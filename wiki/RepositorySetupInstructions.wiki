@@ -1,0 +1,19 @@
+#summary Instructions on how to set up the repository and environment on local machine.
+
+= Checkout =
+
+ # *Checkout the repository trunk to hard drive.*
+ # *Map the checkout folder to drive.* Put _subst <drive letter>: <path to checkout folder>_ to batch file and make file execute at startup or share checkout folder and map it as a network drive.
+Work only in new mapped drive.
+
+= Install =
+ # Install *Visual Studio (Express)*
+ # Install *Python*
+ # Install *Eclipse*
+
+= Configure =
+ # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse
+ # Add *CDT* to Eclipse
+
+= Download =
+ # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level.
