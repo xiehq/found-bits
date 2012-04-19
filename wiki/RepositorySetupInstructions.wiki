@@ -14,7 +14,11 @@ Work only in new mapped drive.
 = Configure =
  # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse
  # Add *CDT* to Eclipse
+ # Don't use tabs. Replace tabs with 2 spaces
+   https://found-bits.googlecode.com/svn/wiki/UseInsertSpacesForTabs.jpg
+ # (optional) Set VS key mappings
+   https://found-bits.googlecode.com/svn/wiki/UseVSKeys.jpg
  # Import coding style from _\Sources\EclipseCCppCodingStyle.xml_
-  https://code.google.com/p/found-bits/source/browse/wiki/ImportCCppCodingStyle.jpg
+   https://found-bits.googlecode.com/svn/wiki/ImportCCppCodingStyle.jpg
 = Download =
  # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level.
