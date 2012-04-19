@@ -14,6 +14,7 @@ Work only in new mapped drive.
 = Configure =
  # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse
  # Add *CDT* to Eclipse
-
+ # Import coding style from _\Sources\EclipseCCppCodingStyle.xml_
+  https://code.google.com/p/found-bits/source/browse/wiki/ImportCCppCodingStyle.jpg
 = Download =
  # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level.
