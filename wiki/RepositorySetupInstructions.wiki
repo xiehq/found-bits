@@ -8,10 +8,12 @@ Work only in new mapped drive.
 
 = Install =
  # Install *Visual Studio (Express)*
+ # Install *Windows Driver Kit (WDK)*
  # Install *Python*
  # Install *Eclipse*
 
 = Configure =
+ # Add Python to PATH
  # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse
  # Add *CDT* to Eclipse
  # Don't use tabs. Replace tabs with 2 spaces
