@@ -1,0 +1,3 @@
+#summary Projects Libs folder description
+
+Used for created libraries used in projects.
