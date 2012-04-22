@@ -1,4 +1,5 @@
 #summary "Searching For A Bit" blog source repository main page
+#labels Featured
 
 = Introduction =
 
