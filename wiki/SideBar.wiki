@@ -1,14 +1,14 @@
 #summary Default side bar
 
- * Overview
- * General repository and work environment setup
+* [Main Overview]
+* [RepositorySetupInstructions Getting Started]
  
-= Folders =
- # Sources\Projects
- # Sources\Projects\Libs
- # Sources\Libs
+* [Folders Folders]
+ * [FolderProjects Sources\Projects]
+ * [FolderProjectsLibs Sources\Projects\Libs]
+ * [FolderLibs Sources\Libs]
 
-= Projects =
- # STM32 Eclipse Template
- # STM32 WinUSBComm Library
- # STM32 WinUSBComm Demo
+* [Projects Projects]
+ * [STM32EclipseTemplate STM32 Eclipse Template]
+ * [STM32WinUSBCommLibrary STM32 WinUSBComm Library]
+ * [STM32WinUSBCommDemo STM32 WinUSBComm Demo]
