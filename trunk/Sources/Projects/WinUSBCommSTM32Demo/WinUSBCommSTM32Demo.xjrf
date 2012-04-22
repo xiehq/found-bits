@@ -1,0 +1,2464 @@
+<Root>
+  <Options>
+    <Editor>
+      <EditorOptions>
+        <REG_HEADER>
+          <Title type="String">BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+          <VersionHigh type="String">0</VersionHigh>
+          <VersionLow type="String">1</VersionLow>
+        </REG_HEADER>
+        <REG_ROOT>
+          <RegVer type="Integer">1258377216</RegVer>
+          <ColorSyntax>
+            <ASMSyntaxFile type="String"></ASMSyntaxFile>
+          </ColorSyntax>
+          <History>
+            <Combo>
+              <ID.0>
+                <Data.0>
+                  <__ type="String">_Data_Setup</__>
+                </Data.0>
+              </ID.0>
+            </Combo>
+          </History>
+          <PI.0>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">66</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</P>
+            <VL type="Integer">47</VL>
+          </PI.0>
+          <PI.1>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">577</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
+            <VL type="Integer">558</VL>
+          </PI.1>
+          <PI.10>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">257</L>
+            <P type="String">..\..\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
+            <VL type="Integer">245</VL>
+          </PI.10>
+          <PI.11>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">83</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_sil.c</P>
+            <VL type="Integer">66</VL>
+          </PI.11>
+          <PI.12>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">95</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c</P>
+            <VL type="Integer">78</VL>
+          </PI.12>
+          <PI.13>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">59</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c</P>
+            <VL type="Integer">44</VL>
+          </PI.13>
+          <PI.14>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">27</C>
+            <L type="Integer">515</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c</P>
+            <VL type="Integer">473</VL>
+          </PI.14>
+          <PI.15>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">16</C>
+            <L type="Integer">265</L>
+            <P type="String">..\..\ST\Project\Virtual_COM_Port\src\usb_prop.c</P>
+            <VL type="Integer">254</VL>
+          </PI.15>
+          <PI.2>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">7</C>
+            <L type="Integer">190</L>
+            <P type="String">WinUSBComm.c</P>
+            <VL type="Integer">184</VL>
+          </PI.2>
+          <PI.3>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">77</L>
+            <P type="String">usb_pwr.c</P>
+            <VL type="Integer">53</VL>
+          </PI.3>
+          <PI.4>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">301</L>
+            <P type="String">usb_prop.c</P>
+            <VL type="Integer">284</VL>
+          </PI.4>
+          <PI.5>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">86</L>
+            <P type="String">usb_istr.c</P>
+            <VL type="Integer">77</VL>
+          </PI.5>
+          <PI.6>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">16</C>
+            <L type="Integer">154</L>
+            <P type="String">stm32f10x_it.c</P>
+            <VL type="Integer">140</VL>
+          </PI.6>
+          <PI.7>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">27</C>
+            <L type="Integer">29</L>
+            <P type="String">main.c</P>
+            <VL type="Integer">7</VL>
+          </PI.7>
+          <PI.8>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">290</L>
+            <P type="String">hw_config.c</P>
+            <VL type="Integer">287</VL>
+          </PI.8>
+          <PI.9>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">16</C>
+            <L type="Integer">266</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c</P>
+            <VL type="Integer">253</VL>
+          </PI.9>
+        </REG_ROOT>
+      </EditorOptions>
+    </Editor>
+    <LA>
+      <LAOptions>
+        <REG_HEADER>
+          <Title type="String">BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+          <VersionHigh type="String">0</VersionHigh>
+          <VersionLow type="String">1</VersionLow>
+        </REG_HEADER>
+        <REG_ROOT>
+          <RegVer type="Integer">1258377216</RegVer>
+        </REG_ROOT>
+      </LAOptions>
+    </LA>
+  </Options>
+  <winIDEA>
+    <REG_HEADER>
+      <Title type="String">BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+      <VersionHigh type="String">0</VersionHigh>
+      <VersionLow type="String">1</VersionLow>
+    </REG_HEADER>
+    <REG_ROOT>
+      <HServer type="String">HASYST</HServer>
+      <HServerMode type="Integer">0</HServerMode>
+      <RegVer type="Integer">1258377216</RegVer>
+      <Desktop>
+        <Workspace_Pane type="Integer">0</Workspace_Pane>
+        <Documents.0>
+          <ActiveDocument>
+            <Maximized type="String">True</Maximized>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</RelativeFileName>
+          </ActiveDocument>
+          <Editor.0>
+            <FileBarIndex type="Integer">0</FileBarIndex>
+            <RectPosBottom type="Integer">651</RectPosBottom>
+            <RectPosLeft type="Integer">200</RectPosLeft>
+            <RectPosRight type="Integer">475</RectPosRight>
+            <RectPosTop type="Integer">200</RectPosTop>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</RelativeFileName>
+          </Editor.0>
+          <Editor.1>
+            <FileBarIndex type="Integer">1</FileBarIndex>
+            <RectPosBottom type="Integer">626</RectPosBottom>
+            <RectPosLeft type="Integer">175</RectPosLeft>
+            <RectPosRight type="Integer">450</RectPosRight>
+            <RectPosTop type="Integer">175</RectPosTop>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</RelativeFileName>
+          </Editor.1>
+          <Editor.2>
+            <FileBarIndex type="Integer">2</FileBarIndex>
+            <RectPosBottom type="Integer">818</RectPosBottom>
+            <RectPosLeft type="Integer">50</RectPosLeft>
+            <RectPosRight type="Integer">464</RectPosRight>
+            <RectPosTop type="Integer">50</RectPosTop>
+            <RelativeFileName type="String">hw_config.c</RelativeFileName>
+          </Editor.2>
+          <Editor.3>
+            <FileBarIndex type="Integer">4</FileBarIndex>
+            <RectPosBottom type="Integer">993</RectPosBottom>
+            <RectPosLeft type="Integer">225</RectPosLeft>
+            <RectPosRight type="Integer">639</RectPosRight>
+            <RectPosTop type="Integer">225</RectPosTop>
+            <RelativeFileName type="String">main.c</RelativeFileName>
+          </Editor.3>
+          <Editor.4>
+            <FileBarIndex type="Integer">3</FileBarIndex>
+            <RectPosBottom type="Integer">307</RectPosBottom>
+            <RectPosLeft type="Integer">0</RectPosLeft>
+            <RectPosRight type="Integer">386</RectPosRight>
+            <RectPosTop type="Integer">0</RectPosTop>
+            <RelativeFileName type="String">stm32f10x_it.c</RelativeFileName>
+          </Editor.4>
+          <Editor.5>
+            <FileBarIndex type="Integer">6</FileBarIndex>
+            <RectPosBottom type="Integer">301</RectPosBottom>
+            <RectPosLeft type="Integer">25</RectPosLeft>
+            <RectPosRight type="Integer">775</RectPosRight>
+            <RectPosTop type="Integer">25</RectPosTop>
+            <RelativeFileName type="String">usb_istr.c</RelativeFileName>
+          </Editor.5>
+          <Editor.6>
+            <FileBarIndex type="Integer">7</FileBarIndex>
+            <RectPosBottom type="Integer">868</RectPosBottom>
+            <RectPosLeft type="Integer">100</RectPosLeft>
+            <RectPosRight type="Integer">514</RectPosRight>
+            <RectPosTop type="Integer">100</RectPosTop>
+            <RelativeFileName type="String">usb_prop.c</RelativeFileName>
+          </Editor.6>
+          <Editor.7>
+            <FileBarIndex type="Integer">8</FileBarIndex>
+            <RectPosBottom type="Integer">654</RectPosBottom>
+            <RectPosLeft type="Integer">125</RectPosLeft>
+            <RectPosRight type="Integer">1302</RectPosRight>
+            <RectPosTop type="Integer">125</RectPosTop>
+            <RelativeFileName type="String">usb_pwr.c</RelativeFileName>
+          </Editor.7>
+          <Editor.8>
+            <FileBarIndex type="Integer">5</FileBarIndex>
+            <RectPosBottom type="Integer">526</RectPosBottom>
+            <RectPosLeft type="Integer">75</RectPosLeft>
+            <RectPosRight type="Integer">386</RectPosRight>
+            <RectPosTop type="Integer">75</RectPosTop>
+            <RelativeFileName type="String">WinUSBComm.c</RelativeFileName>
+          </Editor.8>
+          <EditorHistoryFile.0>
+            <RelativeFileName type="String">startup_stm32f10x_md.s</RelativeFileName>
+          </EditorHistoryFile.0>
+          <EditorHistoryFile.1>
+            <RelativeFileName type="String">stm32f10x_gpio.c</RelativeFileName>
+          </EditorHistoryFile.1>
+          <EditorHistoryFile.2>
+            <RelativeFileName type="String">..\..\ST\Project\Virtual_COM_Port\src\usb_prop.c</RelativeFileName>
+          </EditorHistoryFile.2>
+          <EditorHistoryFile.3>
+            <RelativeFileName type="String">stm32f10x_it.c</RelativeFileName>
+          </EditorHistoryFile.3>
+        </Documents.0>
+        <Progress>
+          <b type="Integer">821</b>
+          <l type="Integer">2180</l>
+          <r type="Integer">2684</r>
+          <t type="Integer">458</t>
+        </Progress>
+        <Watches>
+          <ActiveWatchPane type="Integer">0</ActiveWatchPane>
+          <Misc.0>
+            <InitScript type="String"></InitScript>
+          </Misc.0>
+          <Misc.1>
+            <InitScript type="String"></InitScript>
+          </Misc.1>
+          <Misc.2>
+            <InitScript type="String"></InitScript>
+          </Misc.2>
+          <Misc.3>
+            <InitScript type="String"></InitScript>
+          </Misc.3>
+          <WatchPane.0>
+            <Watch.0>
+              <WatchName type="String">&amp;s_abyOutgoingBuffer</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.0>
+            <Watch.1>
+              <WatchName type="String">s_pOutgoingData</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.1>
+            <Watch.2>
+              <WatchName type="String">s_pbyControlRequestData</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.2>
+            <Watch.3>
+              <WatchName type="String">*(s_pbyControlRequestData),m8</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.3>
+          </WatchPane.0>
+          <WatchPane.2>
+            <Watch.0>
+              <WatchName type="String">s_eWinUSBCommStatus</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.0>
+          </WatchPane.2>
+        </Watches>
+        <Watches2>
+          <ActiveWatchPane type="Integer">0</ActiveWatchPane>
+          <Misc.0>
+            <InitScript type="String"></InitScript>
+          </Misc.0>
+          <Misc.1>
+            <InitScript type="String"></InitScript>
+          </Misc.1>
+          <Misc.2>
+            <InitScript type="String"></InitScript>
+          </Misc.2>
+          <Misc.3>
+            <InitScript type="String"></InitScript>
+          </Misc.3>
+        </Watches2>
+        <Watches3>
+          <ActiveWatchPane type="Integer">0</ActiveWatchPane>
+          <Misc.0>
+            <InitScript type="String"></InitScript>
+          </Misc.0>
+          <Misc.1>
+            <InitScript type="String"></InitScript>
+          </Misc.1>
+          <Misc.2>
+            <InitScript type="String"></InitScript>
+          </Misc.2>
+          <Misc.3>
+            <InitScript type="String"></InitScript>
+          </Misc.3>
+        </Watches3>
+        <Watches4>
+          <ActiveWatchPane type="Integer">0</ActiveWatchPane>
+          <Misc.0>
+            <InitScript type="String"></InitScript>
+          </Misc.0>
+          <Misc.1>
+            <InitScript type="String"></InitScript>
+          </Misc.1>
+          <Misc.2>
+            <InitScript type="String"></InitScript>
+          </Misc.2>
+          <Misc.3>
+            <InitScript type="String"></InitScript>
+          </Misc.3>
+        </Watches4>
+        <Workspace.0>
+          <AreHorz type="Integer">1</AreHorz>
+          <FullScreen type="Integer">0</FullScreen>
+          <Percent type="Integer">0</Percent>
+          <Type type="Integer">0</Type>
+          <TypeOfWnd type="Integer">-1</TypeOfWnd>
+          <DockRect.0>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">28</Percent>
+            <strTypeOfWnd type="String">Debug</strTypeOfWnd>
+            <Type type="Integer">10</Type>
+            <TypeOfWnd type="Integer">10</TypeOfWnd>
+          </DockRect.0>
+          <DockRect.1>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">2</Percent>
+            <Type type="Integer">6</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+          </DockRect.1>
+          <DockRect.2>
+            <AreHorz type="Integer">0</AreHorz>
+            <Percent type="Integer">432</Percent>
+            <Type type="Integer">0</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            <DockRect.0>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">361</Percent>
+              <strTypeOfWnd type="String">Project Workspace</strTypeOfWnd>
+              <Type type="Integer">0</Type>
+              <TypeOfWnd type="Integer">1</TypeOfWnd>
+            </DockRect.0>
+            <DockRect.1>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">5</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.1>
+            <DockRect.2>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">954</Percent>
+              <Type type="Integer">1</Type>
+              <TypeOfWnd type="Integer">-2</TypeOfWnd>
+            </DockRect.2>
+            <DockRect.3>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">5</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.3>
+            <DockRect.4>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">520</Percent>
+              <strTypeOfWnd type="String">Disassembly</strTypeOfWnd>
+              <Type type="Integer">0</Type>
+              <TypeOfWnd type="Integer">5</TypeOfWnd>
+              <Data>
+                <HeaderWidth.0>
+                  <__ type="Integer">80</__>
+                </HeaderWidth.0>
+                <HeaderWidth.1>
+                  <__ type="Integer">72</__>
+                </HeaderWidth.1>
+                <HeaderWidth.2>
+                  <__ type="Integer">204</__>
+                </HeaderWidth.2>
+                <HeaderWidth.3>
+                  <__ type="Integer">122</__>
+                </HeaderWidth.3>
+              </Data>
+            </DockRect.4>
+            <DockRect.5>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">0</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.5>
+          </DockRect.2>
+          <DockRect.3>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">5</Percent>
+            <Type type="Integer">6</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+          </DockRect.3>
+          <DockRect.4>
+            <AreHorz type="Integer">0</AreHorz>
+            <Percent type="Integer">308</Percent>
+            <Type type="Integer">0</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            <DockRect.0>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">482</Percent>
+              <strTypeOfWnd type="String">Variables</strTypeOfWnd>
+              <Type type="Integer">0</Type>
+              <TypeOfWnd type="Integer">3</TypeOfWnd>
+              <Data>
+                <Columns.0>
+                  <Pos type="Double">0.0000000000000000</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.0>
+                <Columns.1>
+                  <Pos type="Double">20.0000000000000000</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.1>
+                <Columns.2>
+                  <Pos type="Double">70.0000000000000000</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.2>
+                <Columns.3>
+                  <Pos type="Double">90.0000000000000000</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.3>
+              </Data>
+            </DockRect.0>
+            <DockRect.1>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">5</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.1>
+            <DockRect.2>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">559</Percent>
+              <strTypeOfWnd type="String">Watch</strTypeOfWnd>
+              <Type type="Integer">0</Type>
+              <TypeOfWnd type="Integer">2</TypeOfWnd>
+              <Data>
+                <Columns.0>
+                  <Pos type="Double">0.0000000000000000</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.0>
+                <Columns.1>
+                  <Pos type="Double">32.4372759856630850</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.1>
+                <Columns.2>
+                  <Pos type="Double">59.6774193548387120</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.2>
+                <Columns.3>
+                  <Pos type="Double">78.3154121863799300</Pos>
+                  <Width type="Integer">0</Width>
+                </Columns.3>
+              </Data>
+            </DockRect.2>
+            <DockRect.3>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">5</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.3>
+            <DockRect.4>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">794</Percent>
+              <strTypeOfWnd type="String">Memory</strTypeOfWnd>
+              <Type type="Integer">0</Type>
+              <TypeOfWnd type="Integer">6</TypeOfWnd>
+              <Data>
+                <Address type="Integer">0</Address>
+                <AddrMode type="Integer">1</AddrMode>
+                <Area type="Integer">0</Area>
+                <Bits type="Integer">8</Bits>
+                <DisplayMode type="Integer">0</DisplayMode>
+                <High type="Integer">-1</High>
+                <LimitMAUsPerLine type="Integer">0</LimitMAUsPerLine>
+                <Low type="Integer">0</Low>
+                <RealTime type="Integer">0</RealTime>
+                <strAddress type="String">0x0</strAddress>
+                <SwapFloat type="String">True</SwapFloat>
+                <SwapInt type="String">True</SwapInt>
+                <API.0>
+                  <Address type="Integer">0</Address>
+                  <AddressOffset type="Integer">0</AddressOffset>
+                  <DisplayMode type="Integer">0</DisplayMode>
+                  <FloatLowFirst type="Integer">1</FloatLowFirst>
+                  <IntLowFirst type="Integer">1</IntLowFirst>
+                </API.0>
+                <API.1>
+                  <Address type="Integer">0</Address>
+                  <AddressOffset type="Integer">0</AddressOffset>
+                  <DisplayMode type="Integer">0</DisplayMode>
+                  <FloatLowFirst type="Integer">0</FloatLowFirst>
+                  <IntLowFirst type="Integer">0</IntLowFirst>
+                </API.1>
+                <API.2>
+                  <Address type="Integer">0</Address>
+                  <AddressOffset type="Integer">0</AddressOffset>
+                  <DisplayMode type="Integer">0</DisplayMode>
+                  <FloatLowFirst type="Integer">0</FloatLowFirst>
+                  <IntLowFirst type="Integer">0</IntLowFirst>
+                </API.2>
+                <API.3>
+                  <Address type="Integer">0</Address>
+                  <AddressOffset type="Integer">0</AddressOffset>
+                  <DisplayMode type="Integer">0</DisplayMode>
+                  <FloatLowFirst type="Integer">0</FloatLowFirst>
+                  <IntLowFirst type="Integer">0</IntLowFirst>
+                </API.3>
+                <API.4>
+                  <Address type="Integer">0</Address>
+                  <AddressOffset type="Integer">0</AddressOffset>
+                  <DisplayMode type="Integer">0</DisplayMode>
+                  <FloatLowFirst type="Integer">0</FloatLowFirst>
+                  <IntLowFirst type="Integer">0</IntLowFirst>
+                </API.4>
+              </Data>
+            </DockRect.4>
+            <DockRect.5>
+              <AreHorz type="Integer">1</AreHorz>
+              <Percent type="Integer">0</Percent>
+              <Type type="Integer">6</Type>
+              <TypeOfWnd type="Integer">-1</TypeOfWnd>
+            </DockRect.5>
+          </DockRect.4>
+          <DockRect.5>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">0</Percent>
+            <Type type="Integer">6</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+          </DockRect.5>
+        </Workspace.0>
+      </Desktop>
+      <Environment>
+        <Breakpoints>
+          <Fetch>
+            <Beep type="String">True</Beep>
+            <DisplayMessage type="String">True</DisplayMessage>
+            <BP.0>
+              <__>
+                <Active type="String">False</Active>
+                <Condition type="String"></Condition>
+                <Condition_Count type="Integer">0</Condition_Count>
+                <ConditionEnabled type="String">False</ConditionEnabled>
+                <Name type="String">&quot;usb_prop.c&quot;::293</Name>
+              </__>
+            </BP.0>
+          </Fetch>
+        </Breakpoints>
+        <CASETool>
+          <AutoBegin type="String">False</AutoBegin>
+        </CASETool>
+        <Debug>
+          <Assume>
+            <UnmodifiableCode type="Integer">0</UnmodifiableCode>
+          </Assume>
+          <BackTrace>
+            <Reconstruction type="Integer">1</Reconstruction>
+          </BackTrace>
+          <Debugging>
+            <DisableBPs type="Integer">0</DisableBPs>
+            <DisableIRQ_RunUntil type="Integer">0</DisableIRQ_RunUntil>
+            <DisableIRQ_RunUntilReturn type="Integer">1</DisableIRQ_RunUntilReturn>
+            <DisableIRQ_Step type="Integer">1</DisableIRQ_Step>
+            <DisableIRQ_StepOver type="Integer">1</DisableIRQ_StepOver>
+            <OnlyOneBPPerSourceLine type="Integer">1</OnlyOneBPPerSourceLine>
+            <ReserveBP type="Integer">1</ReserveBP>
+          </Debugging>
+          <Directories>
+            <ConvertPath type="Integer">0</ConvertPath>
+            <FindPriority type="Integer">0</FindPriority>
+            <FromTo type="String"></FromTo>
+          </Directories>
+          <Download>
+            <DefaultFile type="Integer">0</DefaultFile>
+            <UseRealTimeWrite type="Integer">0</UseRealTimeWrite>
+            <File.0>
+              <Flags type="Integer">3</Flags>
+              <Load type="Integer">1</Load>
+              <LoadCode type="Integer">1</LoadCode>
+              <LoadSymbols type="Integer">1</LoadSymbols>
+              <MemoryArea type="Integer">0</MemoryArea>
+              <Offset type="Integer">0</Offset>
+              <OptimizeTypeByName type="Integer">0</OptimizeTypeByName>
+              <OverrideMemoryArea type="Integer">0</OverrideMemoryArea>
+              <Path type="String">Debug\WinUSBCommSTM32Demo.out</Path>
+              <Process type="Integer">0</Process>
+              <ProjectOutputFile type="Integer">0</ProjectOutputFile>
+              <SOffset type="Integer">0</SOffset>
+              <TargetRelative type="String">False</TargetRelative>
+              <Type type="Integer">28</Type>
+              <Options>
+                <CallStack type="Integer">0</CallStack>
+                <DumpELFHeaders type="Integer">0</DumpELFHeaders>
+                <GCC_ARM_double_Format type="Integer">0</GCC_ARM_double_Format>
+                <IgnoreChecksum type="Integer">0</IgnoreChecksum>
+                <IgnoreNonStatementLines type="Integer">1</IgnoreNonStatementLines>
+                <InsertInlinedFunctions type="Integer">0</InsertInlinedFunctions>
+                <LoadCode type="Integer">0</LoadCode>
+                <LoadDwarfSection type="Integer">1</LoadDwarfSection>
+                <LoadSymbols type="Integer">2</LoadSymbols>
+                <LoadZeros type="Integer">0</LoadZeros>
+                <MergeTypes type="Integer">0</MergeTypes>
+                <RemoveOptimizedLines type="Integer">1</RemoveOptimizedLines>
+                <ReverseBitFields type="Integer">0</ReverseBitFields>
+              </Options>
+            </File.0>
+          </Download>
+          <DownloadOptionsData>
+            <AfterDL1 type="Integer">0</AfterDL1>
+            <AfterDL2 type="Integer">0</AfterDL2>
+            <AfterDownloadGoto type="String"></AfterDownloadGoto>
+            <AfterDownloadRunUntil type="String">main</AfterDownloadRunUntil>
+            <bAfterDL1 type="Integer">0</bAfterDL1>
+            <bAfterDL2 type="Integer">0</bAfterDL2>
+            <BeforeDownload type="Integer">1</BeforeDownload>
+            <bRunUntil type="Integer">0</bRunUntil>
+            <byAutoDownload type="Integer">0</byAutoDownload>
+            <DisplayLoadMap type="String">True</DisplayLoadMap>
+            <DownloadInHotAttach type="Integer">0</DownloadInHotAttach>
+            <PostDLActionAlsoAfterReset type="Integer">1</PostDLActionAlsoAfterReset>
+            <StartOnPowerOn type="Integer">0</StartOnPowerOn>
+            <strRunUntil type="String">main</strRunUntil>
+            <TargetDownload type="Integer">0</TargetDownload>
+            <VerifyDownload type="String">True</VerifyDownload>
+            <VerifyDownloadSource type="Integer">0</VerifyDownloadSource>
+            <Download>
+              <DefaultFile type="Integer">-1</DefaultFile>
+              <UseRealTimeWrite type="Integer">0</UseRealTimeWrite>
+            </Download>
+          </DownloadOptionsData>
+          <HistoryFile>
+            <Enabled type="String">False</Enabled>
+            <LocalVariables type="String">False</LocalVariables>
+            <Memory type="String">False</Memory>
+            <Path type="String">history.txt</Path>
+            <Registers type="String">True</Registers>
+            <SFRs type="String">False</SFRs>
+            <Source type="String">True</Source>
+            <Speed type="Integer">0</Speed>
+            <Status type="String">True</Status>
+            <Trace type="String">False</Trace>
+            <Watches type="String">True</Watches>
+          </HistoryFile>
+          <MMUData>
+            <AddressDisplay type="Integer">0</AddressDisplay>
+            <DisplayAddresses type="Integer">1</DisplayAddresses>
+            <DisplayRegisters type="Integer">1</DisplayRegisters>
+          </MMUData>
+          <mode0>
+            <GlobalProperty type="Integer">0</GlobalProperty>
+            <IgnoreDLInfo type="Integer">0</IgnoreDLInfo>
+          </mode0>
+          <mode1>
+            <GlobalProperty type="Integer">0</GlobalProperty>
+            <IgnoreDLInfo type="Integer">0</IgnoreDLInfo>
+          </mode1>
+          <modeEndianBig>
+            <GlobalProperty type="Integer">0</GlobalProperty>
+            <IgnoreDLInfo type="Integer">0</IgnoreDLInfo>
+          </modeEndianBig>
+          <modeEndianLittle>
+            <GlobalProperty type="Integer">0</GlobalProperty>
+            <IgnoreDLInfo type="Integer">0</IgnoreDLInfo>
+          </modeEndianLittle>
+          <Process>
+            <UseVirtualAccessForCurrentProcess type="Integer">1</UseVirtualAccessForCurrentProcess>
+            <Processes.0>
+              <Name type="String">DEFAULT</Name>
+              <PID_dwPID type="Integer">0</PID_dwPID>
+              <PID_Type type="Integer">0</PID_Type>
+              <Overlay>
+                <Mode type="Integer">0</Mode>
+              </Overlay>
+            </Processes.0>
+          </Process>
+          <RTOS>
+            <OS type="Integer">0</OS>
+          </RTOS>
+          <SymbolFile>
+            <Constants type="String">True</Constants>
+            <Functions type="String">True</Functions>
+            <Lines type="String">True</Lines>
+            <Locals type="String">True</Locals>
+            <Path type="String">symbols.txt</Path>
+            <Typedefs type="String">True</Typedefs>
+            <Variables type="String">True</Variables>
+          </SymbolFile>
+          <Symbols>
+            <AddressDisplay type="Integer">0</AddressDisplay>
+            <ANSI type="Integer">1</ANSI>
+            <BinaryDisplay type="Integer">0</BinaryDisplay>
+            <BrowserScope type="String">True</BrowserScope>
+            <CharArraysAsString type="Integer">1</CharArraysAsString>
+            <CharDisplay type="Integer">2</CharDisplay>
+            <DefaultHex type="String">True</DefaultHex>
+            <DePrefixFunctions type="String">False</DePrefixFunctions>
+            <DePrefixGlobals type="String">False</DePrefixGlobals>
+            <DePrefixLabels type="String">False</DePrefixLabels>
+            <DePrefixLocals type="String">False</DePrefixLocals>
+            <DereferenceStringPointers type="Integer">0</DereferenceStringPointers>
+            <DisplayCollapsedValues type="Integer">1</DisplayCollapsedValues>
+            <DisplayPointerMemArea type="Integer">0</DisplayPointerMemArea>
+            <EnumDisplay type="Integer">0</EnumDisplay>
+            <IgnoreDisable type="String">False</IgnoreDisable>
+            <LoadSym type="Integer">1</LoadSym>
+            <MarkersInLastLine type="String">True</MarkersInLastLine>
+            <MaxParseUpload type="Integer">256</MaxParseUpload>
+            <MemoryAccessOpearator type="String">:</MemoryAccessOpearator>
+            <NumChangeGradients type="Integer">1</NumChangeGradients>
+            <Prefix type="String">_</Prefix>
+            <StepToOtherLine type="Integer">0</StepToOtherLine>
+            <UsePartitionPrefix type="Integer">0</UsePartitionPrefix>
+            <VagueFloatPrecision type="Double">0.0000100000000000</VagueFloatPrecision>
+            <Export>
+              <FileName type="String"></FileName>
+              <Format type="Integer">0</Format>
+            </Export>
+          </Symbols>
+          <Update>
+            <Memory type="String">False</Memory>
+            <OS type="String">True</OS>
+            <Period type="Integer">1</Period>
+            <Registers type="String">False</Registers>
+            <RTPeriod_ms type="Integer">200</RTPeriod_ms>
+            <RTWhenRunning type="String">True</RTWhenRunning>
+            <RTWhenStopped type="String">False</RTWhenStopped>
+            <SFRs type="String">True</SFRs>
+            <UpdateOnBP type="String">False</UpdateOnBP>
+            <Watches type="String">True</Watches>
+            <WhenRunning type="String">False</WhenRunning>
+            <WhenStopped type="String">False</WhenStopped>
+            <AccessData>
+              <Cache type="Integer">0</Cache>
+              <CacheRealTimeAccesses type="Integer">0</CacheRealTimeAccesses>
+              <DisableSFRCaching type="Integer">0</DisableSFRCaching>
+              <MonitorAccess type="Integer">0</MonitorAccess>
+              <RealTimeAccess type="Integer">1</RealTimeAccess>
+            </AccessData>
+          </Update>
+          <WatchExport>
+            <Expression type="Integer">1</Expression>
+            <FileName type="String"></FileName>
+            <Location type="Integer">0</Location>
+            <Type type="Integer">0</Type>
+            <Value type="Integer">1</Value>
+          </WatchExport>
+        </Debug>
+        <FLASH>
+          <AutoConnect type="Integer">0</AutoConnect>
+          <AutoFLASH type="Integer">0</AutoFLASH>
+          <AutoSTART type="Integer">0</AutoSTART>
+          <BatchErase type="Integer">1</BatchErase>
+          <BatchLoad type="Integer">1</BatchLoad>
+          <BatchProgram type="Integer">1</BatchProgram>
+          <BatchSecure type="Integer">0</BatchSecure>
+          <BatchUnsecure type="Integer">0</BatchUnsecure>
+          <BatchVerify type="Integer">1</BatchVerify>
+          <Mode type="Integer">0</Mode>
+          <OnTheFlyVerify type="Integer">0</OnTheFlyVerify>
+          <Target type="Integer">0</Target>
+          <UseDebugDownloadFiles type="Integer">0</UseDebugDownloadFiles>
+          <BusMapping>
+            <FLASHLine type="Buffer">AAABACADAEAFAGAHAIAJAKALAMANAOAPBABBBCBDBEBFBGBHBIBJBKBLBMBNBOBP</FLASHLine>
+            <Mode type="Integer">0</Mode>
+          </BusMapping>
+          <Device>
+            <AbortOnError type="Integer">1</AbortOnError>
+            <Address type="Integer">0</Address>
+            <Description type="String"></Description>
+            <Device type="String"></Device>
+            <IgnoreDeviceID type="Integer">0</IgnoreDeviceID>
+            <IndividualProgram type="String">True</IndividualProgram>
+            <Manufacturer type="String"></Manufacturer>
+          </Device>
+          <Download>
+            <DefaultFile type="Integer">-1</DefaultFile>
+            <UseRealTimeWrite type="Integer">0</UseRealTimeWrite>
+          </Download>
+          <Exclusion.0>
+            <__>
+              <End type="Integer">0</End>
+              <Start type="Integer">0</Start>
+              <Use type="Integer">0</Use>
+            </__>
+          </Exclusion.0>
+          <Exclusion.1>
+            <__>
+              <End type="Integer">0</End>
+              <Start type="Integer">0</Start>
+              <Use type="Integer">0</Use>
+            </__>
+          </Exclusion.1>
+          <Scope>
+            <Scope type="Integer">0</Scope>
+            <Sectors_num_ type="Integer">0</Sectors_num_>
+          </Scope>
+        </FLASH>
+        <GlobalData>
+          <FindInFiles>
+            <CaseSensitive type="Integer">0</CaseSensitive>
+            <FindWhat.0 type="String"></FindWhat.0>
+            <FindWhat.1 type="String"></FindWhat.1>
+            <FindWhat.2 type="String"></FindWhat.2>
+            <FindWhat.3 type="String"></FindWhat.3>
+            <FindWhat.4 type="String"></FindWhat.4>
+            <FindWhat.5 type="String"></FindWhat.5>
+            <FindWhat.6 type="String"></FindWhat.6>
+            <FindWhat.7 type="String"></FindWhat.7>
+            <Folder.0 type="String"></Folder.0>
+            <Folder.1 type="String"></Folder.1>
+            <Folder.2 type="String"></Folder.2>
+            <Folder.3 type="String"></Folder.3>
+            <Folder.4 type="String"></Folder.4>
+            <Folder.5 type="String"></Folder.5>
+            <Folder.6 type="String"></Folder.6>
+            <Folder.7 type="String"></Folder.7>
+            <IncludeAllFilesInProjectFolders type="Integer">0</IncludeAllFilesInProjectFolders>
+            <IncludeProjectDependencies type="Integer">1</IncludeProjectDependencies>
+            <IncludeProjectFiles type="Integer">1</IncludeProjectFiles>
+            <LastFileType type="String"></LastFileType>
+            <ReplaceWith.0 type="String"></ReplaceWith.0>
+            <ReplaceWith.1 type="String"></ReplaceWith.1>
+            <ReplaceWith.2 type="String"></ReplaceWith.2>
+            <ReplaceWith.3 type="String"></ReplaceWith.3>
+            <ReplaceWith.4 type="String"></ReplaceWith.4>
+            <ReplaceWith.5 type="String"></ReplaceWith.5>
+            <ReplaceWith.6 type="String"></ReplaceWith.6>
+            <ReplaceWith.7 type="String"></ReplaceWith.7>
+            <Subfolders type="Integer">0</Subfolders>
+            <WholeWords type="Integer">0</WholeWords>
+          </FindInFiles>
+        </GlobalData>
+        <History>
+          <Combo>
+            <ID.10>
+              <Data.0>
+                <__ type="String">0x0</__>
+              </Data.0>
+            </ID.10>
+          </Combo>
+        </History>
+        <Info>
+          <winIDEA type="String">Build 9.12.21</winIDEA>
+        </Info>
+        <Options>
+          <CASE>
+            <RunWhenWinIDEAStarts type="Integer">0</RunWhenWinIDEAStarts>
+            <Tool type="Integer">0</Tool>
+          </CASE>
+          <Environment>
+            <DocumentTabNumLines type="Integer">1</DocumentTabNumLines>
+            <iConnectLimitClients type="Integer">0</iConnectLimitClients>
+            <iConnectLimitNum type="Integer">1</iConnectLimitNum>
+            <IsBuildManagerEnabled type="Integer">0</IsBuildManagerEnabled>
+            <ShowDocumentTab type="Integer">1</ShowDocumentTab>
+            <ShortcutScript.0>
+              <Path type="String"></Path>
+            </ShortcutScript.0>
+            <ShortcutScript.1>
+              <Path type="String"></Path>
+            </ShortcutScript.1>
+            <ShortcutScript.2>
+              <Path type="String"></Path>
+            </ShortcutScript.2>
+            <ShortcutScript.3>
+              <Path type="String"></Path>
+            </ShortcutScript.3>
+          </Environment>
+          <MemoryWindow>
+            <Default8bitMAUDisplayOptions type="Integer">0</Default8bitMAUDisplayOptions>
+          </MemoryWindow>
+          <ProjectWindow>
+            <Symbols_ModuleFolders type="Integer">2</Symbols_ModuleFolders>
+          </ProjectWindow>
+          <SFRWindow>
+            <Access type="Integer">0</Access>
+            <Display type="Integer">1</Display>
+            <RadixPrefix type="Integer">0</RadixPrefix>
+            <ShortNames type="Integer">0</ShortNames>
+            <SubSFRDisplay type="Integer">2</SubSFRDisplay>
+            <Update type="Integer">0</Update>
+          </SFRWindow>
+          <TerminalWindow>
+            <CurrentDownloadFile type="Integer">-1</CurrentDownloadFile>
+            <OutputFileName type="String"></OutputFileName>
+            <SaveToDisk type="Integer">0</SaveToDisk>
+            <SessionOptions>
+              <AppendNewline type="Integer">0</AppendNewline>
+              <AppendNewlineOut type="Integer">0</AppendNewlineOut>
+              <BaudRate type="Integer">9600</BaudRate>
+              <CommChannel type="String">COM1</CommChannel>
+              <DataBits type="Integer">8</DataBits>
+              <DTR_DSR type="Integer">0</DTR_DSR>
+              <LocalEcho type="Integer">0</LocalEcho>
+              <Parity type="Integer">0</Parity>
+              <RTS_CTS type="Integer">0</RTS_CTS>
+              <Screen.0 type="Integer">24</Screen.0>
+              <Screen.1 type="Integer">80</Screen.1>
+              <Screen.2 type="Integer">500</Screen.2>
+              <StopBits type="Integer">0</StopBits>
+              <TerminalEmulation type="Integer">1</TerminalEmulation>
+              <XON_XOFF type="Integer">0</XON_XOFF>
+            </SessionOptions>
+          </TerminalWindow>
+        </Options>
+        <SourceControl>
+          <CheckInFilesWhenClosingWorkspace type="Integer">0</CheckInFilesWhenClosingWorkspace>
+          <CheckOutSourceFilesWhenEdited type="Integer">1</CheckOutSourceFilesWhenEdited>
+          <GetFilesWhenOpeningWorkspace type="Integer">0</GetFilesWhenOpeningWorkspace>
+          <IncludeOnlySelectedFilesInDialogs type="Integer">1</IncludeOnlySelectedFilesInDialogs>
+          <PerformBackgroundStatusUpdates type="Integer">1</PerformBackgroundStatusUpdates>
+          <PromptToAddFilesWhenInserted type="Integer">1</PromptToAddFilesWhenInserted>
+          <SourceControlSystem type="Integer">0</SourceControlSystem>
+          <UseDialogForCheckout type="Integer">1</UseDialogForCheckout>
+        </SourceControl>
+        <Test>
+          <_166>
+            <Compiler type="String">Tasking</Compiler>
+          </_166>
+          <ColdFire>
+            <Compiler type="String">GCC</Compiler>
+          </ColdFire>
+          <EPADIMD>
+            <ReverseParameters type="String">FALSE</ReverseParameters>
+          </EPADIMD>
+          <PPC>
+            <CreateCallFrame type="String">TRUE</CreateCallFrame>
+            <CustomExitSymbol type="String"></CustomExitSymbol>
+            <ExtendReturnValues type="String">FALSE</ExtendReturnValues>
+            <UseCustomExitSymbol type="String">FALSE</UseCustomExitSymbol>
+          </PPC>
+          <R8C>
+            <Compiler type="String">IAR</Compiler>
+          </R8C>
+          <S12>
+            <WidenParameters type="String">TRUE</WidenParameters>
+          </S12>
+          <V850>
+            <Compiler type="String">GreenHills</Compiler>
+            <PartialAddressDecoding type="String">TRUE</PartialAddressDecoding>
+          </V850>
+        </Test>
+        <WindowsInfo>
+          <Memory>
+            <FillAddressType type="Integer">1</FillAddressType>
+            <FillSize type="Integer">1</FillSize>
+            <FillSizeHex type="String">True</FillSizeHex>
+            <FillSizeType type="Integer">1</FillSizeType>
+            <FillValue type="String">0</FillValue>
+            <FillValueType type="Integer">0</FillValueType>
+            <FindAddressType type="Integer">1</FindAddressType>
+            <FindValueType type="Integer">0</FindValueType>
+            <Format type="Integer">0</Format>
+            <HexList type="String">False</HexList>
+            <HexSaveAddress type="String">False</HexSaveAddress>
+            <HexSaveSize type="String">True</HexSaveSize>
+            <MAUsPerLine type="Integer">16</MAUsPerLine>
+            <SaveFile type="String"></SaveFile>
+            <SaveSize type="String">100</SaveSize>
+            <SaveSizeType type="Integer">1</SaveSizeType>
+            <SymbolTips type="String">True</SymbolTips>
+          </Memory>
+          <OSSwTree>
+            <Selected type="String"></Selected>
+            <Items.0>
+              <__>
+                <Name type="String">Blocks</Name>
+                <Options type="Integer">5</Options>
+                <Items.0>
+                  <__>
+                    <Name type="String">None</Name>
+                    <Options type="Integer">4</Options>
+                  </__>
+                </Items.0>
+              </__>
+            </Items.0>
+          </OSSwTree>
+          <OSWindow>
+            <Selected type="String"></Selected>
+            <Items.0>
+              <__>
+                <Name type="String"></Name>
+                <Options type="Integer">0</Options>
+              </__>
+            </Items.0>
+          </OSWindow>
+          <ProjectWindow>
+            <Selected type="String"></Selected>
+            <Items.0>
+              <__>
+                <Name type="String">Files</Name>
+                <Options type="Integer">5</Options>
+                <Items.0>
+                  <__>
+                    <Name type="String">Source files</Name>
+                    <Options type="Integer">4</Options>
+                  </__>
+                </Items.0>
+              </__>
+            </Items.0>
+          </ProjectWindow>
+          <SFR>
+            <InitScript type="String"></InitScript>
+            <GlobalState>
+              <Selected type="String">USB endpoint 1 register</Selected>
+              <Items.0>
+                <__>
+                  <Name type="String">STM32F103RB</Name>
+                  <Options type="Integer">1</Options>
+                  <Items.0>
+                    <__>
+                      <Name type="String">USB full speed device interface (USB)</Name>
+                      <Options type="Integer">1</Options>
+                      <Items.0>
+                        <__>
+                          <Name type="String">Buffer table address</Name>
+                          <Options type="Integer">4</Options>
+                        </__>
+                      </Items.0>
+                      <Items.1>
+                        <__>
+                          <Name type="String">USB endpoint 0 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.1>
+                      <Items.2>
+                        <__>
+                          <Name type="String">USB endpoint 1 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.2>
+                      <Items.3>
+                        <__>
+                          <Name type="String">USB endpoint 2 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.3>
+                      <Items.4>
+                        <__>
+                          <Name type="String">USB endpoint 3 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.4>
+                      <Items.5>
+                        <__>
+                          <Name type="String">USB endpoint 4 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.5>
+                      <Items.6>
+                        <__>
+                          <Name type="String">USB endpoint 5 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.6>
+                      <Items.7>
+                        <__>
+                          <Name type="String">USB endpoint 6 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.7>
+                      <Items.8>
+                        <__>
+                          <Name type="String">USB endpoint 7 register</Name>
+                          <Options type="Integer">0</Options>
+                        </__>
+                      </Items.8>
+                    </__>
+                  </Items.0>
+                  <Items.1>
+                    <__>
+                      <Name type="String">ADC</Name>
+                      <Options type="Integer">4</Options>
+                    </__>
+                  </Items.1>
+                  <Items.2>
+                    <__>
+                      <Name type="String">USART</Name>
+                      <Options type="Integer">0</Options>
+                    </__>
+                  </Items.2>
+                </__>
+              </Items.0>
+            </GlobalState>
+          </SFR>
+        </WindowsInfo>
+      </Environment>
+      <Plugins>
+        <_76946E39-78E2-4625-9BF0-751C4C11A09F>
+          <Plugin>
+            <Config>
+              <Architecture type="String">Default</Architecture>
+              <AutoStart type="String">false</AutoStart>
+              <Port type="String">5544</Port>
+            </Config>
+          </Plugin>
+        </_76946E39-78E2-4625-9BF0-751C4C11A09F>
+      </Plugins>
+    </REG_ROOT>
+  </winIDEA>
+  <Project>
+    <REG_HEADER>
+      <Title type="String">BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+      <VersionHigh type="String">0</VersionHigh>
+      <VersionLow type="String">1</VersionLow>
+    </REG_HEADER>
+    <REG_ROOT>
+      <RegVer type="Integer">1258377216</RegVer>
+      <Project_Local>
+        <Project.0>
+          <DefaultTargetName type="String">STM32F10x - Debug</DefaultTargetName>
+        </Project.0>
+      </Project_Local>
+    </REG_ROOT>
+  </Project>
+  <HServer>
+    <REG_HEADER>
+      <Title type="String">BF283F24-70B9-4f97-86E6-0AD5BAAE9E01</Title>
+      <VersionHigh type="String">0</VersionHigh>
+      <VersionLow type="String">1</VersionLow>
+    </REG_HEADER>
+    <REG_ROOT>
+      <RegVer type="Integer">1258377216</RegVer>
+      <HServerData>
+        <Data>
+          <Debug>
+            <BDM>
+              <FlashProgramming>
+                <DataOffset type="Integer">0</DataOffset>
+                <DataPath type="String"></DataPath>
+                <Entry type="Integer">0</Entry>
+                <ProgramOffset type="Integer">0</ProgramOffset>
+                <ProgramPath type="String"></ProgramPath>
+                <Type type="Integer">1</Type>
+              </FlashProgramming>
+              <InfiniteProfilerData>
+                <dCycle2ns type="Double">0.0000000000000000</dCycle2ns>
+                <RestartOnRunning type="Integer">0</RestartOnRunning>
+                <StartOnReset type="Integer">0</StartOnReset>
+                <Region.0>
+                  <EntireFunction type="Integer">0</EntireFunction>
+                  <Entry type="String"></Entry>
+                  <Exit type="String"></Exit>
+                </Region.0>
+              </InfiniteProfilerData>
+            </BDM>
+            <BP>
+              <WhenBPHits>
+                <Beep type="Integer">0</Beep>
+                <DisplayMessage type="Integer">0</DisplayMessage>
+              </WhenBPHits>
+            </BP>
+            <BPData>
+              <ARMBPs>
+                <Data>
+                  <Condition type="Integer">0</Condition>
+                  <Size type="Integer">0</Size>
+                  <WP.0>
+                    <Address type="String"></Address>
+                    <AddressMask type="Integer">-1</AddressMask>
+                    <Data type="Integer">0</Data>
+                    <DataMask type="Integer">0</DataMask>
+                    <EXTERN type="Integer">0</EXTERN>
+                    <MAS type="Integer">0</MAS>
+                    <OPC type="Integer">0</OPC>
+                    <RW type="Integer">0</RW>
+                    <TRANS type="Integer">0</TRANS>
+                  </WP.0>
+                  <WP.1>
+                    <Address type="String"></Address>
+                    <AddressMask type="Integer">-1</AddressMask>
+                    <Data type="Integer">0</Data>
+                    <DataMask type="Integer">0</DataMask>
+                    <EXTERN type="Integer">0</EXTERN>
+                    <MAS type="Integer">0</MAS>
+                    <OPC type="Integer">0</OPC>
+                    <RW type="Integer">0</RW>
+                    <TRANS type="Integer">0</TRANS>
+                  </WP.1>
+                </Data>
+                <ICECrusher>
+                  <DataBusAbort type="Integer">0</DataBusAbort>
+                  <EmuIntr type="Integer">0</EmuIntr>
+                  <HaltOnInterconnectError type="Integer">0</HaltOnInterconnectError>
+                  <InstructionBusAbort type="Integer">0</InstructionBusAbort>
+                  <SuppressInterconnIntr type="Integer">0</SuppressInterconnIntr>
+                  <HWBP.0>
+                    <__>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <InstData type="Integer">0</InstData>
+                      <Mask type="Integer">0</Mask>
+                      <Priv type="Integer">0</Priv>
+                      <RW type="Integer">0</RW>
+                      <TriggerMode type="Integer">0</TriggerMode>
+                      <UseExtern type="Integer">0</UseExtern>
+                      <UseRange type="Integer">0</UseRange>
+                    </__>
+                  </HWBP.0>
+                  <HWBP.1>
+                    <__>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <InstData type="Integer">0</InstData>
+                      <Mask type="Integer">0</Mask>
+                      <Priv type="Integer">0</Priv>
+                      <RW type="Integer">0</RW>
+                      <TriggerMode type="Integer">0</TriggerMode>
+                      <UseExtern type="Integer">0</UseExtern>
+                      <UseRange type="Integer">0</UseRange>
+                    </__>
+                  </HWBP.1>
+                  <HWBP.2>
+                    <__>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <InstData type="Integer">0</InstData>
+                      <Mask type="Integer">0</Mask>
+                      <Priv type="Integer">0</Priv>
+                      <RW type="Integer">0</RW>
+                      <TriggerMode type="Integer">0</TriggerMode>
+                      <UseExtern type="Integer">0</UseExtern>
+                      <UseRange type="Integer">0</UseRange>
+                    </__>
+                  </HWBP.2>
+                  <HWBP.3>
+                    <__>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <InstData type="Integer">0</InstData>
+                      <Mask type="Integer">0</Mask>
+                      <Priv type="Integer">0</Priv>
+                      <RW type="Integer">0</RW>
+                      <TriggerMode type="Integer">0</TriggerMode>
+                      <UseExtern type="Integer">0</UseExtern>
+                      <UseRange type="Integer">0</UseRange>
+                    </__>
+                  </HWBP.3>
+                  <HWET.0>
+                    <__>
+                      <Enabled type="Integer">0</Enabled>
+                      <TriggerControl type="Integer">8</TriggerControl>
+                    </__>
+                  </HWET.0>
+                  <HWET.1>
+                    <__>
+                      <Enabled type="Integer">0</Enabled>
+                      <TriggerControl type="Integer">8</TriggerControl>
+                    </__>
+                  </HWET.1>
+                </ICECrusher>
+              </ARMBPs>
+              <CortexMBPs>
+                <DWT>
+                  <CC_Enabled type="Integer">0</CC_Enabled>
+                  <CC_ITMSyncPacket type="Integer">0</CC_ITMSyncPacket>
+                  <CC_ITMSyncPacketPeriod type="Integer">0</CC_ITMSyncPacketPeriod>
+                  <CC_Periodic type="Integer">0</CC_Periodic>
+                  <CC_PeriodicCycles type="Integer">0</CC_PeriodicCycles>
+                  <CC_PeriodicGenerate type="Integer">0</CC_PeriodicGenerate>
+                  <CC_RestartCounter type="Integer">0</CC_RestartCounter>
+                  <Enabled type="Integer">0</Enabled>
+                  <EnableExceptionTrace type="Integer">0</EnableExceptionTrace>
+                  <EnableITMStimulus type="Buffer">AAAAAAAA</EnableITMStimulus>
+                  <EnableITMTimestamps type="Integer">0</EnableITMTimestamps>
+                  <ITMStimulusSelect type="Integer">0</ITMStimulusSelect>
+                  <PCE_CPICounter type="Integer">0</PCE_CPICounter>
+                  <PCE_ExceptionOverheadCounter type="Integer">0</PCE_ExceptionOverheadCounter>
+                  <PCE_FoldedInstructionCounter type="Integer">0</PCE_FoldedInstructionCounter>
+                  <PCE_LoadStoreUnitCounter type="Integer">0</PCE_LoadStoreUnitCounter>
+                  <PCE_SleepOverheadCounter type="Integer">0</PCE_SleepOverheadCounter>
+                  <Comparator.0>
+                    <Action type="Integer">5</Action>
+                    <CycleCount type="Integer">0</CycleCount>
+                    <Data type="Integer">0</Data>
+                    <DataSize type="Integer">0</DataSize>
+                    <DataValue type="Integer">0</DataValue>
+                    <Enabled type="Integer">0</Enabled>
+                    <Function type="Integer">0</Function>
+                    <Address.0>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">1</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.0>
+                    <Address.1>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.1>
+                  </Comparator.0>
+                  <Comparator.1>
+                    <Action type="Integer">5</Action>
+                    <CycleCount type="Integer">0</CycleCount>
+                    <Data type="Integer">0</Data>
+                    <DataSize type="Integer">0</DataSize>
+                    <DataValue type="Integer">0</DataValue>
+                    <Enabled type="Integer">0</Enabled>
+                    <Function type="Integer">0</Function>
+                    <Address.0>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">1</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.0>
+                    <Address.1>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.1>
+                  </Comparator.1>
+                  <Comparator.2>
+                    <Action type="Integer">5</Action>
+                    <CycleCount type="Integer">0</CycleCount>
+                    <Data type="Integer">0</Data>
+                    <DataSize type="Integer">0</DataSize>
+                    <DataValue type="Integer">0</DataValue>
+                    <Enabled type="Integer">0</Enabled>
+                    <Function type="Integer">0</Function>
+                    <Address.0>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">1</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.0>
+                    <Address.1>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.1>
+                  </Comparator.2>
+                  <Comparator.3>
+                    <Action type="Integer">5</Action>
+                    <CycleCount type="Integer">0</CycleCount>
+                    <Data type="Integer">0</Data>
+                    <DataSize type="Integer">0</DataSize>
+                    <DataValue type="Integer">0</DataValue>
+                    <Enabled type="Integer">0</Enabled>
+                    <Function type="Integer">0</Function>
+                    <Address.0>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">1</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.0>
+                    <Address.1>
+                      <Address type="String"></Address>
+                      <Enabled type="Integer">0</Enabled>
+                      <IgnoreLSBBits type="Integer">0</IgnoreLSBBits>
+                    </Address.1>
+                  </Comparator.3>
+                </DWT>
+              </CortexMBPs>
+              <CortexRBPs>
+                <WP0_AccessMode type="Integer">0</WP0_AccessMode>
+                <WP0_AccessType type="Integer">0</WP0_AccessType>
+                <WP0_Address type="String"></WP0_Address>
+                <WP0_AddressMask type="Integer">0</WP0_AddressMask>
+                <WP0_ByteAddrSel type="Integer">0</WP0_ByteAddrSel>
+                <WP0_ContextID type="Integer">0</WP0_ContextID>
+                <WP0_Enabled type="Integer">0</WP0_Enabled>
+                <WP0_LinkWithCtxID type="Integer">0</WP0_LinkWithCtxID>
+                <WP0_SecureWorldCtl type="Integer">0</WP0_SecureWorldCtl>
+                <WP1_AccessMode type="Integer">0</WP1_AccessMode>
+                <WP1_AccessType type="Integer">0</WP1_AccessType>
+                <WP1_Address type="String"></WP1_Address>
+                <WP1_AddressMask type="Integer">0</WP1_AddressMask>
+                <WP1_ByteAddrSel type="Integer">0</WP1_ByteAddrSel>
+                <WP1_ContextID type="Integer">0</WP1_ContextID>
+                <WP1_Enabled type="Integer">0</WP1_Enabled>
+                <WP1_LinkWithCtxID type="Integer">0</WP1_LinkWithCtxID>
+                <WP1_SecureWorldCtl type="Integer">0</WP1_SecureWorldCtl>
+              </CortexRBPs>
+              <XscaleBPs>
+                <DB0AccessType type="Integer">2</DB0AccessType>
+                <DB0Address type="String"></DB0Address>
+                <DB0AddressMask type="Integer">0</DB0AddressMask>
+                <DB0Enabled type="Integer">0</DB0Enabled>
+                <DB0UseMask type="Integer">0</DB0UseMask>
+                <DB1AccessType type="Integer">2</DB1AccessType>
+                <DB1Address type="String"></DB1Address>
+                <DB1Enabled type="Integer">0</DB1Enabled>
+              </XscaleBPs>
+            </BPData>
+            <Emul>
+              <AccessBPs_0>
+                <Num type="Integer">0</Num>
+              </AccessBPs_0>
+              <AccessBPs_1>
+                <Num type="Integer">0</Num>
+              </AccessBPs_1>
+            </Emul>
+            <HC08>
+              <TrimClockkHz type="String">16000</TrimClockkHz>
+            </HC08>
+          </Debug>
+          <FLASH>
+            <Programming>
+              <LoadMonitorWithOffset type="Integer">1</LoadMonitorWithOffset>
+              <MonitorAddress type="Integer">0</MonitorAddress>
+              <MonitorSize type="Integer">0</MonitorSize>
+              <Programming type="Integer">0</Programming>
+            </Programming>
+          </FLASH>
+          <HIL>
+            <A_IN.0>
+              <Name type="String">AIN0</Name>
+            </A_IN.0>
+            <A_IN.1>
+              <Name type="String">AIN1</Name>
+            </A_IN.1>
+            <A_OUT.0>
+              <Name type="String">AOUT0</Name>
+            </A_OUT.0>
+            <A_OUT.1>
+              <Name type="String">AOUT1</Name>
+            </A_OUT.1>
+            <D_IN.0>
+              <Name type="String">DIN0</Name>
+            </D_IN.0>
+            <D_IN.1>
+              <Name type="String">DIN1</Name>
+            </D_IN.1>
+            <D_IN.10>
+              <Name type="String">DIN10</Name>
+            </D_IN.10>
+            <D_IN.11>
+              <Name type="String">DIN11</Name>
+            </D_IN.11>
+            <D_IN.12>
+              <Name type="String">DIN12</Name>
+            </D_IN.12>
+            <D_IN.13>
+              <Name type="String">DIN13</Name>
+            </D_IN.13>
+            <D_IN.14>
+              <Name type="String">DIN14</Name>
+            </D_IN.14>
+            <D_IN.15>
+              <Name type="String">DIN15</Name>
+            </D_IN.15>
+            <D_IN.16>
+              <Name type="String">DIN16</Name>
+            </D_IN.16>
+            <D_IN.17>
+              <Name type="String">DIN17</Name>
+            </D_IN.17>
+            <D_IN.18>
+              <Name type="String">DIN18</Name>
+            </D_IN.18>
+            <D_IN.19>
+              <Name type="String">DIN19</Name>
+            </D_IN.19>
+            <D_IN.2>
+              <Name type="String">DIN2</Name>
+            </D_IN.2>
+            <D_IN.20>
+              <Name type="String">DIN20</Name>
+            </D_IN.20>
+            <D_IN.21>
+              <Name type="String">DIN21</Name>
+            </D_IN.21>
+            <D_IN.22>
+              <Name type="String">DIN22</Name>
+            </D_IN.22>
+            <D_IN.23>
+              <Name type="String">DIN23</Name>
+            </D_IN.23>
+            <D_IN.24>
+              <Name type="String">DIN24</Name>
+            </D_IN.24>
+            <D_IN.25>
+              <Name type="String">DIN25</Name>
+            </D_IN.25>
+            <D_IN.26>
+              <Name type="String">DIN26</Name>
+            </D_IN.26>
+            <D_IN.27>
+              <Name type="String">DIN27</Name>
+            </D_IN.27>
+            <D_IN.28>
+              <Name type="String">DIN28</Name>
+            </D_IN.28>
+            <D_IN.29>
+              <Name type="String">DIN29</Name>
+            </D_IN.29>
+            <D_IN.3>
+              <Name type="String">DIN3</Name>
+            </D_IN.3>
+            <D_IN.30>
+              <Name type="String">DIN30</Name>
+            </D_IN.30>
+            <D_IN.31>
+              <Name type="String">DIN31</Name>
+            </D_IN.31>
+            <D_IN.4>
+              <Name type="String">DIN4</Name>
+            </D_IN.4>
+            <D_IN.5>
+              <Name type="String">DIN5</Name>
+            </D_IN.5>
+            <D_IN.6>
+              <Name type="String">DIN6</Name>
+            </D_IN.6>
+            <D_IN.7>
+              <Name type="String">DIN7</Name>
+            </D_IN.7>
+            <D_IN.8>
+              <Name type="String">DIN8</Name>
+            </D_IN.8>
+            <D_IN.9>
+              <Name type="String">DIN9</Name>
+            </D_IN.9>
+            <D_OUT.0>
+              <Name type="String">DOUT0</Name>
+            </D_OUT.0>
+            <D_OUT.1>
+              <Name type="String">DOUT1</Name>
+            </D_OUT.1>
+            <D_OUT.10>
+              <Name type="String">DOUT10</Name>
+            </D_OUT.10>
+            <D_OUT.11>
+              <Name type="String">DOUT11</Name>
+            </D_OUT.11>
+            <D_OUT.12>
+              <Name type="String">DOUT12</Name>
+            </D_OUT.12>
+            <D_OUT.13>
+              <Name type="String">DOUT13</Name>
+            </D_OUT.13>
+            <D_OUT.14>
+              <Name type="String">DOUT14</Name>
+            </D_OUT.14>
+            <D_OUT.15>
+              <Name type="String">DOUT15</Name>
+            </D_OUT.15>
+            <D_OUT.16>
+              <Name type="String">DOUT16</Name>
+            </D_OUT.16>
+            <D_OUT.17>
+              <Name type="String">DOUT17</Name>
+            </D_OUT.17>
+            <D_OUT.18>
+              <Name type="String">DOUT18</Name>
+            </D_OUT.18>
+            <D_OUT.19>
+              <Name type="String">DOUT19</Name>
+            </D_OUT.19>
+            <D_OUT.2>
+              <Name type="String">DOUT2</Name>
+            </D_OUT.2>
+            <D_OUT.20>
+              <Name type="String">DOUT20</Name>
+            </D_OUT.20>
+            <D_OUT.21>
+              <Name type="String">DOUT21</Name>
+            </D_OUT.21>
+            <D_OUT.22>
+              <Name type="String">DOUT22</Name>
+            </D_OUT.22>
+            <D_OUT.23>
+              <Name type="String">DOUT23</Name>
+            </D_OUT.23>
+            <D_OUT.24>
+              <Name type="String">DOUT24</Name>
+            </D_OUT.24>
+            <D_OUT.25>
+              <Name type="String">DOUT25</Name>
+            </D_OUT.25>
+            <D_OUT.26>
+              <Name type="String">DOUT26</Name>
+            </D_OUT.26>
+            <D_OUT.27>
+              <Name type="String">DOUT27</Name>
+            </D_OUT.27>
+            <D_OUT.28>
+              <Name type="String">DOUT28</Name>
+            </D_OUT.28>
+            <D_OUT.29>
+              <Name type="String">DOUT29</Name>
+            </D_OUT.29>
+            <D_OUT.3>
+              <Name type="String">DOUT3</Name>
+            </D_OUT.3>
+            <D_OUT.30>
+              <Name type="String">DOUT30</Name>
+            </D_OUT.30>
+            <D_OUT.31>
+              <Name type="String">DOUT31</Name>
+            </D_OUT.31>
+            <D_OUT.4>
+              <Name type="String">DOUT4</Name>
+            </D_OUT.4>
+            <D_OUT.5>
+              <Name type="String">DOUT5</Name>
+            </D_OUT.5>
+            <D_OUT.6>
+              <Name type="String">DOUT6</Name>
+            </D_OUT.6>
+            <D_OUT.7>
+              <Name type="String">DOUT7</Name>
+            </D_OUT.7>
+            <D_OUT.8>
+              <Name type="String">DOUT8</Name>
+            </D_OUT.8>
+            <D_OUT.9>
+              <Name type="String">DOUT9</Name>
+            </D_OUT.9>
+            <HW>
+              <AverageAIN type="String">TRUE</AverageAIN>
+              <AverageAINNum type="String">16</AverageAINNum>
+              <CurrentShunt type="String">1</CurrentShunt>
+              <LoadPattern type="String">FALSE</LoadPattern>
+              <PatternClockPrescaler type="String">1/1</PatternClockPrescaler>
+              <PatternClockSource type="String">Internal</PatternClockSource>
+              <PowerMeasurement type="String">FALSE</PowerMeasurement>
+              <SamplingMode type="String">All</SamplingMode>
+              <SamplingQualifier type="String">CLK</SamplingQualifier>
+              <ShowOutputsInAnalyzer type="String">FALSE</ShowOutputsInAnalyzer>
+              <A_IN.0>
+                <Enabled type="String">TRUE</Enabled>
+                <Multiply type="String">1</Multiply>
+                <Range>
+                  <Max type="String">0</Max>
+                  <Min type="String">0</Min>
+                  <Range type="String">Full</Range>
+                </Range>
+              </A_IN.0>
+              <A_IN.1>
+                <Enabled type="String">TRUE</Enabled>
+                <Multiply type="String">1</Multiply>
+                <Range>
+                  <Max type="String">0</Max>
+                  <Min type="String">0</Min>
+                  <Range type="String">Full</Range>
+                </Range>
+              </A_IN.1>
+              <A_OUT.0>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">0</InitialState>
+                <Range>
+                  <Max type="String">0</Max>
+                  <Min type="String">0</Min>
+                  <Range type="String">Full</Range>
+                </Range>
+              </A_OUT.0>
+              <A_OUT.1>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">0</InitialState>
+                <Range>
+                  <Max type="String">0</Max>
+                  <Min type="String">0</Min>
+                  <Range type="String">Full</Range>
+                </Range>
+              </A_OUT.1>
+              <D_IN.0>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.0>
+              <D_IN.1>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.1>
+              <D_IN.10>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.10>
+              <D_IN.11>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.11>
+              <D_IN.12>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.12>
+              <D_IN.13>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.13>
+              <D_IN.14>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.14>
+              <D_IN.15>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.15>
+              <D_IN.16>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.16>
+              <D_IN.17>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.17>
+              <D_IN.18>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.18>
+              <D_IN.19>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.19>
+              <D_IN.2>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.2>
+              <D_IN.20>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.20>
+              <D_IN.21>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.21>
+              <D_IN.22>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.22>
+              <D_IN.23>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.23>
+              <D_IN.24>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.24>
+              <D_IN.25>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.25>
+              <D_IN.26>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.26>
+              <D_IN.27>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.27>
+              <D_IN.28>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.28>
+              <D_IN.29>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.29>
+              <D_IN.3>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.3>
+              <D_IN.30>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.30>
+              <D_IN.31>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.31>
+              <D_IN.4>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.4>
+              <D_IN.5>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.5>
+              <D_IN.6>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.6>
+              <D_IN.7>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.7>
+              <D_IN.8>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.8>
+              <D_IN.9>
+                <Enabled type="String">TRUE</Enabled>
+              </D_IN.9>
+              <D_OUT.0>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.0>
+              <D_OUT.1>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.1>
+              <D_OUT.10>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.10>
+              <D_OUT.11>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.11>
+              <D_OUT.12>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.12>
+              <D_OUT.13>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.13>
+              <D_OUT.14>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.14>
+              <D_OUT.15>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.15>
+              <D_OUT.16>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.16>
+              <D_OUT.17>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.17>
+              <D_OUT.18>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.18>
+              <D_OUT.19>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.19>
+              <D_OUT.2>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.2>
+              <D_OUT.20>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.20>
+              <D_OUT.21>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.21>
+              <D_OUT.22>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.22>
+              <D_OUT.23>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.23>
+              <D_OUT.24>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.24>
+              <D_OUT.25>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.25>
+              <D_OUT.26>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.26>
+              <D_OUT.27>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.27>
+              <D_OUT.28>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.28>
+              <D_OUT.29>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.29>
+              <D_OUT.3>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.3>
+              <D_OUT.30>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.30>
+              <D_OUT.31>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.31>
+              <D_OUT.4>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.4>
+              <D_OUT.5>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.5>
+              <D_OUT.6>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.6>
+              <D_OUT.7>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.7>
+              <D_OUT.8>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.8>
+              <D_OUT.9>
+                <Driver type="String">Manual</Driver>
+                <InitialState type="String">FALSE</InitialState>
+              </D_OUT.9>
+              <PowerRange>
+                <Max type="String">0</Max>
+                <Min type="String">0</Min>
+                <Range type="String">Full</Range>
+              </PowerRange>
+            </HW>
+            <PatternFile>
+              <FileName type="String"></FileName>
+              <ScaleAOUT type="String">1</ScaleAOUT>
+              <ScaleTime type="String">1</ScaleTime>
+              <UseConfig type="String">TRUE</UseConfig>
+              <UseTableA type="String">TRUE</UseTableA>
+              <UseTableB type="String">TRUE</UseTableB>
+            </PatternFile>
+          </HIL>
+          <HILLive>
+            <IO_A_OUT_0 type="String">0</IO_A_OUT_0>
+            <IO_A_OUT_1 type="String">0</IO_A_OUT_1>
+            <IO_D_OUT_0 type="String">0</IO_D_OUT_0>
+            <IO_D_OUT_1 type="String">0</IO_D_OUT_1>
+            <IO_D_OUT_10 type="String">0</IO_D_OUT_10>
+            <IO_D_OUT_11 type="String">0</IO_D_OUT_11>
+            <IO_D_OUT_12 type="String">0</IO_D_OUT_12>
+            <IO_D_OUT_13 type="String">0</IO_D_OUT_13>
+            <IO_D_OUT_14 type="String">0</IO_D_OUT_14>
+            <IO_D_OUT_15 type="String">0</IO_D_OUT_15>
+            <IO_D_OUT_16 type="String">0</IO_D_OUT_16>
+            <IO_D_OUT_17 type="String">0</IO_D_OUT_17>
+            <IO_D_OUT_18 type="String">0</IO_D_OUT_18>
+            <IO_D_OUT_19 type="String">0</IO_D_OUT_19>
+            <IO_D_OUT_2 type="String">0</IO_D_OUT_2>
+            <IO_D_OUT_20 type="String">0</IO_D_OUT_20>
+            <IO_D_OUT_21 type="String">0</IO_D_OUT_21>
+            <IO_D_OUT_22 type="String">0</IO_D_OUT_22>
+            <IO_D_OUT_23 type="String">0</IO_D_OUT_23>
+            <IO_D_OUT_24 type="String">0</IO_D_OUT_24>
+            <IO_D_OUT_25 type="String">0</IO_D_OUT_25>
+            <IO_D_OUT_26 type="String">0</IO_D_OUT_26>
+            <IO_D_OUT_27 type="String">0</IO_D_OUT_27>
+            <IO_D_OUT_28 type="String">0</IO_D_OUT_28>
+            <IO_D_OUT_29 type="String">0</IO_D_OUT_29>
+            <IO_D_OUT_3 type="String">0</IO_D_OUT_3>
+            <IO_D_OUT_30 type="String">0</IO_D_OUT_30>
+            <IO_D_OUT_31 type="String">0</IO_D_OUT_31>
+            <IO_D_OUT_4 type="String">0</IO_D_OUT_4>
+            <IO_D_OUT_5 type="String">0</IO_D_OUT_5>
+            <IO_D_OUT_6 type="String">0</IO_D_OUT_6>
+            <IO_D_OUT_7 type="String">0</IO_D_OUT_7>
+            <IO_D_OUT_8 type="String">0</IO_D_OUT_8>
+            <IO_D_OUT_9 type="String">0</IO_D_OUT_9>
+            <Pattern.0>
+              <File>
+                <FileName type="String"></FileName>
+                <ScaleAOUT type="String">1</ScaleAOUT>
+                <ScaleTime type="String">1</ScaleTime>
+                <UseConfig type="String">TRUE</UseConfig>
+                <UseTableA type="String">TRUE</UseTableA>
+                <UseTableB type="String">TRUE</UseTableB>
+              </File>
+            </Pattern.0>
+            <Pattern.1>
+              <File>
+                <FileName type="String"></FileName>
+                <ScaleAOUT type="String">1</ScaleAOUT>
+                <ScaleTime type="String">1</ScaleTime>
+                <UseConfig type="String">TRUE</UseConfig>
+                <UseTableA type="String">TRUE</UseTableA>
+                <UseTableB type="String">TRUE</UseTableB>
+              </File>
+            </Pattern.1>
+            <Pattern.2>
+              <File>
+                <FileName type="String"></FileName>
+                <ScaleAOUT type="String">1</ScaleAOUT>
+                <ScaleTime type="String">1</ScaleTime>
+                <UseConfig type="String">TRUE</UseConfig>
+                <UseTableA type="String">TRUE</UseTableA>
+                <UseTableB type="String">TRUE</UseTableB>
+              </File>
+            </Pattern.2>
+            <Pattern.3>
+              <File>
+                <FileName type="String"></FileName>
+                <ScaleAOUT type="String">1</ScaleAOUT>
+                <ScaleTime type="String">1</ScaleTime>
+                <UseConfig type="String">TRUE</UseConfig>
+                <UseTableA type="String">TRUE</UseTableA>
+                <UseTableB type="String">TRUE</UseTableB>
+              </File>
+            </Pattern.3>
+          </HILLive>
+          <Tools>
+            <Memory>
+              <Address type="Integer">0</Address>
+              <Area type="Integer">0</Area>
+              <Continuous type="String">False</Continuous>
+              <DataSize type="Integer">0</DataSize>
+              <ECC_Address type="Integer">0</ECC_Address>
+              <ECC_Size type="Integer">1</ECC_Size>
+              <Operation type="Integer">0</Operation>
+              <Ordering type="Integer">0</Ordering>
+              <RefreshAll type="Integer">0</RefreshAll>
+              <WriteData type="Integer">0</WriteData>
+            </Memory>
+            <Output>
+              <Type type="Integer">0</Type>
+              <Cortex>
+                <EnableITMStimulus type="Buffer">AAAAAAAA</EnableITMStimulus>
+                <ITMStimulusSelect type="Integer">0</ITMStimulusSelect>
+              </Cortex>
+              <SharedMem>
+                <DebugConn type="Integer">1</DebugConn>
+                <DebugConnAddress type="String">#g_TConn</DebugConnAddress>
+                <DefaultBuff type="Integer">1</DefaultBuff>
+                <Buffer.0>
+                  <TBuffer type="String">#g_TWBuffer</TBuffer>
+                  <TDefault type="Integer">1</TDefault>
+                  <TSize type="Integer">0</TSize>
+                </Buffer.0>
+                <Buffer.1>
+                  <TBuffer type="String">#g_TRBuffer</TBuffer>
+                  <TDefault type="Integer">1</TDefault>
+                  <TSize type="Integer">0</TSize>
+                </Buffer.1>
+              </SharedMem>
+            </Output>
+            <V850DataFLASH>
+              <DFSaveFileOffset type="Integer">0</DFSaveFileOffset>
+              <DisplayMode type="Integer">2</DisplayMode>
+              <EraseAuto type="Integer">0</EraseAuto>
+              <LoadAuto type="Integer">0</LoadAuto>
+              <LoadDFAuto type="Integer">0</LoadDFAuto>
+              <LoadDFFile type="String"></LoadDFFile>
+              <LoadFile type="String"></LoadFile>
+              <SaveAuto type="Integer">0</SaveAuto>
+              <SaveDFFile type="String"></SaveDFFile>
+              <SaveFile type="String"></SaveFile>
+            </V850DataFLASH>
+          </Tools>
+          <Trace>
+            <Common>
+              <CoverageBuffSize type="String">100%</CoverageBuffSize>
+              <CustomTimeStamp type="String">1 ns</CustomTimeStamp>
+              <ProfilerMode type="Integer">0</ProfilerMode>
+              <ProfilerStallCPU type="Integer">0</ProfilerStallCPU>
+              <ProfilerRecorderCommon>
+                <BufferSize type="Integer">0</BufferSize>
+                <BufferSizePerc type="String">100 %</BufferSizePerc>
+                <ContinuousMode type="Integer">0</ContinuousMode>
+                <DeepTrace type="Integer">1</DeepTrace>
+                <FileSize type="String">256 MB</FileSize>
+                <Start type="Integer">1</Start>
+                <TimeStamp type="Integer">1</TimeStamp>
+                <TriggerOutput type="Integer">0</TriggerOutput>
+                <TriggerPosition type="Integer">1</TriggerPosition>
+                <UnpackerType type="Integer">0</UnpackerType>
+              </ProfilerRecorderCommon>
+            </Common>
+            <ETM>
+              <BranchBroadcast type="Integer">0</BranchBroadcast>
+              <Clocking type="Integer">1</Clocking>
+              <ContextTracing type="Integer">0</ContextTracing>
+              <CycleAccurateTracing type="Integer">0</CycleAccurateTracing>
+              <MMDConfig type="Integer">0</MMDConfig>
+              <Mode type="Integer">0</Mode>
+              <PortWidth type="Integer">0</PortWidth>
+            </ETM>
+            <TriCore>
+              <ProfilerTimeSource type="Integer">1</ProfilerTimeSource>
+            </TriCore>
+          </Trace>
+          <UMI>
+            <Devices>
+              <Devices.0>
+                <AllowDownloadOnly type="Integer">0</AllowDownloadOnly>
+                <CacheContents type="Integer">0</CacheContents>
+                <Device type="String">STM32F10xxB_128KB</Device>
+                <DeviceAddress type="Integer">134217728</DeviceAddress>
+                <Enabled type="Integer">1</Enabled>
+                <EraseBeforeDownload type="Integer">0</EraseBeforeDownload>
+                <Flags type="IntegerArray">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Flags>
+                <Flags.0 type="Integer">0</Flags.0>
+                <Flags.1 type="Integer">0</Flags.1>
+                <Flags.2 type="Integer">0</Flags.2>
+                <Flags.3 type="Integer">0</Flags.3>
+                <LoadExternalMonitor type="Integer">0</LoadExternalMonitor>
+                <Manufacturer type="String">ST</Manufacturer>
+                <MonitorAddress type="Integer">536870912</MonitorAddress>
+                <MonitorReserveRAM type="Integer">0</MonitorReserveRAM>
+                <MonitorReserveSize type="Integer">8192</MonitorReserveSize>
+                <Name type="String">ST STM32F10xxB_128KB</Name>
+                <OnChip type="Integer">1</OnChip>
+                <ProgramAtDownload type="Integer">0</ProgramAtDownload>
+                <Timeout type="Integer">30</Timeout>
+                <UseCompression type="Integer">1</UseCompression>
+                <Verify type="Integer">1</Verify>
+                <VerifyOnTheFly type="Integer">1</VerifyOnTheFly>
+                <Version type="String"></Version>
+                <Virtual type="Integer">0</Virtual>
+              </Devices.0>
+            </Devices>
+          </UMI>
+        </Data>
+        <HW>
+          <V_BUILD type="Integer">21</V_BUILD>
+          <V_BUILD_SUB type="Integer">0</V_BUILD_SUB>
+          <V_MAJOR type="Integer">9</V_MAJOR>
+          <V_Mfix type="Integer">1</V_Mfix>
+          <V_MINOR type="Integer">12</V_MINOR>
+          <Version type="Integer">151781418</Version>
+          <BDM>
+            <CPU>
+              <CPU type="Integer">4</CPU>
+              <CPU1 type="Integer">4</CPU1>
+              <CPUOptions type="Integer">0</CPUOptions>
+              <CPUOptionsMask type="Integer">127</CPUOptionsMask>
+              <Endian type="Integer">0</Endian>
+              <Family type="Integer">21</Family>
+              <POD type="Integer">13</POD>
+              <SubCPU type="String">STM32F103RB</SubCPU>
+              <ARM7>
+                <AllowFLASHWrite type="Integer">0</AllowFLASHWrite>
+                <bPresetPC type="Integer">0</bPresetPC>
+                <Cortex_DWT type="Integer">1</Cortex_DWT>
+                <Cortex_ETM type="Integer">1</Cortex_ETM>
+                <Cortex_HTM type="Integer">0</Cortex_HTM>
+                <CortexDebugProtocol type="Integer">0</CortexDebugProtocol>
+                <CortexSwoClkPrescaler type="Integer">0</CortexSwoClkPrescaler>
+                <CortexTraceProtocol type="Integer">2</CortexTraceProtocol>
+                <CortexTRACEWidth type="Integer">2</CortexTRACEWidth>
+                <DebugHandlerBase type="Integer">20</DebugHandlerBase>
+                <ETMClocking type="Integer">3</ETMClocking>
+                <ETMEmbeddedTraceBuffer type="Integer">0</ETMEmbeddedTraceBuffer>
+                <ETMPortSize type="Integer">3</ETMPortSize>
+                <Exceptions type="Integer">2033</Exceptions>
+                <ForceOddResetVectorOnThumbOnly type="Integer">0</ForceOddResetVectorOnThumbOnly>
+                <ForceSupervisor type="Integer">0</ForceSupervisor>
+                <HALTEDOnFFStatus type="Integer">0</HALTEDOnFFStatus>
+                <iMX_DisableSecurityAIPS_TZ1_2 type="Integer">0</iMX_DisableSecurityAIPS_TZ1_2>
+                <LPC2xxx_MEMMAP type="Integer">0</LPC2xxx_MEMMAP>
+                <LPC2xxx_PresetMEMMAP type="Integer">0</LPC2xxx_PresetMEMMAP>
+                <MAC72xx_BackDoorAccessKey type="IntegerArray">PPPPPPPPPPPPPPPP</MAC72xx_BackDoorAccessKey>
+                <MAC72xx_BackDoorAccessKey.0 type="Integer">-1</MAC72xx_BackDoorAccessKey.0>
+                <MAC72xx_BackDoorAccessKey.1 type="Integer">-1</MAC72xx_BackDoorAccessKey.1>
+                <MAC72xx_BlockNonUserArea type="Integer">1</MAC72xx_BlockNonUserArea>
+                <MAC72xx_CacheContents type="Integer">1</MAC72xx_CacheContents>
+                <MAC72xx_EraseBeforeDownload type="Integer">1</MAC72xx_EraseBeforeDownload>
+                <MAC72xx_EraseShadowBlock type="Integer">0</MAC72xx_EraseShadowBlock>
+                <MAC72xx_SetBackDoorAccessKey type="Integer">0</MAC72xx_SetBackDoorAccessKey>
+                <MAC72xx_UnsecureShadowBlock type="Integer">1</MAC72xx_UnsecureShadowBlock>
+                <PresetPC type="Integer">0</PresetPC>
+                <STR9_CSxMapping type="Integer">0</STR9_CSxMapping>
+                <STR9_MassEraseBeforeDownload type="Integer">0</STR9_MassEraseBeforeDownload>
+                <SupportRuntimeVectorChanges type="Integer">1</SupportRuntimeVectorChanges>
+                <TMS470_adwFLASH_Keys type="IntegerArray">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</TMS470_adwFLASH_Keys>
+                <TMS470_adwFLASH_Keys.0 type="Integer">0</TMS470_adwFLASH_Keys.0>
+                <TMS470_adwFLASH_Keys.1 type="Integer">0</TMS470_adwFLASH_Keys.1>
+                <TMS470_adwFLASH_Keys.2 type="Integer">0</TMS470_adwFLASH_Keys.2>
+                <TMS470_adwFLASH_Keys.3 type="Integer">0</TMS470_adwFLASH_Keys.3>
+                <TMS470_bFLASH_Keys type="Integer">0</TMS470_bFLASH_Keys>
+                <TMS470_ExternalJTCKSync type="Integer">0</TMS470_ExternalJTCKSync>
+                <TMS470_ExternalJTCKSyncEdge type="Integer">0</TMS470_ExternalJTCKSyncEdge>
+                <TMS470_HaltOnRTPOverflow type="Integer">0</TMS470_HaltOnRTPOverflow>
+                <TMS470_ICECrusherPresent type="Integer">0</TMS470_ICECrusherPresent>
+                <TMS470_RTPClockPrescaller type="Integer">0</TMS470_RTPClockPrescaller>
+                <TMS470_RTPEnabled type="Integer">0</TMS470_RTPEnabled>
+                <TMS470_RTPPortWidth type="Integer">0</TMS470_RTPPortWidth>
+                <TMS470_UseDMM type="Integer">0</TMS470_UseDMM>
+                <TMS470_UseRTPShadow type="Integer">0</TMS470_UseRTPShadow>
+                <UseDBGRQACK type="Integer">0</UseDBGRQACK>
+                <UseDCCMonitor type="Integer">0</UseDCCMonitor>
+                <UseHandshaking type="Integer">0</UseHandshaking>
+                <UsenSRST type="Integer">0</UsenSRST>
+                <Windsor_CFMCLKD type="Integer">73</Windsor_CFMCLKD>
+                <Windsor_OSCCLK type="Integer">8000</Windsor_OSCCLK>
+                <Windsor_REFDV type="Integer">0</Windsor_REFDV>
+                <Windsor_SetPLL type="Integer">1</Windsor_SetPLL>
+                <Windsor_SYNR type="Integer">1</Windsor_SYNR>
+                <EFM32>
+                  <SWOPin type="String">Pin 0</SWOPin>
+                </EFM32>
+                <ETM12>
+                  <BranchBroadcast type="String">TRUE</BranchBroadcast>
+                  <Clocking type="String">FullRate</Clocking>
+                  <ContextTracing type="String">Disabled</ContextTracing>
+                  <CycleAccurateTracing type="String">TRUE</CycleAccurateTracing>
+                  <MMD type="String">0</MMD>
+                  <PortMode type="String">Normal</PortMode>
+                  <PortWidth type="String">16-bit</PortWidth>
+                </ETM12>
+                <TMS470_RTPShadowRegion.0>
+                  <Access type="Integer">0</Access>
+                  <Enabled type="Integer">0</Enabled>
+                  <End type="Integer">0</End>
+                  <Start type="Integer">0</Start>
+                </TMS470_RTPShadowRegion.0>
+                <TMS470_RTPShadowRegion.1>
+                  <Access type="Integer">0</Access>
+                  <Enabled type="Integer">0</Enabled>
+                  <End type="Integer">0</End>
+                  <Start type="Integer">0</Start>
+                </TMS470_RTPShadowRegion.1>
+                <XMC4000>
+                  <TRACE_._CLOCK_._Port type="String">PORT2</TRACE_._CLOCK_._Port>
+                  <TRACE_._DATA0_._Port type="String">PORT2</TRACE_._DATA0_._Port>
+                  <TRACE_._DATA1_._Port type="String">PORT2</TRACE_._DATA1_._Port>
+                  <TRACE_._DATA2_._Port type="String">PORT2</TRACE_._DATA2_._Port>
+                  <TRACE_._DATA3_._Port type="String">PORT2</TRACE_._DATA3_._Port>
+                </XMC4000>
+              </ARM7>
+            </CPU>
+            <Debugging>
+              <AllowAccessToUnimplementedRegisters type="Integer">0</AllowAccessToUnimplementedRegisters>
+              <AlwaysUseRTAccess type="Integer">0</AlwaysUseRTAccess>
+              <BoostClock type="Integer">0</BoostClock>
+              <Breakpoints type="Integer">0</Breakpoints>
+              <CalibrateClockVref type="Integer">0</CalibrateClockVref>
+              <CalibratePhase type="Integer">13</CalibratePhase>
+              <CalibrateVref type="Integer">116</CalibrateVref>
+              <CalibrationPerformed type="Integer">0</CalibrationPerformed>
+              <ClockkHz type="Integer">72000</ClockkHz>
+              <DebugClockkHz type="Integer">4000</DebugClockkHz>
+              <ExtOscillatorClk type="Integer">0</ExtOscillatorClk>
+              <FLASHIncremental type="Integer">0</FLASHIncremental>
+              <IgnoreAccessErrors type="Integer">0</IgnoreAccessErrors>
+              <IgnoreTargetResetAfter type="Integer">0</IgnoreTargetResetAfter>
+              <IgnoreTargetResetAfter_ms type="Integer">10</IgnoreTargetResetAfter_ms>
+              <InitRAM type="Integer">1</InitRAM>
+              <LatchRESET type="Integer">1</LatchRESET>
+              <MicrosecBetweenAccesses type="Integer">0</MicrosecBetweenAccesses>
+              <MMUAware type="Integer">0</MMUAware>
+              <NexusClockDivider type="Integer">0</NexusClockDivider>
+              <NexusDataRate type="Integer">0</NexusDataRate>
+              <NexusForcePeriodicSYNC type="Integer">0</NexusForcePeriodicSYNC>
+              <NexusMDOWidth type="Integer">5</NexusMDOWidth>
+              <NexusMSEOWidth type="Integer">0</NexusMSEOWidth>
+              <OCTInitAtStart type="Integer">0</OCTInitAtStart>
+              <PhaseShift type="Integer">0</PhaseShift>
+              <PostResetDelay type="Integer">200</PostResetDelay>
+              <ResetDelay type="Integer">300</ResetDelay>
+              <ResetMethod type="Integer">0</ResetMethod>
+              <RESETOutput type="Integer">0</RESETOutput>
+              <SFRBase type="Integer">0</SFRBase>
+              <SimulateSingleStep type="Integer">0</SimulateSingleStep>
+              <StopAfterReset type="Integer">1</StopAfterReset>
+              <SyncStartOnTargetReset type="Integer">0</SyncStartOnTargetReset>
+              <TargetPowerSenseDisabled type="Integer">0</TargetPowerSenseDisabled>
+              <Watchdog type="Integer">0</Watchdog>
+            </Debugging>
+            <ExtWDT>
+              <DebugEntryExit>
+                <Address type="Integer">0</Address>
+                <DataEntry type="Integer">0</DataEntry>
+                <DataExit type="Integer">0</DataExit>
+                <DataMask type="Integer">0</DataMask>
+                <Enable type="Integer">0</Enable>
+                <MemArea type="Integer">0</MemArea>
+                <MinTime type="Integer">0</MinTime>
+                <Size type="Integer">0</Size>
+              </DebugEntryExit>
+              <PeriodicService>
+                <Initialization type="Integer">0</Initialization>
+                <MinTime type="Integer">1</MinTime>
+                <Service type="Integer">0</Service>
+                <ServiceInRun type="Integer">0</ServiceInRun>
+                <Item.0>
+                  <Address type="Integer">0</Address>
+                  <Data type="Integer">0</Data>
+                  <MemArea type="Integer">0</MemArea>
+                  <Size type="Integer">0</Size>
+                </Item.0>
+              </PeriodicService>
+            </ExtWDT>
+            <FLASHRetains>
+              <Exclusion.0>
+                <Address type="Integer">0</Address>
+                <Exclude type="Integer">0</Exclude>
+                <Size type="Integer">0</Size>
+              </Exclusion.0>
+              <Exclusion.1>
+                <Address type="Integer">0</Address>
+                <Exclude type="Integer">0</Exclude>
+                <Size type="Integer">0</Size>
+              </Exclusion.1>
+              <Exclusion.2>
+                <Address type="Integer">0</Address>
+                <Exclude type="Integer">0</Exclude>
+                <Size type="Integer">0</Size>
+              </Exclusion.2>
+              <Exclusion.3>
+                <Address type="Integer">0</Address>
+                <Exclude type="Integer">0</Exclude>
+                <Size type="Integer">0</Size>
+              </Exclusion.3>
+            </FLASHRetains>
+            <GT>
+              <DebugProbe type="Integer">0</DebugProbe>
+              <Probe.0>
+                <Operation type="Integer">0</Operation>
+              </Probe.0>
+              <Probe.1>
+                <Operation type="Integer">0</Operation>
+              </Probe.1>
+              <Probe.2>
+                <Operation type="Integer">0</Operation>
+              </Probe.2>
+              <Probe.3>
+                <Operation type="Integer">0</Operation>
+              </Probe.3>
+            </GT>
+            <InitSequence>
+              <File type="String"></File>
+              <FromFile type="Integer">0</FromFile>
+              <InitAfterReset type="Integer">1</InitAfterReset>
+              <Offset type="Integer">0</Offset>
+              <OffsetMode type="Integer">0</OffsetMode>
+              <ResetCPUAfterDownload type="Integer">0</ResetCPUAfterDownload>
+              <TargetInitSec type="Integer">1</TargetInitSec>
+              <Use type="Integer">0</Use>
+            </InitSequence>
+            <InitSequence2nd>
+              <File type="String"></File>
+              <FromFile type="Integer">0</FromFile>
+              <InitAfterReset type="Integer">1</InitAfterReset>
+              <Offset type="Integer">0</Offset>
+              <OffsetMode type="Integer">0</OffsetMode>
+              <ResetCPUAfterDownload type="Integer">0</ResetCPUAfterDownload>
+              <TargetInitSec type="Integer">1</TargetInitSec>
+              <Use type="Integer">0</Use>
+            </InitSequence2nd>
+            <JTAGPos>
+              <DRPostfix type="Integer">0</DRPostfix>
+              <DRPrefix type="Integer">0</DRPrefix>
+              <HWBurstClockkHz type="Integer">1000</HWBurstClockkHz>
+              <IdleTCKCount type="Integer">0</IdleTCKCount>
+              <InhibitTRST type="Integer">0</InhibitTRST>
+              <InitScanClockkHz type="Integer">500</InitScanClockkHz>
+              <InitScanSpeed type="Integer">0</InitScanSpeed>
+              <IRPostfix type="Integer">0</IRPostfix>
+              <IRPrefix type="Integer">0</IRPrefix>
+              <ScanSpeed1 type="Integer">2</ScanSpeed1>
+              <SingleDevice type="Integer">1</SingleDevice>
+              <SlowScanDuringInit type="Integer">0</SlowScanDuringInit>
+            </JTAGPos>
+            <Module>
+              <CheckVref type="Integer">1</CheckVref>
+              <DebugVccSource type="Integer">1</DebugVccSource>
+              <DebugVccVoltage type="Integer">3300</DebugVccVoltage>
+              <HotAttach type="String">False</HotAttach>
+              <iTRACETresholdSource type="Integer">0</iTRACETresholdSource>
+              <PowerSupply type="Integer">1</PowerSupply>
+              <Type type="Integer">1</Type>
+              <UseSameTresholdOnAllModules type="Integer">1</UseSameTresholdOnAllModules>
+              <wiTRACETresholdVoltage type="Integer">1700</wiTRACETresholdVoltage>
+              <OCTModule.0>
+                <TresholdSource type="Integer">0</TresholdSource>
+                <TresholdVoltage type="Integer">1700</TresholdVoltage>
+              </OCTModule.0>
+              <OCTModule.1>
+                <TresholdSource type="Integer">0</TresholdSource>
+                <TresholdVoltage type="Integer">1700</TresholdVoltage>
+              </OCTModule.1>
+              <OCTModule.2>
+                <TresholdSource type="Integer">0</TresholdSource>
+                <TresholdVoltage type="Integer">1700</TresholdVoltage>
+              </OCTModule.2>
+              <OCTModule.3>
+                <TresholdSource type="Integer">0</TresholdSource>
+                <TresholdVoltage type="Integer">1700</TresholdVoltage>
+              </OCTModule.3>
+            </Module>
+            <SlowRun>
+              <Enabled type="String">FALSE</Enabled>
+            </SlowRun>
+            <Synchronization>
+              <Enabled type="Integer">0</Enabled>
+              <Core.0>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.0>
+              <Core.1>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.1>
+              <Core.2>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.2>
+              <Core.3>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.3>
+              <Core.4>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.4>
+              <Core.5>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.5>
+              <Core.6>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.6>
+              <Core.7>
+                <Sync type="Buffer">AAAAAAAAAAAAAAAA</Sync>
+              </Core.7>
+            </Synchronization>
+          </BDM>
+          <HW>
+            <ActiveType type="Integer">1</ActiveType>
+            <HW type="Integer">8</HW>
+            <Usage type="Integer">2</Usage>
+            <Communication>
+              <IPAddr type="String"></IPAddr>
+              <IPUseGlobalDiscoveryPort type="Integer">0</IPUseGlobalDiscoveryPort>
+              <LockPort type="Integer">0</LockPort>
+              <Mode type="Integer">3</Mode>
+              <Port type="Integer">1</Port>
+              <Speed type="Integer">0</Speed>
+              <TCPPortNumber type="Integer">5313</TCPPortNumber>
+              <USBDeviceName type="String"></USBDeviceName>
+            </Communication>
+          </HW>
+          <Trace>
+            <CoverageOperMode type="Integer">1</CoverageOperMode>
+            <Type type="Integer">0</Type>
+          </Trace>
+        </HW>
+      </HServerData>
+    </REG_ROOT>
+  </HServer>
+</Root>
