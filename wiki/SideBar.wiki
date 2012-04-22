@@ -1,6 +1,6 @@
   * [Main Overview]
   * [RepositorySetupInstructions Getting Started]
-  * Folders Folders
+  * Folders
     * [FolderProjects Sources\Projects]
     * [FolderProjectsLibs Sources\Projects\Libs]
     * [FolderLibs Sources\Libs]
