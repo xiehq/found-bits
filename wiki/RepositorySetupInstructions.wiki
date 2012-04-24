@@ -4,7 +4,9 @@
 
  # *Checkout the repository trunk to hard drive.*
    URL: http://found-bits.googlecode.com/svn/trunk/
+   
    https://found-bits.googlecode.com/svn/wiki/Checkout.jpg
+
  # *Map the checkout folder to drive.* 
    Put 
    _subst <drive letter>: <path to checkout folder>_
@@ -16,9 +18,9 @@ Work only in new mapped drive.
    https://found-bits.googlecode.com/svn/wiki/CodeSourcery.jpg
 
 = Install =
- # Install *Visual Studio (Express)* (2010 when this written)
- # Install *Windows Driver Kit (WDK)* (7.1.0 when this written) 
- # Install *Python* (2.7.3 when this written)
+ # Install *Visual Studio (Express)* (2010 when this was written)
+ # Install *Windows Driver Kit (WDK)* (7.1.0 when this was written) 
+ # Install *Python* (2.7.3 when this was written)
  # Install *Eclipse*. Standard edition is OK, so is version for C/C++ with CDT. (Indigo when this was written)
 
 = Configure =
