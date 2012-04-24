@@ -16,6 +16,7 @@ Work only in new mapped drive.
 = Download =
  # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level. (arm-2011.09 when this was written)
    https://found-bits.googlecode.com/svn/wiki/CodeSourcery.jpg
+ # Samples might use other sources than ones from repository. They need to be downloaded from the original sites. There is a list of external libraries in _\Sources\Projects\ManagementScripts\ExternalLibsList.py_ and there is a _GetExternalLibs.py_ script to help you downloading them.
 
 = Install =
  # Install *Visual Studio (Express)* (2010 when this was written)
