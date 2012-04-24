@@ -1,7 +1,7 @@
 This might be useful when setting up Eclipse
  * for the first time
  * the next time
- * and you are C/C++ programmer in Windows
+ * you are C/C++ programmer in Windows
 
  # Don't use tabs. Replace tabs with 2 spaces
    https://found-bits.googlecode.com/svn/wiki/UseInsertSpacesForTabs.jpg
@@ -13,3 +13,12 @@ This might be useful when setting up Eclipse
    https://found-bits.googlecode.com/svn/wiki/ImportCCppCodingStyle.jpg
  # Save automatically before build
    https://found-bits.googlecode.com/svn/wiki/SaveAutomaticallyBeforeBuild.jpg
+ # When Eclipse is ran it seems to create additional icon in Windows taskbar if it is already pinned there. To have only pinned icon in taskbar when Eclipse is running:
+   # Unpin eclipse from taskbar.
+   # Add following at the top of eclipse.ini (next to eclipse.exe):
+     {{{
+     -vm
+     C:\Program Files\Java\jre7\bin
+     }}}
+   # Run Eclipse.
+   # Pin created icon to taskbar.
