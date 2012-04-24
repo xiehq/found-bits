@@ -1,4 +1,4 @@
-#summary Demonstration of utilizing [WinUSBCommLibrary WinUSBComm library].
+#summary Demonstration of utilizing WinUSBComm library.
 
 Project is made in Eclipse. The CDT internal builder is used. It depends on files from ST libraries and it is based on Mass storage USB example from ST. I kept the file names and layout as ST does in their examples. Codesourcery Lite compiler for ARM is used to build the project. Development and testing was done on STM32F103RB device.
 
