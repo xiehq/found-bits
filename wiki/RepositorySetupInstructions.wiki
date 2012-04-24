@@ -3,24 +3,27 @@
 = Checkout =
 
  # *Checkout the repository trunk to hard drive.*
- # *Map the checkout folder to drive.* Put _subst <drive letter>: <path to checkout folder>_ to batch file and make file execute at startup or share checkout folder and map it as a network drive.
+   URL: http://found-bits.googlecode.com/svn/trunk/
+   https://found-bits.googlecode.com/svn/wiki/Checkout.jpg
+ # *Map the checkout folder to drive.* 
+   Put 
+   _subst <drive letter>: <path to checkout folder>_
+   to batch file and make file execute at startup or share checkout folder and map it as a network drive.
 Work only in new mapped drive.
 
+= Download =
+ # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level. (arm-2011.09 when this was written)
+   https://found-bits.googlecode.com/svn/wiki/CodeSourcery.jpg
+
 = Install =
- # Install *Visual Studio (Express)*
- # Install *Windows Driver Kit (WDK)*
- # Install *Python*
- # Install *Eclipse*
+ # Install *Visual Studio (Express)* (2010 when this written)
+ # Install *Windows Driver Kit (WDK)* (7.1.0 when this written) 
+ # Install *Python* (2.7.3 when this written)
+ # Install *Eclipse*. Standard edition is OK, so is version for C/C++ with CDT. (Indigo when this was written)
 
 = Configure =
- # Add Python to PATH
- # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse
- # Add *CDT* to Eclipse
- # Don't use tabs. Replace tabs with 2 spaces
-   https://found-bits.googlecode.com/svn/wiki/UseInsertSpacesForTabs.jpg
- # (optional) Set VS key mappings
-   https://found-bits.googlecode.com/svn/wiki/UseVSKeys.jpg
- # Import coding style from _\Sources\EclipseCCppCodingStyle.xml_
-   https://found-bits.googlecode.com/svn/wiki/ImportCCppCodingStyle.jpg
-= Download =
- # Download *CodeSourcery* and put it in \Tools\Compilers\CodeSourcery. This folder must contain only one version of CodeSourcery. Don't create any version subfolders. Single version folder are on this level.
+ # Add Python to PATH.
+   https://found-bits.googlecode.com/svn/wiki/PythonToPATH.jpg
+ # Add *Pydev* to Eclipse and create default Python interpreter in Eclipse.
+ # Add *CDT* to Eclipse if you haven't downloaded Eclipse for C/C++ developers.
+ # Some optional [EclipseConfig Eclipse configuration] steps if you are setting Eclipse from scratch.
