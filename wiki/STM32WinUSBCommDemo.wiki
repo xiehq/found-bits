@@ -1,0 +1,18 @@
+#summary Demonstration of utilizing [WinUSBCommLibrary WinUSBComm library].
+
+Project is made in Eclipse. The CDT internal builder is used. It depends on files from ST libraries and it is based on Mass storage USB example from ST. I kept the file names and layout as ST does in their examples. Codesourcery Lite compiler for ARM is used to build the project. Development and testing was done on STM32F103RB device.
+
+===To build the project:===
+ # Add USB_VID and USB_PID macros to compiler symbols or create _usbID.h_ in project folder and assign macros there:
+   {{{
+   #ifndef __USB_ID_H__
+   #define __USB_ID_H__
+
+   #define USB_VID <your USB VID here>
+   #define USB_PID <your USB PID here>
+
+   #endif  //  __USB_ID_H__
+   }}}
+ # Run PreBuildOnce.py to get some files from original sample.
+ # Refresh the project.
+ # Build.
