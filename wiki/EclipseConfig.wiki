@@ -1,0 +1,15 @@
+This might be useful when setting up Eclipse
+ * for the first time
+ * the next time
+ * and you are C/C++ programmer in Windows
+
+ # Don't use tabs. Replace tabs with 2 spaces
+   https://found-bits.googlecode.com/svn/wiki/UseInsertSpacesForTabs.jpg
+ # Replace tabs with 2 spaces also in Python
+   https://found-bits.googlecode.com/svn/wiki/2SpacesForTabInPydev.jpg
+ # Set VS key mappings
+   https://found-bits.googlecode.com/svn/wiki/UseVSKeys.jpg
+ # Import coding style from _\Sources\EclipseCCppCodingStyle.xml_
+   https://found-bits.googlecode.com/svn/wiki/ImportCCppCodingStyle.jpg
+ # Save automatically before build
+   https://found-bits.googlecode.com/svn/wiki/SaveAutomaticallyBeforeBuild.jpg
