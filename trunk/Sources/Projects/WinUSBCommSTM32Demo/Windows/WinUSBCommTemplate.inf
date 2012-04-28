@@ -1,0 +1,106 @@
+[Version]
+Signature = "$Windows NT$"
+Class = WinUSBCommDeviceClass
+ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171}
+Provider = %ManufacturerName%
+CatalogFile=WinUSBComm.cat
+DriverVer=<DATE>,1.0.0.2
+
+; ================== Class section ==================
+
+[ClassInstall32]
+Addreg=WinUSBCommDeviceClassReg
+
+[WinUSBCommDeviceClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-1
+
+; ========== Manufacturer/Models sections ===========
+
+[Manufacturer]
+%ManufacturerName% = Standard,NTx86,NTamd64,NTia64
+
+[Standard.NTx86]
+%DeviceName% =USB_Install, USB\VID_<USBVID>&PID_<USBPID>
+
+[Standard.NTamd64]
+%DeviceName% =USB_Install, USB\VID_<USBVID>&PID_<USBPID>
+
+[Standard.NTia64]
+%DeviceName% =USB_Install, USB\VID_<USBVID>&PID_<USBPID>
+; =================== Installation ===================
+
+;[1]
+[USB_Install]
+Include=winusb.inf
+Needs=WINUSB.NT
+
+;[2]
+[USB_Install.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+;[3]
+[WinUSB_ServiceInstall]
+DisplayName     = %WinUSB_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WinUSB.sys
+
+;[4]
+[USB_Install.Wdf]
+KmdfService=WINUSB, WinUsb_Install
+
+[WinUSB_Install]
+KmdfLibraryVersion=<KMDFLIBVER>
+
+;[5]
+[USB_Install.HW]
+AddReg=Dev_AddReg
+
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{EA0BD5C3-50F3-4888-84B4-74E50E1649DB}"
+
+;[6]
+[USB_Install.CoInstallers]
+AddReg=CoInstallers_AddReg
+CopyFiles=CoInstallers_CopyFiles
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller<WDFCOINSTVER>.dll,WdfCoInstaller","WinUsbCoInstaller2.dll"
+
+[CoInstallers_CopyFiles]
+WinUsbCoInstaller2.dll
+WdfCoInstaller<WDFCOINSTVER>.dll
+
+[DestinationDirs]
+CoInstallers_CopyFiles=11
+
+; ================= Source Media Section =====================
+;[7]
+
+[SourceDisksNames]
+1 = %DiskName%,,,\x86
+2 = %DiskName%,,,\amd64
+3 = %DiskName%,,,\ia64
+
+[SourceDisksFiles.x86]
+WinUsbCoInstaller2.dll=1
+WdfCoInstaller<WDFCOINSTVER>.dll=1
+
+[SourceDisksFiles.amd64]
+WinUsbCoInstaller2.dll=2
+WdfCoInstaller<WDFCOINSTVER>.dll=2
+
+[SourceDisksFiles.ia64]
+WinUsbCoInstaller2.dll=3
+WdfCoInstaller<WDFCOINSTVER>.dll=3
+; =================== Strings ===================
+
+[Strings]
+ManufacturerName="<NAME>"
+ClassName="WinUSBCommDeviceClass"
+DiskName="WinUSBComm Installation Disk"
+WinUSB_SvcDesc="WinUSB Driver"
+DeviceName="WinUSBComm Device"
