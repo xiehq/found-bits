@@ -1,5 +1,8 @@
 #summary USB communication library to use with WinUSB
 
+= Communication flow chart =
+https://found-bits.googlecode.com/svn/wiki/WinUSBCommFlow.png
+
 = Device =
 In firmware the library resides above user's USB driver implementation and below user'application code. See the comments in [https://code.google.com/p/found-bits/source/browse/trunk/Sources/Projects/Libs/WinUSBComm/WinUSBComm.h WinUSBComm.h].
 === USB driver ===
