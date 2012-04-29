@@ -101,6 +101,6 @@ const uint8_t StringLangID[] =
 };      /* LangID = 0x0409: U.S. English */
 COMPILETIME_ASSERT(sizeof(StringLangID) == SIZ_STRING_LANGID);
 
-const char * g_pcszUSBVendorName = "Awesome Embedded Developer";
+const char * g_pcszUSBVendorName = USB_VENDORNAME;
 const char * g_pcszUSBProductName = "WinUSBComm Device";
 const char * g_pcszWinUSBUSBInterfaceName = "WinUSBComm";
