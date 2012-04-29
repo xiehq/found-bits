@@ -20,7 +20,6 @@ Work only in new mapped drive.
 
 = Install =
  # Install *Visual Studio (Express)* (2010 when this was written)
- # Install *Windows Driver Kit (WDK)* (7.1.0 when this was written) 
  # Install *Python* (2.7.3 when this was written)
  # Install *Eclipse*. Standard edition is OK, so is version for C/C++ with CDT. (Indigo when this was written)
 
