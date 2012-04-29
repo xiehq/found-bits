@@ -42,7 +42,7 @@ WDKPath = "C:\\WinDDK\\7600.16385.1"
 now = datetime.datetime.now()
 date = now.strftime("%m/%d/%Y")
 
-name = raw_input("Enter the name (e.g. AwesomeEmbeddedDeveloper). Don't use characters that are not valid in file names!: ")
+name = raw_input("Enter the name (e.g. Awesome Embedded Developer). Don't use characters that are not valid in file names!: ")
 certPrepend = name.replace(' ', '')
 usbVID = raw_input("Enter your USB VID (4 HEX characters, without 0x or h or hex):")
 usbPID = raw_input("Enter USB PID for the device (4 HEX characters, without 0x or h or hex):")
@@ -153,6 +153,7 @@ if len(raw_input("Create usbID.h with entered USB IDs (if file exists it will be
   
   data = data.replace("<USBVID>", "0x" + usbVID)
   data = data.replace("<USBPID>", "0x" + usbPID)
+  data = data.replace("<NAME>", name)
     
   with file(".\\..\\usbID.h", 'w') as usbIDh:
     usbIDh.write(data)
@@ -174,6 +175,7 @@ if not os.path.isfile(catPath):
 # Sign catalog file
 execute(SignTool, "sign /f " + spcPFX + " /t http://timestamp.verisign.com/scripts/timstamp.dll " + catPath)
 
+print "Driver package ready in " + driverPath
 
 # Install driver - ask first 
 if len(raw_input("Install driver? [ENTER for NO, anything for YES]:")):
@@ -181,6 +183,5 @@ if len(raw_input("Install driver? [ENTER for NO, anything for YES]:")):
     bitVersion = "amd64"
   
   dpinstPath = os.path.join(driverPath, bitVersion + "\\dpinst.exe")
-  execute(dpinstPath, "/q /se /sw /u " + infPath)  
+  execute(dpinstPath, "/q /se /sw /path " + driverPath)  
 
-print "Driver package ready in " + driverPath
