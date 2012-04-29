@@ -42,10 +42,10 @@ WDKPath = "C:\\WinDDK\\7600.16385.1"
 now = datetime.datetime.now()
 date = now.strftime("%m/%d/%Y")
 
-name = "A E D"#raw_input("Enter the name (e.g. AwesomeEmbeddedDeveloper). Don't use characters that are not valid in file names!: ")
+name = raw_input("Enter the name (e.g. AwesomeEmbeddedDeveloper). Don't use characters that are not valid in file names!: ")
 certPrepend = name.replace(' ', '')
-usbVID = "1111"#raw_input("Enter your USB VID (4 HEX characters, without 0x or h or hex):")
-usbPID = "2222"#raw_input("Enter USB PID for the device (4 HEX characters, without 0x or h or hex):")
+usbVID = raw_input("Enter your USB VID (4 HEX characters, without 0x or h or hex):")
+usbPID = raw_input("Enter USB PID for the device (4 HEX characters, without 0x or h or hex):")
 
 if not os.path.isdir(WDKPath):
   WDKPath = tkFileDialog.askdirectory()
