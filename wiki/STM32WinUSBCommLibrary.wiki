@@ -1,9 +1,9 @@
 #summary USB communication library to use with WinUSB
 
-== Device ==
+= Device =
 In firmware the library resides above user's USB driver implementation and below user'application code. See the comments in [https://code.google.com/p/found-bits/source/browse/trunk/Sources/Projects/Libs/WinUSBComm/WinUSBComm.h WinUSBComm.h].
 === USB driver ===
-In general the USB implementation must call
+The USB implementation must call
 {{{
 void WinUSBComm_In();
 }}}
@@ -44,5 +44,17 @@ This function will call back the
 void WinUSBComm_OnNewData();
 }}}
 if new data packet was received.
-This is not single USB data packet. This is a larger packet received with more USB data packets. The max size of this packet is WinUSBComm buffer size. It can be changed by user. Library has a buffer size request control through which the host learns about the max buffer size.
-== Host ==
+This is not single USB data packet. This is a larger packet received with more USB data packets. The max size of this packet is the WinUSBComm buffer size. It can be changed by user. Library has a buffer size request control through which the host learns about the max buffer size.
+When in callback handler the user calls to
+{{{
+uint32_t WinUSBComm_GetAvailableByteCount();
+}}}
+to get how many bytes are still available to read and
+{{{
+uint8_t * WinUSBComm_ReadData(uint32_t dwLength);
+void WinUSBComm_WriteData(uint8_t *pbyData, uint32_t dwLength);
+}}}
+To receive and send data.
+The WinUSBComm has no buffer overflow mechanism. It must be guaranteed by design that a global query-response cycle won't use more than max buffer size per query. Larger data sizes can be achieved with a custom mechanism splitting what would have been a single cycle to multiple cycles. This mechanism can use the max buffer size information from the control request at the host side. 
+= Host =
+_TODO_
