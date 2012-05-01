@@ -1,9 +1,12 @@
 #summary Demonstration of utilizing WinUSBComm library.
 
+= Driver =
+For a Windows driver setup run the Driver.py script. It will create a self-signed certificate, the INF and CAT files and sign them. You need to download and install the Windows Driver Kit (WDK). For more information about driver signing read [http://searchingforbit.blogspot.com/2012/04/winusb-communication-with-stm32-part-3.html this].
+
+= Firmware =
 Project is made in Eclipse. The CDT internal builder is used. It depends on files from ST libraries and it is based on Mass storage USB example from ST. I kept the file names and layout as ST does in their examples. Codesourcery Lite compiler for ARM is used to build the project. Development and testing was done on STM32F103RB device.
 [http://searchingforbit.blogspot.com/2012/04/winusb-communication-with-stm32-part-1.html Some additional info]
 
-For a Windows driver setup run the Driver.py script. It will create a self-signed certificate, the INF and CAT files and sign them. You need to download and install the Windows Driver Kit (WDK). For more information about driver signing read [http://searchingforbit.blogspot.com/2012/04/winusb-communication-with-stm32-part-3.html this].
 ===To build the project:===
  # Add USB_VID and USB_PID macros to compiler symbols or create _usbID.h_ in project folder and assign macros there:
    {{{
@@ -21,3 +24,7 @@ For a Windows driver setup run the Driver.py script. It will create a self-signe
  # Run PreBuildOnce.py to get some files from original sample.
  # Refresh the project.
  # Build.
+
+= Software =
+Windows Driver Kit (WDK) must be installed to build the test project. Additional include folders from WDK must be added, additional link folders and libraries must be added. There was a syntax error with some WDK header file inclusion. That is why WDK include folders are added to VC++ Include Directories after default include path.
+https://found-bits.googlecode.com/svn/wiki/WinUSBCommTestSettings.jpg
