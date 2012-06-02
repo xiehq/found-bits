@@ -36,6 +36,8 @@ typedef int64_t QLONG;
 typedef int32_t LONG;
 typedef int16_t SHORT;
 typedef int8_t SBYTE;
+typedef char CHAR;
+
 
 #ifndef NO_BOOL
 typedef enum _BOOL
@@ -45,5 +47,8 @@ typedef enum _BOOL
 }BOOL;
 #endif
 
+#ifndef NULL
+#define NULL (void *)0
+#endif
 
 #endif  //  __TYPE_DEFS_H__

@@ -32,9 +32,21 @@
 #define _countof(a) (sizeof(a)/sizeof(a[0]))
 #endif
 
-#ifndef COMPILETIME_ASSERT
-#define COMPILETIME_ASSERT(e) extern char _cta[(e) ? 1 : 0]
+#ifndef _PtrAndCnt
+#define _PtrAndCnt(a) &(a[0]), _countof(a)
 #endif
+
+#ifndef _CntAndPtr
+#define _CntAndPtr(a)  _countof(a), &(a[0])
+#endif
+
+#ifndef COMPILETIME_ASSERT
+#define COMPILETIME_ASSERT(e) extern char _cta[(e) ? 1 : -1]
+#endif
+
+#define ABS(X)  ((X) > 0 ? (X) : -(X))
+#define MAX(X,Y)  ((X) > (Y) ? (X) : (Y))
+#define MIN(X,Y)  ((X) > (Y) ? (Y) : (X))
 
 #define BYTE0(v) ((BYTE)(v))
 #define BYTE1(v) ((BYTE)((v) >> 8))
