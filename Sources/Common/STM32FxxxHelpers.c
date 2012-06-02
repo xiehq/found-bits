@@ -41,4 +41,12 @@ void STM32_GetSerial(uint32_t *pdwDevice_Serial2, uint32_t *pdwDevice_Serial1, u
 #endif /* STM32L1XX_MD */
 }
 
-
+void STM32_RCCPeriphClockCmd(uint32_t RCC_Periph, FunctionalState NewState)
+{
+  if ( IS_RCC_APB2_PERIPH(RCC_Periph) )
+  { RCC_APB2PeriphClockCmd(RCC_Periph, NewState); }
+  else if ( IS_RCC_APB1_PERIPH(RCC_Periph) )
+  { RCC_APB1PeriphClockCmd(RCC_Periph, NewState); }
+  else if ( IS_RCC_AHB_PERIPH(RCC_Periph) )
+  { RCC_AHBPeriphClockCmd(RCC_Periph, NewState); }
+}

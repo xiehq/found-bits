@@ -30,5 +30,6 @@
 
 
 void STM32_GetSerial(uint32_t *pdwDevice_Serial2, uint32_t *pdwDevice_Serial1, uint32_t *pdwDevice_Serial0);
+void STM32_RCCPeriphClockCmd(uint32_t RCC_Periph, FunctionalState NewState);
 
 #endif  //  __STM32FXXX_HELPERS_H__
