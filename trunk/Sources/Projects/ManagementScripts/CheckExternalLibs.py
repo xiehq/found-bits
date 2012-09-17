@@ -32,14 +32,24 @@ import sys
 goneFiles = 0
 for externalLib in ell.externalLibs:
   print externalLib.URL,
-  ret = urllib2.urlopen(externalLib.URL)
-  if ret.code == 200:
-    print "STILL THERE"
-  else:
+  gone = False  
+  try:
+    ret = urllib2.urlopen(externalLib.URL)
+    if ret.code == 200:
+      print "STILL THERE"
+    else:
+      gone = True
+  except:
+    gone = True
+  
+  if gone:
     print "GONE"
     goneFiles = goneFiles + 1
 
-if goneFiles > 0:
+if goneFiles == 1:
+  print "1 online file missing"
+  sys.exit(-1)
+elif goneFiles > 0:
   print "{0:d} online files missing".format(goneFiles)
   sys.exit(-1)
 else:
