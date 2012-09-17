@@ -35,5 +35,5 @@ class ExernalLib:
 
 externalLibs = [
 ExernalLib("http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm32f10x_stdperiph_lib.zip", ".\\..\\..\\Libs\\STM32\\ST\\", True, "STM32F10x_StdPeriph_Lib_V3.5.0"),
-ExernalLib("http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/um0424.zip",                  ".\\..\\..\\Libs\\STM32\\ST\\", True, "STM32_USB-FS-Device_Lib_V3.3.0"),
+ExernalLib("http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm32_usb-fs-device_lib.zip", ".\\..\\..\\Libs\\STM32\\ST\\", True, "STM32_USB-FS-Device_Lib_V3.4.0"),
 ]
