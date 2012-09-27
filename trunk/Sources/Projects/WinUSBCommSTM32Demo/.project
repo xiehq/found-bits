@@ -129,7 +129,7 @@
 		<link>
 			<name>Helpers/STM32FxxxHelpers.c</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Common/STM32FxxxHelpers.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libs/STM32/STM32FxxxHelpers.c</locationURI>
 		</link>
 		<link>
 			<name>STM32F10x_StdPeriph_Driver/misc.c</name>

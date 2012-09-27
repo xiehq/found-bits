@@ -32,6 +32,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\Common&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\Libs\WinUSBComm&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\Libs\STM32&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.1801175241" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -x c -Wimplicit -mthumb -mcpu=cortex-m3 -fno-exceptions" valueType="string"/>
@@ -56,7 +57,7 @@
 								</option>
 								<option id="gnu.c.link.option.ldflags.1944879990" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-mthumb -fno-exceptions" valueType="string"/>
 								<option id="gnu.c.link.option.other.1902113095" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">
-									<listOptionValue builtIn="false" value="--script=${ProjDirPath}\..\..\LinkerScripts\STM32Fxxx_128kIntFLASH_20kIntRAM.ind"/>
+									<listOptionValue builtIn="false" value="--script=${ProjDirPath}\STM32Fxxx_128kIntFLASH_20kIntRAM.ind"/>
 									<listOptionValue builtIn="false" value="-Map=${ProjName}.map"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.685153315" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
