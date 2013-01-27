@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) 2012, pa.eeapai@gmail.com                                         //
+// Copyright (c) 2013, pa.eeapai@gmail.com                                         //
 // All rights reserved.                                                            //
 //                                                                                 //
 // Redistribution and use in source and binary forms, with or without              //
@@ -28,14 +28,14 @@
 #ifndef __TYPE_DEFS_H__
 #define __TYPE_DEFS_H__
 
-typedef uint64_t QWORD;
-typedef uint32_t DWORD;
-typedef uint16_t WORD;
-typedef uint8_t BYTE;
-typedef int64_t QLONG;
-typedef int32_t LONG;
-typedef int16_t SHORT;
-typedef int8_t SBYTE;
+typedef unsigned long long QWORD;
+typedef unsigned long DWORD;
+typedef unsigned short WORD;
+typedef unsigned char BYTE;
+typedef long long QLONG;
+typedef long LONG;
+typedef short SHORT;
+typedef signed char SBYTE;
 typedef char CHAR;
 
 
