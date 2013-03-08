@@ -48,6 +48,8 @@ static uint8_t s_byError = 0;
 
 static uint32_t s_dwOutgoingDataSize = 0;
 
+static uint8_t s_abyControlDataTestBuff[4] = { 0 };
+
 void WinUSBComm_Reset()
 {
   s_pIncomingData = s_abyIncomingBuffer;
@@ -185,7 +187,7 @@ uint32_t WinUSBComm_GetAvailableByteCount()
   return (uint32_t)(s_pIncomingData - s_pReadData);
 }
 
-uint16_t WinUSBComm_Control(uint8_t byRequest, uint8_t **ppData)
+uint16_t WinUSBComm_Control(uint8_t byRequest, uint8_t **ppData, uint16_t wControlDataSizeToBeReceived)
 {
   uint16_t wControlDataSize = 0;
   if ( ppData ) *ppData = NULL;
@@ -196,6 +198,13 @@ uint16_t WinUSBComm_Control(uint8_t byRequest, uint8_t **ppData)
   case winusbctrlTXDONE: WinUSBComm_AllDataSentToDevice(); break;
   case winusbctrlGETDATASIZE: wControlDataSize = 4; if ( ppData ) *ppData = (uint8_t *)&s_dwOutgoingDataSize; break;
   case winusbctrlGETBUFFSIZE: wControlDataSize = 4; if ( ppData ) *ppData = (uint8_t *)&s_dwMaxRxBufferSize; break;
+
+  case winusbctrlEXAMPLEDATA4B:
+    ASSERT( 4 == wControlDataSizeToBeReceived );
+    wControlDataSize = 4;
+    if ( ppData )
+    { *ppData = (uint8_t *)s_abyControlDataTestBuff; }  // tell where to copy received data
+    break;
   default: break;
   }
   return wControlDataSize;

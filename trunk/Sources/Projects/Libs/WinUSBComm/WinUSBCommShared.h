@@ -41,7 +41,9 @@ typedef enum _EWinUSBCommControl
   winusbctrlGETSTATUS,    ///< read current comm status (EWinUSBCommStatus)
   winusbctrlTXDONE,       ///< all data sent to device, process it; go to winusbcommPROCESSING
   winusbctrlGETBUFFSIZE,  ///< get the max size of the receive buffer in device
-  winusbctrlGETDATASIZE   ///< get the size of data to receive from device
+  winusbctrlGETDATASIZE,  ///< get the size of data to receive from device
+
+  winusbctrlEXAMPLEDATA4B ///< example for sending some data (e.g. 4 bytes) on cotrol EP (not needed in WinUSBComm)
 }EWinUSBCommControl;
 
 
