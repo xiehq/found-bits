@@ -560,6 +560,14 @@ int _tmain(int argc, _TCHAR* argv[])
   DWORD dwNumLoops = 100;
   QueryPerformanceCounter(&countStart);
 
+  // send some data over control EP
+  BYTE abyCtrlEPTestData[4] = { 4, 3, '2', '1' };
+  bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlEXAMPLEDATA4B, abyCtrlEPTestData, 4);
+  if(!bResult)
+  {
+    goto done;
+  }
+
   do
   {
     // put device to receiving state

@@ -8,7 +8,7 @@
           <VersionLow type="String">1</VersionLow>
         </REG_HEADER>
         <REG_ROOT>
-          <RegVer type="Integer">1258377216</RegVer>
+          <RegVer type="Integer">1258491904</RegVer>
           <ColorSyntax>
             <ASMSyntaxFile type="String"></ASMSyntaxFile>
           </ColorSyntax>
@@ -23,92 +23,114 @@
           </History>
           <PI.0>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">66</L>
-            <P type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</P>
-            <VL type="Integer">47</VL>
+            <L type="Integer">321</L>
+            <P type="String">usb_prop.c</P>
+            <VL type="Integer">304</VL>
           </PI.0>
           <PI.1>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">577</L>
-            <P type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
-            <VL type="Integer">558</VL>
+            <L type="Integer">141</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c</P>
+            <VL type="Integer">124</VL>
           </PI.1>
           <PI.10>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">257</L>
-            <P type="String">..\..\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
-            <VL type="Integer">245</VL>
+            <C type="Integer">31</C>
+            <L type="Integer">68</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</P>
+            <VL type="Integer">47</VL>
           </PI.10>
           <PI.11>
-            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">83</L>
-            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_sil.c</P>
-            <VL type="Integer">66</VL>
-          </PI.11>
-          <PI.12>
-            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">95</L>
-            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c</P>
-            <VL type="Integer">78</VL>
-          </PI.12>
-          <PI.13>
-            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">59</L>
-            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c</P>
-            <VL type="Integer">44</VL>
-          </PI.13>
-          <PI.14>
-            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <C type="Integer">27</C>
-            <L type="Integer">515</L>
-            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c</P>
-            <VL type="Integer">473</VL>
-          </PI.14>
-          <PI.15>
-            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <C type="Integer">16</C>
-            <L type="Integer">265</L>
-            <P type="String">..\..\ST\Project\Virtual_COM_Port\src\usb_prop.c</P>
-            <VL type="Integer">254</VL>
-          </PI.15>
-          <PI.2>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
             <C type="Integer">7</C>
             <L type="Integer">190</L>
             <P type="String">WinUSBComm.c</P>
             <VL type="Integer">184</VL>
+          </PI.11>
+          <PI.12>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">16</C>
+            <L type="Integer">266</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c</P>
+            <VL type="Integer">253</VL>
+          </PI.12>
+          <PI.13>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">257</L>
+            <P type="String">..\..\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
+            <VL type="Integer">245</VL>
+          </PI.13>
+          <PI.14>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">83</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_sil.c</P>
+            <VL type="Integer">66</VL>
+          </PI.14>
+          <PI.15>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">95</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c</P>
+            <VL type="Integer">78</VL>
+          </PI.15>
+          <PI.16>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <L type="Integer">59</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c</P>
+            <VL type="Integer">44</VL>
+          </PI.16>
+          <PI.17>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">27</C>
+            <L type="Integer">515</L>
+            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c</P>
+            <VL type="Integer">473</VL>
+          </PI.17>
+          <PI.18>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">16</C>
+            <L type="Integer">265</L>
+            <P type="String">..\..\ST\Project\Virtual_COM_Port\src\usb_prop.c</P>
+            <VL type="Integer">254</VL>
+          </PI.18>
+          <PI.2>
+            <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
+            <C type="Integer">50</C>
+            <L type="Integer">97</L>
+            <P type="String">usb_istr.c</P>
+            <VL type="Integer">69</VL>
           </PI.2>
           <PI.3>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">77</L>
-            <P type="String">usb_pwr.c</P>
-            <VL type="Integer">53</VL>
+            <C type="Integer">61</C>
+            <L type="Integer">115</L>
+            <P type="String">stm32f10x_it.c</P>
+            <VL type="Integer">90</VL>
           </PI.3>
           <PI.4>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">301</L>
-            <P type="String">usb_prop.c</P>
-            <VL type="Integer">284</VL>
+            <L type="Integer">1002</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c</P>
+            <VL type="Integer">987</VL>
           </PI.4>
           <PI.5>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <L type="Integer">86</L>
-            <P type="String">usb_istr.c</P>
-            <VL type="Integer">77</VL>
+            <C type="Integer">63</C>
+            <L type="Integer">209</L>
+            <P type="String">..\Libs\WinUSBComm\WinUSBComm.c</P>
+            <VL type="Integer">183</VL>
           </PI.5>
           <PI.6>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <C type="Integer">16</C>
-            <L type="Integer">154</L>
-            <P type="String">stm32f10x_it.c</P>
-            <VL type="Integer">140</VL>
+            <C type="Integer">55</C>
+            <L type="Integer">46</L>
+            <P type="String">main.c</P>
+            <VL type="Integer">12</VL>
           </PI.6>
           <PI.7>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <C type="Integer">27</C>
-            <L type="Integer">29</L>
-            <P type="String">main.c</P>
-            <VL type="Integer">7</VL>
+            <L type="Integer">577</L>
+            <P type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</P>
+            <VL type="Integer">558</VL>
           </PI.7>
           <PI.8>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
@@ -118,10 +140,9 @@
           </PI.8>
           <PI.9>
             <Bookmarks_num_ type="Integer">0</Bookmarks_num_>
-            <C type="Integer">16</C>
-            <L type="Integer">266</L>
-            <P type="String">..\..\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_regs.c</P>
-            <VL type="Integer">253</VL>
+            <L type="Integer">77</L>
+            <P type="String">usb_pwr.c</P>
+            <VL type="Integer">53</VL>
           </PI.9>
         </REG_ROOT>
       </EditorOptions>
@@ -134,7 +155,7 @@
           <VersionLow type="String">1</VersionLow>
         </REG_HEADER>
         <REG_ROOT>
-          <RegVer type="Integer">1258377216</RegVer>
+          <RegVer type="Integer">1258491904</RegVer>
         </REG_ROOT>
       </LAOptions>
     </LA>
@@ -148,107 +169,91 @@
     <REG_ROOT>
       <HServer type="String">HASYST</HServer>
       <HServerMode type="Integer">0</HServerMode>
-      <RegVer type="Integer">1258377216</RegVer>
+      <RegVer type="Integer">1258491904</RegVer>
       <Desktop>
         <Workspace_Pane type="Integer">0</Workspace_Pane>
         <Documents.0>
           <ActiveDocument>
             <Maximized type="String">True</Maximized>
-            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</RelativeFileName>
+            <RelativeFileName type="String">main.c</RelativeFileName>
           </ActiveDocument>
           <Editor.0>
-            <FileBarIndex type="Integer">0</FileBarIndex>
-            <RectPosBottom type="Integer">651</RectPosBottom>
-            <RectPosLeft type="Integer">200</RectPosLeft>
-            <RectPosRight type="Integer">475</RectPosRight>
-            <RectPosTop type="Integer">200</RectPosTop>
-            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\gcc_ride7\startup_stm32f10x_md.s</RelativeFileName>
+            <FileBarIndex type="Integer">4</FileBarIndex>
+            <RectPosBottom type="Integer">479</RectPosBottom>
+            <RectPosLeft type="Integer">75</RectPosLeft>
+            <RectPosRight type="Integer">825</RectPosRight>
+            <RectPosTop type="Integer">75</RectPosTop>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c</RelativeFileName>
           </Editor.0>
           <Editor.1>
             <FileBarIndex type="Integer">1</FileBarIndex>
-            <RectPosBottom type="Integer">626</RectPosBottom>
-            <RectPosLeft type="Integer">175</RectPosLeft>
-            <RectPosRight type="Integer">450</RectPosRight>
-            <RectPosTop type="Integer">175</RectPosTop>
-            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</RelativeFileName>
+            <RectPosBottom type="Integer">554</RectPosBottom>
+            <RectPosLeft type="Integer">150</RectPosLeft>
+            <RectPosRight type="Integer">900</RectPosRight>
+            <RectPosTop type="Integer">150</RectPosTop>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_int.c</RelativeFileName>
           </Editor.1>
           <Editor.2>
-            <FileBarIndex type="Integer">2</FileBarIndex>
-            <RectPosBottom type="Integer">818</RectPosBottom>
+            <FileBarIndex type="Integer">5</FileBarIndex>
+            <RectPosBottom type="Integer">454</RectPosBottom>
             <RectPosLeft type="Integer">50</RectPosLeft>
-            <RectPosRight type="Integer">464</RectPosRight>
+            <RectPosRight type="Integer">800</RectPosRight>
             <RectPosTop type="Integer">50</RectPosTop>
-            <RelativeFileName type="String">hw_config.c</RelativeFileName>
+            <RelativeFileName type="String">..\Libs\WinUSBComm\WinUSBComm.c</RelativeFileName>
           </Editor.2>
           <Editor.3>
-            <FileBarIndex type="Integer">4</FileBarIndex>
-            <RectPosBottom type="Integer">993</RectPosBottom>
-            <RectPosLeft type="Integer">225</RectPosLeft>
-            <RectPosRight type="Integer">639</RectPosRight>
-            <RectPosTop type="Integer">225</RectPosTop>
+            <FileBarIndex type="Integer">6</FileBarIndex>
+            <RectPosBottom type="Integer">429</RectPosBottom>
+            <RectPosLeft type="Integer">25</RectPosLeft>
+            <RectPosRight type="Integer">775</RectPosRight>
+            <RectPosTop type="Integer">25</RectPosTop>
             <RelativeFileName type="String">main.c</RelativeFileName>
           </Editor.3>
           <Editor.4>
             <FileBarIndex type="Integer">3</FileBarIndex>
-            <RectPosBottom type="Integer">307</RectPosBottom>
-            <RectPosLeft type="Integer">0</RectPosLeft>
-            <RectPosRight type="Integer">386</RectPosRight>
-            <RectPosTop type="Integer">0</RectPosTop>
+            <RectPosBottom type="Integer">504</RectPosBottom>
+            <RectPosLeft type="Integer">100</RectPosLeft>
+            <RectPosRight type="Integer">850</RectPosRight>
+            <RectPosTop type="Integer">100</RectPosTop>
             <RelativeFileName type="String">stm32f10x_it.c</RelativeFileName>
           </Editor.4>
           <Editor.5>
-            <FileBarIndex type="Integer">6</FileBarIndex>
-            <RectPosBottom type="Integer">301</RectPosBottom>
-            <RectPosLeft type="Integer">25</RectPosLeft>
-            <RectPosRight type="Integer">775</RectPosRight>
-            <RectPosTop type="Integer">25</RectPosTop>
+            <FileBarIndex type="Integer">2</FileBarIndex>
+            <RectPosBottom type="Integer">529</RectPosBottom>
+            <RectPosLeft type="Integer">125</RectPosLeft>
+            <RectPosRight type="Integer">875</RectPosRight>
+            <RectPosTop type="Integer">125</RectPosTop>
             <RelativeFileName type="String">usb_istr.c</RelativeFileName>
           </Editor.5>
           <Editor.6>
-            <FileBarIndex type="Integer">7</FileBarIndex>
-            <RectPosBottom type="Integer">868</RectPosBottom>
-            <RectPosLeft type="Integer">100</RectPosLeft>
-            <RectPosRight type="Integer">514</RectPosRight>
-            <RectPosTop type="Integer">100</RectPosTop>
+            <FileBarIndex type="Integer">0</FileBarIndex>
+            <RectPosBottom type="Integer">579</RectPosBottom>
+            <RectPosLeft type="Integer">175</RectPosLeft>
+            <RectPosRight type="Integer">925</RectPosRight>
+            <RectPosTop type="Integer">175</RectPosTop>
             <RelativeFileName type="String">usb_prop.c</RelativeFileName>
           </Editor.6>
-          <Editor.7>
-            <FileBarIndex type="Integer">8</FileBarIndex>
-            <RectPosBottom type="Integer">654</RectPosBottom>
-            <RectPosLeft type="Integer">125</RectPosLeft>
-            <RectPosRight type="Integer">1302</RectPosRight>
-            <RectPosTop type="Integer">125</RectPosTop>
-            <RelativeFileName type="String">usb_pwr.c</RelativeFileName>
-          </Editor.7>
-          <Editor.8>
-            <FileBarIndex type="Integer">5</FileBarIndex>
-            <RectPosBottom type="Integer">526</RectPosBottom>
-            <RectPosLeft type="Integer">75</RectPosLeft>
-            <RectPosRight type="Integer">386</RectPosRight>
-            <RectPosTop type="Integer">75</RectPosTop>
-            <RelativeFileName type="String">WinUSBComm.c</RelativeFileName>
-          </Editor.8>
           <EditorHistoryFile.0>
-            <RelativeFileName type="String">startup_stm32f10x_md.s</RelativeFileName>
+            <RelativeFileName type="String">stm32f10x_it.c</RelativeFileName>
           </EditorHistoryFile.0>
           <EditorHistoryFile.1>
-            <RelativeFileName type="String">stm32f10x_gpio.c</RelativeFileName>
+            <RelativeFileName type="String">main.c</RelativeFileName>
           </EditorHistoryFile.1>
           <EditorHistoryFile.2>
-            <RelativeFileName type="String">..\..\ST\Project\Virtual_COM_Port\src\usb_prop.c</RelativeFileName>
+            <RelativeFileName type="String">hw_config.c</RelativeFileName>
           </EditorHistoryFile.2>
           <EditorHistoryFile.3>
-            <RelativeFileName type="String">stm32f10x_it.c</RelativeFileName>
+            <RelativeFileName type="String">..\..\Libs\STM32\ST\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</RelativeFileName>
           </EditorHistoryFile.3>
         </Documents.0>
         <Progress>
-          <b type="Integer">821</b>
-          <l type="Integer">2180</l>
-          <r type="Integer">2684</r>
-          <t type="Integer">458</t>
+          <b type="Integer">781</b>
+          <l type="Integer">745</l>
+          <r type="Integer">1249</r>
+          <t type="Integer">418</t>
         </Progress>
         <Watches>
-          <ActiveWatchPane type="Integer">0</ActiveWatchPane>
+          <ActiveWatchPane type="Integer">2</ActiveWatchPane>
           <Misc.0>
             <InitScript type="String"></InitScript>
           </Misc.0>
@@ -311,6 +316,56 @@
               </ExpressionDisplay>
             </Watch.3>
           </WatchPane.0>
+          <WatchPane.1>
+            <Watch.0>
+              <WatchName type="String">pInformation</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.0>
+            <Watch.1>
+              <WatchName type="String">*pBuf.b,m8</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.1>
+            <Watch.2>
+              <WatchName type="String">pBuf</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.2>
+            <Watch.3>
+              <WatchName type="String">s_abyControlDataTestBuff</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.3>
+          </WatchPane.1>
           <WatchPane.2>
             <Watch.0>
               <WatchName type="String">s_eWinUSBCommStatus</WatchName>
@@ -324,6 +379,18 @@
                 <Scale type="Integer">0</Scale>
               </ExpressionDisplay>
             </Watch.0>
+            <Watch.1>
+              <WatchName type="String">s_abyControlDataTestBuff</WatchName>
+              <ExpressionDisplay>
+                <Color type="Integer">0</Color>
+                <ColorBack type="Integer">8421376</ColorBack>
+                <ColorText type="Integer">0</ColorText>
+                <Enabled type="Integer">0</Enabled>
+                <Hi type="Double">100.0000000000000000</Hi>
+                <Lo type="Double">0.0000000000000000</Lo>
+                <Scale type="Integer">0</Scale>
+              </ExpressionDisplay>
+            </Watch.1>
           </WatchPane.2>
         </Watches>
         <Watches2>
@@ -392,7 +459,7 @@
           </DockRect.1>
           <DockRect.2>
             <AreHorz type="Integer">0</AreHorz>
-            <Percent type="Integer">432</Percent>
+            <Percent type="Integer">615</Percent>
             <Type type="Integer">0</Type>
             <TypeOfWnd type="Integer">-1</TypeOfWnd>
             <DockRect.0>
@@ -456,7 +523,7 @@
           </DockRect.3>
           <DockRect.4>
             <AreHorz type="Integer">0</AreHorz>
-            <Percent type="Integer">308</Percent>
+            <Percent type="Integer">359</Percent>
             <Type type="Integer">0</Type>
             <TypeOfWnd type="Integer">-1</TypeOfWnd>
             <DockRect.0>
@@ -502,15 +569,15 @@
                   <Width type="Integer">0</Width>
                 </Columns.0>
                 <Columns.1>
-                  <Pos type="Double">32.4372759856630850</Pos>
+                  <Pos type="Double">32.3624595469255640</Pos>
                   <Width type="Integer">0</Width>
                 </Columns.1>
                 <Columns.2>
-                  <Pos type="Double">59.6774193548387120</Pos>
+                  <Pos type="Double">72.9773462783171570</Pos>
                   <Width type="Integer">0</Width>
                 </Columns.2>
                 <Columns.3>
-                  <Pos type="Double">78.3154121863799300</Pos>
+                  <Pos type="Double">78.1553398058252500</Pos>
                   <Width type="Integer">0</Width>
                 </Columns.3>
               </Data>
@@ -528,22 +595,22 @@
               <Type type="Integer">0</Type>
               <TypeOfWnd type="Integer">6</TypeOfWnd>
               <Data>
-                <Address type="Integer">0</Address>
+                <Address type="Integer">1073766448</Address>
                 <AddrMode type="Integer">1</AddrMode>
                 <Area type="Integer">0</Area>
                 <Bits type="Integer">8</Bits>
-                <DisplayMode type="Integer">0</DisplayMode>
+                <DisplayMode type="Integer">256</DisplayMode>
                 <High type="Integer">-1</High>
                 <LimitMAUsPerLine type="Integer">0</LimitMAUsPerLine>
                 <Low type="Integer">0</Low>
                 <RealTime type="Integer">0</RealTime>
-                <strAddress type="String">0x0</strAddress>
+                <strAddress type="String">0x4000603c</strAddress>
                 <SwapFloat type="String">True</SwapFloat>
                 <SwapInt type="String">True</SwapInt>
                 <API.0>
-                  <Address type="Integer">0</Address>
-                  <AddressOffset type="Integer">0</AddressOffset>
-                  <DisplayMode type="Integer">0</DisplayMode>
+                  <Address type="Integer">1073766449</Address>
+                  <AddressOffset type="Integer">1073766448</AddressOffset>
+                  <DisplayMode type="Integer">256</DisplayMode>
                   <FloatLowFirst type="Integer">1</FloatLowFirst>
                   <IntLowFirst type="Integer">1</IntLowFirst>
                 </API.0>
@@ -586,10 +653,23 @@
           </DockRect.4>
           <DockRect.5>
             <AreHorz type="Integer">1</AreHorz>
-            <Percent type="Integer">0</Percent>
+            <Percent type="Integer">5</Percent>
             <Type type="Integer">6</Type>
             <TypeOfWnd type="Integer">-1</TypeOfWnd>
           </DockRect.5>
+          <DockRect.6>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">110</Percent>
+            <strTypeOfWnd type="String">Output</strTypeOfWnd>
+            <Type type="Integer">0</Type>
+            <TypeOfWnd type="Integer">0</TypeOfWnd>
+          </DockRect.6>
+          <DockRect.7>
+            <AreHorz type="Integer">1</AreHorz>
+            <Percent type="Integer">0</Percent>
+            <Type type="Integer">6</Type>
+            <TypeOfWnd type="Integer">-1</TypeOfWnd>
+          </DockRect.7>
         </Workspace.0>
       </Desktop>
       <Environment>
@@ -606,6 +686,33 @@
                 <Name type="String">&quot;usb_prop.c&quot;::293</Name>
               </__>
             </BP.0>
+            <BP.1>
+              <__>
+                <Active type="String">False</Active>
+                <Condition type="String"></Condition>
+                <Condition_Count type="Integer">0</Condition_Count>
+                <ConditionEnabled type="String">False</ConditionEnabled>
+                <Name type="String">&quot;..\Libs\WinUSBComm\WinUSBComm.c&quot;::199</Name>
+              </__>
+            </BP.1>
+            <BP.2>
+              <__>
+                <Active type="String">False</Active>
+                <Condition type="String"></Condition>
+                <Condition_Count type="Integer">0</Condition_Count>
+                <ConditionEnabled type="String">False</ConditionEnabled>
+                <Name type="String">&quot;..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c&quot;::892</Name>
+              </__>
+            </BP.2>
+            <BP.3>
+              <__>
+                <Active type="String">False</Active>
+                <Condition type="String"></Condition>
+                <Condition_Count type="Integer">0</Condition_Count>
+                <ConditionEnabled type="String">False</ConditionEnabled>
+                <Name type="String">&quot;..\..\Libs\STM32\ST\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c&quot;::441</Name>
+              </__>
+            </BP.3>
           </Fetch>
         </Breakpoints>
         <CASETool>
@@ -619,12 +726,14 @@
             <Reconstruction type="Integer">1</Reconstruction>
           </BackTrace>
           <Debugging>
+            <Ambiguity type="Integer">1</Ambiguity>
             <DisableBPs type="Integer">0</DisableBPs>
             <DisableIRQ_RunUntil type="Integer">0</DisableIRQ_RunUntil>
             <DisableIRQ_RunUntilReturn type="Integer">1</DisableIRQ_RunUntilReturn>
             <DisableIRQ_Step type="Integer">1</DisableIRQ_Step>
             <DisableIRQ_StepOver type="Integer">1</DisableIRQ_StepOver>
             <OnlyOneBPPerSourceLine type="Integer">1</OnlyOneBPPerSourceLine>
+            <ReevaluateBPsAfterNewPartition type="Integer">0</ReevaluateBPsAfterNewPartition>
             <ReserveBP type="Integer">1</ReserveBP>
           </Debugging>
           <Directories>
@@ -673,14 +782,14 @@
             <AfterDownloadGoto type="String"></AfterDownloadGoto>
             <AfterDownloadRunUntil type="String">main</AfterDownloadRunUntil>
             <bAfterDL1 type="Integer">0</bAfterDL1>
-            <bAfterDL2 type="Integer">0</bAfterDL2>
+            <bAfterDL2 type="Integer">1</bAfterDL2>
             <BeforeDownload type="Integer">1</BeforeDownload>
-            <bRunUntil type="Integer">0</bRunUntil>
+            <bRunUntil type="Integer">1</bRunUntil>
             <byAutoDownload type="Integer">0</byAutoDownload>
             <DisplayLoadMap type="String">True</DisplayLoadMap>
             <DownloadInHotAttach type="Integer">0</DownloadInHotAttach>
             <PostDLActionAlsoAfterReset type="Integer">1</PostDLActionAlsoAfterReset>
-            <StartOnPowerOn type="Integer">0</StartOnPowerOn>
+            <StartOnPowerOn type="String">0</StartOnPowerOn>
             <strRunUntil type="String">main</strRunUntil>
             <TargetDownload type="Integer">0</TargetDownload>
             <VerifyDownload type="String">True</VerifyDownload>
@@ -703,10 +812,17 @@
             <Trace type="String">False</Trace>
             <Watches type="String">True</Watches>
           </HistoryFile>
+          <LoadMap>
+            <FileName type="String">$Download.xml</FileName>
+            <Report type="String">0</Report>
+            <SaveLoaded type="String">1</SaveLoaded>
+            <SaveOverlaps type="String">1</SaveOverlaps>
+            <SaveVerifyErrors type="String">1</SaveVerifyErrors>
+          </LoadMap>
           <MMUData>
-            <AddressDisplay type="Integer">0</AddressDisplay>
-            <DisplayAddresses type="Integer">1</DisplayAddresses>
-            <DisplayRegisters type="Integer">1</DisplayRegisters>
+            <AddressDisplay type="String">0</AddressDisplay>
+            <DisplayAddresses type="String">1</DisplayAddresses>
+            <DisplayRegisters type="String">1</DisplayRegisters>
           </MMUData>
           <mode0>
             <GlobalProperty type="Integer">0</GlobalProperty>
@@ -724,17 +840,19 @@
             <GlobalProperty type="Integer">0</GlobalProperty>
             <IgnoreDLInfo type="Integer">0</IgnoreDLInfo>
           </modeEndianLittle>
-          <Process>
-            <UseVirtualAccessForCurrentProcess type="Integer">1</UseVirtualAccessForCurrentProcess>
-            <Processes.0>
-              <Name type="String">DEFAULT</Name>
-              <PID_dwPID type="Integer">0</PID_dwPID>
-              <PID_Type type="Integer">0</PID_Type>
-              <Overlay>
-                <Mode type="Integer">0</Mode>
-              </Overlay>
-            </Processes.0>
-          </Process>
+          <ProcessData>
+            <UseVirtualAccessForCurrentProcess type="String">1</UseVirtualAccessForCurrentProcess>
+            <Processes>
+              <__.0>
+                <Name type="String">DEFAULT</Name>
+                <PID_dwPID type="String">0</PID_dwPID>
+                <PID_Type type="String">0</PID_Type>
+                <Overlay>
+                  <Mode type="String">0</Mode>
+                </Overlay>
+              </__.0>
+            </Processes>
+          </ProcessData>
           <RTOS>
             <OS type="Integer">0</OS>
           </RTOS>
@@ -767,7 +885,6 @@
             <LoadSym type="Integer">1</LoadSym>
             <MarkersInLastLine type="String">True</MarkersInLastLine>
             <MaxParseUpload type="Integer">256</MaxParseUpload>
-            <MemoryAccessOpearator type="String">:</MemoryAccessOpearator>
             <NumChangeGradients type="Integer">1</NumChangeGradients>
             <Prefix type="String">_</Prefix>
             <StepToOtherLine type="Integer">0</StepToOtherLine>
@@ -860,8 +977,8 @@
         <GlobalData>
           <FindInFiles>
             <CaseSensitive type="Integer">0</CaseSensitive>
-            <FindWhat.0 type="String"></FindWhat.0>
-            <FindWhat.1 type="String"></FindWhat.1>
+            <FindWhat.0 type="String">Data_Setup</FindWhat.0>
+            <FindWhat.1 type="String">Data_Setup0</FindWhat.1>
             <FindWhat.2 type="String"></FindWhat.2>
             <FindWhat.3 type="String"></FindWhat.3>
             <FindWhat.4 type="String"></FindWhat.4>
@@ -879,7 +996,7 @@
             <IncludeAllFilesInProjectFolders type="Integer">0</IncludeAllFilesInProjectFolders>
             <IncludeProjectDependencies type="Integer">1</IncludeProjectDependencies>
             <IncludeProjectFiles type="Integer">1</IncludeProjectFiles>
-            <LastFileType type="String"></LastFileType>
+            <LastFileType type="String">*.c;*.cpp;*.h</LastFileType>
             <ReplaceWith.0 type="String"></ReplaceWith.0>
             <ReplaceWith.1 type="String"></ReplaceWith.1>
             <ReplaceWith.2 type="String"></ReplaceWith.2>
@@ -902,7 +1019,7 @@
           </Combo>
         </History>
         <Info>
-          <winIDEA type="String">Build 9.12.21</winIDEA>
+          <winIDEA type="String">Build 9.12.49</winIDEA>
         </Info>
         <Options>
           <CASE>
@@ -929,7 +1046,7 @@
             </ShortcutScript.3>
           </Environment>
           <MemoryWindow>
-            <Default8bitMAUDisplayOptions type="Integer">0</Default8bitMAUDisplayOptions>
+            <Default8bitMAUDisplayOptions type="Integer">256</Default8bitMAUDisplayOptions>
           </MemoryWindow>
           <ProjectWindow>
             <Symbols_ModuleFolders type="Integer">2</Symbols_ModuleFolders>
@@ -976,30 +1093,37 @@
           <UseDialogForCheckout type="Integer">1</UseDialogForCheckout>
         </SourceControl>
         <Test>
+          <ZeroInitVar type="String">0</ZeroInitVar>
           <_166>
-            <Compiler type="String">Tasking</Compiler>
+            <Compiler type="String">0</Compiler>
           </_166>
+          <ARM>
+            <ExtendReturnValues type="String">1</ExtendReturnValues>
+          </ARM>
           <ColdFire>
-            <Compiler type="String">GCC</Compiler>
+            <Compiler type="String">0</Compiler>
           </ColdFire>
           <EPADIMD>
-            <ReverseParameters type="String">FALSE</ReverseParameters>
+            <ReverseParameters type="String">0</ReverseParameters>
           </EPADIMD>
           <PPC>
-            <CreateCallFrame type="String">TRUE</CreateCallFrame>
+            <CreateCallFrame type="String">1</CreateCallFrame>
             <CustomExitSymbol type="String"></CustomExitSymbol>
-            <ExtendReturnValues type="String">FALSE</ExtendReturnValues>
-            <UseCustomExitSymbol type="String">FALSE</UseCustomExitSymbol>
+            <ExtendReturnValues type="String">0</ExtendReturnValues>
+            <UseCustomExitSymbol type="String">0</UseCustomExitSymbol>
           </PPC>
           <R8C>
-            <Compiler type="String">IAR</Compiler>
+            <Compiler type="String">0</Compiler>
           </R8C>
+          <S08>
+            <WidenParameters type="String">1</WidenParameters>
+          </S08>
           <S12>
-            <WidenParameters type="String">TRUE</WidenParameters>
+            <WidenParameters type="String">1</WidenParameters>
           </S12>
           <V850>
-            <Compiler type="String">GreenHills</Compiler>
-            <PartialAddressDecoding type="String">TRUE</PartialAddressDecoding>
+            <Compiler type="String">0</Compiler>
+            <PartialAddressDecoding type="String">1</PartialAddressDecoding>
           </V850>
         </Test>
         <WindowsInfo>
@@ -1151,8 +1275,8 @@
         <_76946E39-78E2-4625-9BF0-751C4C11A09F>
           <Plugin>
             <Config>
-              <Architecture type="String">Default</Architecture>
-              <AutoStart type="String">false</AutoStart>
+              <Architecture type="String">0</Architecture>
+              <AutoStart type="String">0</AutoStart>
               <Port type="String">5544</Port>
             </Config>
           </Plugin>
@@ -1167,7 +1291,7 @@
       <VersionLow type="String">1</VersionLow>
     </REG_HEADER>
     <REG_ROOT>
-      <RegVer type="Integer">1258377216</RegVer>
+      <RegVer type="Integer">1258491904</RegVer>
       <Project_Local>
         <Project.0>
           <DefaultTargetName type="String">STM32F10x - Debug</DefaultTargetName>
@@ -1182,7 +1306,7 @@
       <VersionLow type="String">1</VersionLow>
     </REG_HEADER>
     <REG_ROOT>
-      <RegVer type="Integer">1258377216</RegVer>
+      <RegVer type="Integer">1258491904</RegVer>
       <HServerData>
         <Data>
           <Debug>
@@ -1666,289 +1790,290 @@
               <Name type="String">DOUT9</Name>
             </D_OUT.9>
             <HW>
-              <AverageAIN type="String">TRUE</AverageAIN>
-              <AverageAINNum type="String">16</AverageAINNum>
+              <AverageAIN type="String">1</AverageAIN>
+              <AverageAINNum type="String">4</AverageAINNum>
+              <CTRL_0 type="String">0</CTRL_0>
               <CurrentShunt type="String">1</CurrentShunt>
-              <LoadPattern type="String">FALSE</LoadPattern>
-              <PatternClockPrescaler type="String">1/1</PatternClockPrescaler>
-              <PatternClockSource type="String">Internal</PatternClockSource>
-              <PowerMeasurement type="String">FALSE</PowerMeasurement>
-              <SamplingMode type="String">All</SamplingMode>
-              <SamplingQualifier type="String">CLK</SamplingQualifier>
-              <ShowOutputsInAnalyzer type="String">FALSE</ShowOutputsInAnalyzer>
+              <LoadPattern type="String">0</LoadPattern>
+              <PatternClockPrescaler type="String">0</PatternClockPrescaler>
+              <PatternClockSource type="String">0</PatternClockSource>
+              <PowerMeasurement type="String">0</PowerMeasurement>
+              <SamplingMode type="String">0</SamplingMode>
+              <SamplingQualifier type="String">0</SamplingQualifier>
+              <ShowOutputsInAnalyzer type="String">0</ShowOutputsInAnalyzer>
               <A_IN.0>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
                 <Multiply type="String">1</Multiply>
                 <Range>
                   <Max type="String">0</Max>
                   <Min type="String">0</Min>
-                  <Range type="String">Full</Range>
+                  <Range type="String">0</Range>
                 </Range>
               </A_IN.0>
               <A_IN.1>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
                 <Multiply type="String">1</Multiply>
                 <Range>
                   <Max type="String">0</Max>
                   <Min type="String">0</Min>
-                  <Range type="String">Full</Range>
+                  <Range type="String">0</Range>
                 </Range>
               </A_IN.1>
               <A_OUT.0>
-                <Driver type="String">Manual</Driver>
+                <Driver type="String">1</Driver>
                 <InitialState type="String">0</InitialState>
                 <Range>
                   <Max type="String">0</Max>
                   <Min type="String">0</Min>
-                  <Range type="String">Full</Range>
+                  <Range type="String">0</Range>
                 </Range>
               </A_OUT.0>
               <A_OUT.1>
-                <Driver type="String">Manual</Driver>
+                <Driver type="String">1</Driver>
                 <InitialState type="String">0</InitialState>
                 <Range>
                   <Max type="String">0</Max>
                   <Min type="String">0</Min>
-                  <Range type="String">Full</Range>
+                  <Range type="String">0</Range>
                 </Range>
               </A_OUT.1>
               <D_IN.0>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.0>
               <D_IN.1>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.1>
               <D_IN.10>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.10>
               <D_IN.11>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.11>
               <D_IN.12>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.12>
               <D_IN.13>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.13>
               <D_IN.14>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.14>
               <D_IN.15>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.15>
               <D_IN.16>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.16>
               <D_IN.17>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.17>
               <D_IN.18>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.18>
               <D_IN.19>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.19>
               <D_IN.2>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.2>
               <D_IN.20>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.20>
               <D_IN.21>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.21>
               <D_IN.22>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.22>
               <D_IN.23>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.23>
               <D_IN.24>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.24>
               <D_IN.25>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.25>
               <D_IN.26>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.26>
               <D_IN.27>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.27>
               <D_IN.28>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.28>
               <D_IN.29>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.29>
               <D_IN.3>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.3>
               <D_IN.30>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.30>
               <D_IN.31>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.31>
               <D_IN.4>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.4>
               <D_IN.5>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.5>
               <D_IN.6>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.6>
               <D_IN.7>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.7>
               <D_IN.8>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.8>
               <D_IN.9>
-                <Enabled type="String">TRUE</Enabled>
+                <Enabled type="String">1</Enabled>
               </D_IN.9>
               <D_OUT.0>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.0>
               <D_OUT.1>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.1>
               <D_OUT.10>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.10>
               <D_OUT.11>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.11>
               <D_OUT.12>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.12>
               <D_OUT.13>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.13>
               <D_OUT.14>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.14>
               <D_OUT.15>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.15>
               <D_OUT.16>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.16>
               <D_OUT.17>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.17>
               <D_OUT.18>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.18>
               <D_OUT.19>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.19>
               <D_OUT.2>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.2>
               <D_OUT.20>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.20>
               <D_OUT.21>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.21>
               <D_OUT.22>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.22>
               <D_OUT.23>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.23>
               <D_OUT.24>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.24>
               <D_OUT.25>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.25>
               <D_OUT.26>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.26>
               <D_OUT.27>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.27>
               <D_OUT.28>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.28>
               <D_OUT.29>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.29>
               <D_OUT.3>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.3>
               <D_OUT.30>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.30>
               <D_OUT.31>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.31>
               <D_OUT.4>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.4>
               <D_OUT.5>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.5>
               <D_OUT.6>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.6>
               <D_OUT.7>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.7>
               <D_OUT.8>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.8>
               <D_OUT.9>
-                <Driver type="String">Manual</Driver>
-                <InitialState type="String">FALSE</InitialState>
+                <Driver type="String">1</Driver>
+                <InitialState type="String">0</InitialState>
               </D_OUT.9>
               <PowerRange>
                 <Max type="String">0</Max>
                 <Min type="String">0</Min>
-                <Range type="String">Full</Range>
+                <Range type="String">0</Range>
               </PowerRange>
             </HW>
             <PatternFile>
               <FileName type="String"></FileName>
               <ScaleAOUT type="String">1</ScaleAOUT>
               <ScaleTime type="String">1</ScaleTime>
-              <UseConfig type="String">TRUE</UseConfig>
-              <UseTableA type="String">TRUE</UseTableA>
-              <UseTableB type="String">TRUE</UseTableB>
+              <UseConfig type="String">1</UseConfig>
+              <UseTableA type="String">1</UseTableA>
+              <UseTableB type="String">1</UseTableB>
             </PatternFile>
           </HIL>
           <HILLive>
@@ -1991,9 +2116,9 @@
                 <FileName type="String"></FileName>
                 <ScaleAOUT type="String">1</ScaleAOUT>
                 <ScaleTime type="String">1</ScaleTime>
-                <UseConfig type="String">TRUE</UseConfig>
-                <UseTableA type="String">TRUE</UseTableA>
-                <UseTableB type="String">TRUE</UseTableB>
+                <UseConfig type="String">1</UseConfig>
+                <UseTableA type="String">1</UseTableA>
+                <UseTableB type="String">1</UseTableB>
               </File>
             </Pattern.0>
             <Pattern.1>
@@ -2001,9 +2126,9 @@
                 <FileName type="String"></FileName>
                 <ScaleAOUT type="String">1</ScaleAOUT>
                 <ScaleTime type="String">1</ScaleTime>
-                <UseConfig type="String">TRUE</UseConfig>
-                <UseTableA type="String">TRUE</UseTableA>
-                <UseTableB type="String">TRUE</UseTableB>
+                <UseConfig type="String">1</UseConfig>
+                <UseTableA type="String">1</UseTableA>
+                <UseTableB type="String">1</UseTableB>
               </File>
             </Pattern.1>
             <Pattern.2>
@@ -2011,9 +2136,9 @@
                 <FileName type="String"></FileName>
                 <ScaleAOUT type="String">1</ScaleAOUT>
                 <ScaleTime type="String">1</ScaleTime>
-                <UseConfig type="String">TRUE</UseConfig>
-                <UseTableA type="String">TRUE</UseTableA>
-                <UseTableB type="String">TRUE</UseTableB>
+                <UseConfig type="String">1</UseConfig>
+                <UseTableA type="String">1</UseTableA>
+                <UseTableB type="String">1</UseTableB>
               </File>
             </Pattern.2>
             <Pattern.3>
@@ -2021,9 +2146,9 @@
                 <FileName type="String"></FileName>
                 <ScaleAOUT type="String">1</ScaleAOUT>
                 <ScaleTime type="String">1</ScaleTime>
-                <UseConfig type="String">TRUE</UseConfig>
-                <UseTableA type="String">TRUE</UseTableA>
-                <UseTableB type="String">TRUE</UseTableB>
+                <UseConfig type="String">1</UseConfig>
+                <UseTableA type="String">1</UseTableA>
+                <UseTableB type="String">1</UseTableB>
               </File>
             </Pattern.3>
           </HILLive>
@@ -2077,6 +2202,7 @@
           </Tools>
           <Trace>
             <Common>
+              <AnalyzerReadMemoryOnMissingCode type="Integer">1</AnalyzerReadMemoryOnMissingCode>
               <CoverageBuffSize type="String">100%</CoverageBuffSize>
               <CustomTimeStamp type="String">1 ns</CustomTimeStamp>
               <ProfilerMode type="Integer">0</ProfilerMode>
@@ -2140,15 +2266,14 @@
           </UMI>
         </Data>
         <HW>
-          <V_BUILD type="Integer">21</V_BUILD>
+          <V_BUILD type="Integer">49</V_BUILD>
           <V_BUILD_SUB type="Integer">0</V_BUILD_SUB>
           <V_MAJOR type="Integer">9</V_MAJOR>
           <V_Mfix type="Integer">1</V_Mfix>
           <V_MINOR type="Integer">12</V_MINOR>
-          <Version type="Integer">151781418</Version>
+          <Version type="Integer">151781474</Version>
           <BDM>
             <CPU>
-              <CPU type="Integer">4</CPU>
               <CPU1 type="Integer">4</CPU1>
               <CPUOptions type="Integer">0</CPUOptions>
               <CPUOptionsMask type="Integer">127</CPUOptionsMask>
@@ -2215,17 +2340,23 @@
                 <Windsor_SetPLL type="Integer">1</Windsor_SetPLL>
                 <Windsor_SYNR type="Integer">1</Windsor_SYNR>
                 <EFM32>
-                  <SWOPin type="String">Pin 0</SWOPin>
+                  <SWOPin type="String">0</SWOPin>
                 </EFM32>
                 <ETM12>
-                  <BranchBroadcast type="String">TRUE</BranchBroadcast>
-                  <Clocking type="String">FullRate</Clocking>
-                  <ContextTracing type="String">Disabled</ContextTracing>
-                  <CycleAccurateTracing type="String">TRUE</CycleAccurateTracing>
+                  <BranchBroadcast type="String">1</BranchBroadcast>
+                  <Clocking type="String">1</Clocking>
+                  <ContextTracing type="String">0</ContextTracing>
+                  <CycleAccurateTracing type="String">1</CycleAccurateTracing>
                   <MMD type="String">0</MMD>
-                  <PortMode type="String">Normal</PortMode>
-                  <PortWidth type="String">16-bit</PortWidth>
+                  <PortMode type="String">0</PortMode>
+                  <PortWidth type="String">2</PortWidth>
                 </ETM12>
+                <LPC1800>
+                  <TRACE_._DATA0_._Port type="String">0</TRACE_._DATA0_._Port>
+                  <TRACE_._DATA1_._Port type="String">0</TRACE_._DATA1_._Port>
+                  <TRACE_._DATA2_._Port type="String">0</TRACE_._DATA2_._Port>
+                  <TRACE_._DATA3_._Port type="String">0</TRACE_._DATA3_._Port>
+                </LPC1800>
                 <TMS470_RTPShadowRegion.0>
                   <Access type="Integer">0</Access>
                   <Enabled type="Integer">0</Enabled>
@@ -2239,13 +2370,20 @@
                   <Start type="Integer">0</Start>
                 </TMS470_RTPShadowRegion.1>
                 <XMC4000>
-                  <TRACE_._CLOCK_._Port type="String">PORT2</TRACE_._CLOCK_._Port>
-                  <TRACE_._DATA0_._Port type="String">PORT2</TRACE_._DATA0_._Port>
-                  <TRACE_._DATA1_._Port type="String">PORT2</TRACE_._DATA1_._Port>
-                  <TRACE_._DATA2_._Port type="String">PORT2</TRACE_._DATA2_._Port>
-                  <TRACE_._DATA3_._Port type="String">PORT2</TRACE_._DATA3_._Port>
+                  <TRACE_._CLOCK_._Port type="String">0</TRACE_._CLOCK_._Port>
+                  <TRACE_._DATA0_._Port type="String">0</TRACE_._DATA0_._Port>
+                  <TRACE_._DATA1_._Port type="String">0</TRACE_._DATA1_._Port>
+                  <TRACE_._DATA2_._Port type="String">0</TRACE_._DATA2_._Port>
+                  <TRACE_._DATA3_._Port type="String">0</TRACE_._DATA3_._Port>
                 </XMC4000>
               </ARM7>
+              <SFR>
+                <Format type="String">0</Format>
+                <KeepInternal type="String">0</KeepInternal>
+                <Load type="String">0</Load>
+                <Name type="String"></Name>
+                <Path type="String"></Path>
+              </SFR>
             </CPU>
             <Debugging>
               <AllowAccessToUnimplementedRegisters type="Integer">0</AllowAccessToUnimplementedRegisters>
@@ -2263,7 +2401,7 @@
               <IgnoreAccessErrors type="Integer">0</IgnoreAccessErrors>
               <IgnoreTargetResetAfter type="Integer">0</IgnoreTargetResetAfter>
               <IgnoreTargetResetAfter_ms type="Integer">10</IgnoreTargetResetAfter_ms>
-              <InitRAM type="Integer">1</InitRAM>
+              <InitRAM type="Integer">0</InitRAM>
               <LatchRESET type="Integer">1</LatchRESET>
               <MicrosecBetweenAccesses type="Integer">0</MicrosecBetweenAccesses>
               <MMUAware type="Integer">0</MMUAware>
@@ -2352,7 +2490,7 @@
               <InitAfterReset type="Integer">1</InitAfterReset>
               <Offset type="Integer">0</Offset>
               <OffsetMode type="Integer">0</OffsetMode>
-              <ResetCPUAfterDownload type="Integer">0</ResetCPUAfterDownload>
+              <ResetCPUAfterDownload type="Integer">1</ResetCPUAfterDownload>
               <TargetInitSec type="Integer">1</TargetInitSec>
               <Use type="Integer">0</Use>
             </InitSequence>
@@ -2408,7 +2546,7 @@
               </OCTModule.3>
             </Module>
             <SlowRun>
-              <Enabled type="String">FALSE</Enabled>
+              <Enabled type="String">0</Enabled>
             </SlowRun>
             <Synchronization>
               <Enabled type="Integer">0</Enabled>
@@ -2441,7 +2579,9 @@
           <HW>
             <ActiveType type="Integer">1</ActiveType>
             <HW type="Integer">8</HW>
+            <TestStandID type="String"></TestStandID>
             <Usage type="Integer">2</Usage>
+            <UseTestStand type="Integer">0</UseTestStand>
             <Communication>
               <IPAddr type="String"></IPAddr>
               <IPUseGlobalDiscoveryPort type="Integer">0</IPUseGlobalDiscoveryPort>

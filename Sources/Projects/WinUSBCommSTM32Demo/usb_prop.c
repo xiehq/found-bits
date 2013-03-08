@@ -319,7 +319,7 @@ RESULT USB_Data_Setup(uint8_t RequestNo)
          ( usbifWinUSBComm == pInformation->USBwIndexs.bw.bb1 ) )
   {
     pInformation->Ctrl_Info.CopyData = usb_ControlCopyData;
-    s_wControlRequestDataSize = WinUSBComm_Control(RequestNo, &s_pbyControlRequestData);
+    s_wControlRequestDataSize = WinUSBComm_Control(RequestNo, &s_pbyControlRequestData, pInformation->USBwLengths.w);
     pInformation->Ctrl_Info.Usb_wLength = s_wControlRequestDataSize;
   }
 
@@ -339,7 +339,7 @@ RESULT USB_NoData_Setup(uint8_t RequestNo)
        ( INTERFACE_RECIPIENT == (pInformation->USBbmRequestType & RECIPIENT) ) &&
        ( usbifWinUSBComm == pInformation->USBwIndexs.bw.bb1 ) )
   {
-    WinUSBComm_Control(RequestNo, NULL);
+    WinUSBComm_Control(RequestNo, NULL, 0);
   }
 
   return USB_SUCCESS;

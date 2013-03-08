@@ -36,7 +36,7 @@ void WinUSBComm_Out();                      ///< Called to transfer the data fro
                                             ///< WinUSBComm_ProcessNewData calls the WinUSBComm_OnNewData callback.
 
 
-uint16_t WinUSBComm_Control(uint8_t byRequest, uint8_t **ppData);   ///< Called for the communication control. Used for communication reset,
+uint16_t WinUSBComm_Control(uint8_t byRequest, uint8_t **ppData, uint16_t wControlDataSizeToBeReceived);   ///< Called for the communication control. Used for communication reset,
                                                                     ///< obtaining the response packet size and
                                                                     ///< signaling that the complete packet has been sent to device.
 
