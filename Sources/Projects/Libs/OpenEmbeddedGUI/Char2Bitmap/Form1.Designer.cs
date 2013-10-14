@@ -61,6 +61,7 @@
       this.toolStripButtonGenerateSources = new System.Windows.Forms.ToolStripButton();
       this.pictureBoxPreviewAll = new System.Windows.Forms.PictureBox();
       this.listBoxFontChars = new System.Windows.Forms.ListBox();
+      this.textBoxCodePreview = new System.Windows.Forms.TextBox();
       this.toolStrip1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreviewAll)).BeginInit();
       this.SuspendLayout();
@@ -72,7 +73,7 @@
             this.toolStripButtonGenerateSources});
       this.toolStrip1.Location = new System.Drawing.Point(0, 0);
       this.toolStrip1.Name = "toolStrip1";
-      this.toolStrip1.Size = new System.Drawing.Size(404, 25);
+      this.toolStrip1.Size = new System.Drawing.Size(557, 25);
       this.toolStrip1.TabIndex = 0;
       this.toolStrip1.Text = "toolStrip1";
       // 
@@ -104,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
       this.pictureBoxPreviewAll.Location = new System.Drawing.Point(113, 28);
       this.pictureBoxPreviewAll.Name = "pictureBoxPreviewAll";
-      this.pictureBoxPreviewAll.Size = new System.Drawing.Size(279, 301);
+      this.pictureBoxPreviewAll.Size = new System.Drawing.Size(432, 306);
       this.pictureBoxPreviewAll.TabIndex = 1;
       this.pictureBoxPreviewAll.TabStop = false;
       // 
@@ -116,15 +117,26 @@
       this.listBoxFontChars.IntegralHeight = false;
       this.listBoxFontChars.Location = new System.Drawing.Point(12, 28);
       this.listBoxFontChars.Name = "listBoxFontChars";
-      this.listBoxFontChars.Size = new System.Drawing.Size(95, 301);
+      this.listBoxFontChars.Size = new System.Drawing.Size(95, 306);
       this.listBoxFontChars.TabIndex = 2;
       this.listBoxFontChars.SelectedIndexChanged += new System.EventHandler(this.listBoxFontChars_SelectedIndexChanged);
+      // 
+      // textBoxCodePreview
+      // 
+      this.textBoxCodePreview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.textBoxCodePreview.Location = new System.Drawing.Point(12, 340);
+      this.textBoxCodePreview.Multiline = true;
+      this.textBoxCodePreview.Name = "textBoxCodePreview";
+      this.textBoxCodePreview.Size = new System.Drawing.Size(533, 214);
+      this.textBoxCodePreview.TabIndex = 3;
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(404, 335);
+      this.ClientSize = new System.Drawing.Size(557, 566);
+      this.Controls.Add(this.textBoxCodePreview);
       this.Controls.Add(this.listBoxFontChars);
       this.Controls.Add(this.pictureBoxPreviewAll);
       this.Controls.Add(this.toolStrip1);
@@ -145,6 +157,7 @@
     private System.Windows.Forms.ToolStripButton toolStripButtonGenerateSources;
     private System.Windows.Forms.PictureBox pictureBoxPreviewAll;
     private System.Windows.Forms.ListBox listBoxFontChars;
+    private System.Windows.Forms.TextBox textBoxCodePreview;
   }
 }
 
