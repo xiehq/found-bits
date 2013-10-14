@@ -82,9 +82,10 @@ namespace Char2Bitmap
       Color byteColor2 = Color.Blue;
       Color byteColor = byteColor1;
       int gridWidth = 4;
-      for (int Y = 0; Y < cbm.GetHeight(); Y++)
+      CharBitmap.Padding padding = cbm.GetPadding();
+      for (int Y = padding.Top; Y < cbm.GetHeight() - padding.Bottom; Y++)
       {
-        for (int X = 0; X < cbm.GetWidth(); X++)
+        for (int X = padding.Left; X < cbm.GetWidth() - padding.Right; X++)
         {
           Color pixColor = cbm.IsForegroundColor(X, Y) ? Color.Black : Color.White;
           SolidBrush brush = new SolidBrush(pixColor);
@@ -104,6 +105,8 @@ namespace Char2Bitmap
           }
         }
       }
+
+      textBoxCodePreview.Text = cbm.GetSource(padding);
     }
   }
 }
