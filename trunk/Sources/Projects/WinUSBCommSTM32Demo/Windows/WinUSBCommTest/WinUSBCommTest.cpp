@@ -256,19 +256,14 @@ BOOL GetUSBDeviceSpeed(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pDeviceSpee
     goto done;
   }
 
-  if(*pDeviceSpeed == LowSpeed)
+  if(*pDeviceSpeed == 1)
   {
-    printf("Device speed: %d (Low speed).\n", *pDeviceSpeed);
-    goto done;
-  }
-  if(*pDeviceSpeed == FullSpeed)
-  {
-    printf("Device speed: %d (Full speed).\n", *pDeviceSpeed);
+    printf("Device speed: %d - Full speed or lower (initial documentation on MSDN was wrong).\n", *pDeviceSpeed);
     goto done;
   }
   if(*pDeviceSpeed == HighSpeed)
   {
-    printf("Device speed: %d (High speed).\n", *pDeviceSpeed);
+    printf("Device speed: %d - High speed.\n", *pDeviceSpeed);
     goto done;
   }
 
@@ -666,8 +661,14 @@ int _tmain(int argc, _TCHAR* argv[])
   printf("Data speed: %f kbps = %f kBps\n", rate * 8, rate);
   system("PAUSE");
 done:
-  CloseHandle(hDeviceHandle);
-  WinUsb_Free(hWinUSBHandle);
+  if ( INVALID_HANDLE_VALUE != hDeviceHandle )
+  {
+    CloseHandle(hDeviceHandle);
+  }
+  if ( INVALID_HANDLE_VALUE != hWinUSBHandle )
+  {
+    WinUsb_Free(hWinUSBHandle);
+  }
   if ( pbyDataToDevice ) delete[] pbyDataToDevice;
   if ( pbyDataFromDevice ) delete[] pbyDataFromDevice;
 }
