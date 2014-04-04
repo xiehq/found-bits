@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{90a56a21-f6cf-450c-b749-f75ce5592c7a}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ManagementScripts.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +23,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ManagementScripts.py" />
+    <Compile Include="CheckExternalLibs.py" />
+    <Compile Include="DownloadFile.py" />
+    <Compile Include="ExternalLibsList.py" />
+    <Compile Include="FileUtils.py" />
+    <Compile Include="GetExternalLibs.py" />
+    <Compile Include="PrependLicense.py" />
+    <Compile Include="ZIP.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
