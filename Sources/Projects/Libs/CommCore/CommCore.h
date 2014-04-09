@@ -25,8 +25,8 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __COMM_H__
-#define __COMM_H__
+#ifndef __COMM_CORE_H__
+#define __COMM_CORE_H__
 
 #ifdef __cplusplus
  extern "C" {
@@ -47,11 +47,12 @@ typedef unsigned short COMMINDEX;
 
 typedef enum _ECommStatus
 {
-  commstatusIdle,     ///< No communication
-  commstatusActive,   ///< Communication is ongoing
-  commstatusNewPacket,///< New packet received
-  commstatusError,    ///< Internal error
-  commstatusOverrun,  ///< Trying to send or receive too much data
+  commstatusIdle,       ///< No communication
+  commstatusActive,     ///< Communication is ongoing
+  commstatusNewPacket,  ///< New packet received
+  commstatusError,      ///< Internal error
+  commstatusOverrun,    ///< Trying to send or receive too much data
+  commstatusDisconnect, ///< Communication disconnected
 }ECommStatus;
 
 typedef void (*pfnCommEvent)(SCommLayer *psCommLayer);  ///< Layer event notification (init, packet start/end, disconnect etc.)
@@ -111,10 +112,12 @@ typedef struct _ICommLayer
 #define COMM_GETBUFFERSIZE_NULL (pfnCommGetBufferSize)NULL
 
 
+typedef SCommStack * HCOMMSTACK;
+
 struct _SCommLayer
 {
   void *m_pLayerInstance;                     ///< "THIS" pointer.
-  ICommLayer *m_piCommLayer;                  ///< Pointer to comm interface implementation.
+  const ICommLayer *m_piCommLayer;            ///< Pointer to comm interface implementation.
   SCommLayer *m_psUpperLayer;                 ///< Pointer to upper comm layer.
   SCommLayer *m_psLowerLayer;                 ///< Pointer to lower comm layer.
   HCOMMSTACK m_hCommStack;                    ///< Comm stack handle to which layer belongs.
@@ -131,10 +134,8 @@ struct _SCommStack
 {
   SCommLayer *m_psCommLayer;      ///< Pointer to array of comm layers. Lowest layer (physical) at index 0.
   COMMCOUNT m_cntNumberOfLayers;  ///< Number of layers in array.
-  BYTE m_byFlags;                 ///< Of ECommStackFlags.
+  unsigned char m_byFlags;                 ///< Of ECommStackFlags.
 };
-
-typedef SCommStack * HCOMMSTACK;
 
 void Comm_PacketStart(SCommLayer *psCommLayer);
 void Comm_Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount);
@@ -147,11 +148,10 @@ void Comm_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT
 void Comm_OnPacketEnd(SCommLayer *psCommLayer);
 COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer);
 
-HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer *psCommLayers, COMMCOUNT cntLayerCount);
+HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer **ppsCommLayers, COMMCOUNT cntLayerCount);
 void CommStack_PacketStart(HCOMMSTACK hCommStack);
 void CommStack_Send(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 void CommStack_PacketEnd(HCOMMSTACK hCommStack);
-void CommStack_SendPacket(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes);
 ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes);
 COMMCOUNT CommStack_GetBufferSize(HCOMMSTACK hCommStack);
@@ -167,4 +167,4 @@ void CommStack_Disconnect(HCOMMSTACK hCommStack);
 #endif
 
 
-#endif  //  __COMM_H__
+#endif  //  __COMM_CORE_H__
