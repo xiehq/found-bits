@@ -40,6 +40,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>BuildFiles/Notes.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Notes.txt</locationURI>
+		</link>
+		<link>
 			<name>BuildFiles/RefreshFiles.bat</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/RefreshFiles.bat</locationURI>
