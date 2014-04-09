@@ -5,7 +5,7 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1162137535" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<macros>
 					<stringMacro name="LinkerFilePath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\STM32F407xG.ind"/>
-					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\ARMGCC"/>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\ARMGCC\gcc-arm-none-eabi-4_8-2013q4-20131204-win32"/>
 					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}\bin"/>
 					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
 				</macros>
@@ -37,9 +37,11 @@
 								<option id="gnu.c.compiler.option.include.paths.1904852348" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\ExtLib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\LibSTM32F4xx&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\WinUSBComm&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\CommCore&quot;"/>
 								</option>
-								<option id="gnu.c.compiler.option.misc.other.914525148" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-x c -march=armv7-m -mthumb -mfpu=vfp -g3 -c -Wimplicit -ffunction-sections" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.other.914525148" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-x c -march=armv7-m -mthumb -mfpu=vfp -g3 -gdwarf-2 -c -Wimplicit -ffunction-sections" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.142454167" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.258459893" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -54,8 +56,9 @@
 									<listOptionValue builtIn="false" value="c"/>
 									<listOptionValue builtIn="false" value="gcc"/>
 									<listOptionValue builtIn="false" value="nosys"/>
+									<listOptionValue builtIn="false" value="STM32F407xx"/>
 								</option>
-								<option id="gnu.c.link.option.ldflags.944150594" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-march=armv7-m -mthumb -mfpu=vfp  -fno-exceptions" valueType="string"/>
+								<option id="gnu.c.link.option.ldflags.944150594" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-march=armv7-m -mthumb -mfpu=vfp  -fno-exceptions -gdwarf-2 " valueType="string"/>
 								<option id="gnu.c.link.option.other.723668963" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" valueType="stringList">
 									<listOptionValue builtIn="false" value="-Map=${CWD}\\${ProjName}.map"/>
 									<listOptionValue builtIn="false" value="--script=${LinkerFilePath}"/>
@@ -64,6 +67,7 @@
 								</option>
 								<option id="gnu.c.link.option.paths.2072602429" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\LibSTM32F4xx\Eclipse\Debug407&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1495982228" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -73,7 +77,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1600508795" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1348349007" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.346264096" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
-								<option id="gnu.both.asm.option.flags.937593960" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="-march=armv7-m -mthumb -mfpu=vfp" valueType="string"/>
+								<option id="gnu.both.asm.option.flags.937593960" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="-march=armv7-m -mthumb -mfpu=vfp -gdwarf-2 " valueType="string"/>
 								<option id="gnu.both.asm.option.include.paths.1671826379" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\ExtLib&quot;"/>
 								</option>
