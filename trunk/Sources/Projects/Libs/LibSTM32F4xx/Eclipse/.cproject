@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" moduleId="org.eclipse.cdt.core.settings" name="Debug407">
+				<macros>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\ARMGCC\gcc-arm-none-eabi-4_8-2013q4-20131204-win32"/>
+					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}\bin"/>
+					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/LibSTM32F4xx"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/LibSTM32F4xx/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/LibSTM32F4xx/Debug407"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="STM32F407xx" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="STM32F407xx" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="Debug lib for STM32F407xx devices" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" name="Debug407" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1308258430" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.1456608611" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${CompilerToolsPath}\\${CompilerToolsPrefix}" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1085945327" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/LibSTM32F4xx}/Debug" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.1291378066" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1590210248" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1764559878" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.383893870" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.2001668456" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
+									<listOptionValue builtIn="false" value="STM32F407xx"/>
+									<listOptionValue builtIn="false" value="HSI_VALUE=((uint32_t)16000000)"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.paths.2118144801" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../Includes&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.misc.other.946871642" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-pipe -x c -march=armv7-m -mthumb -mfpu=vfp -g3 -gdwarf-2 -c -Wimplicit -ffunction-sections" valueType="string"/>
+								<option id="gnu.c.compiler.option.include.files.1834789686" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles">
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_rcc.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_gpio.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_dma.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_cortex.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_adc.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_can.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_crc.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_cryp.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_dma2d.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_dac.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_dcmi.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_eth.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_flash.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_sram.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_nor.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_nand.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_pccard.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_sdram.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_hash.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_i2c.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_i2s.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_iwdg.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_ltdc.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_pwr.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_rng.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_rtc.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_sai.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_sd.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_spi.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_tim.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_uart.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_usart.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_irda.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_smartcard.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_wwdg.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_pcd.h"/>
+									<listOptionValue builtIn="false" value="stm32f4xx_hal_hcd.h"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.231795348" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1156453200" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.434772406" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.603480221" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1901361506" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.2082503357" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.757704852" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1302138200" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver">
+								<option id="gnu.both.lib.option.flags.1339041371" name="Archiver flags" superClass="gnu.both.lib.option.flags" value="-r -c -s" valueType="string"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.679917736" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1039180435" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="LibSTM32F4xx.cdt.managedbuild.target.gnu.cross.exe.1800225791" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369;cdt.managedbuild.config.gnu.cross.exe.debug.1116461369.;cdt.managedbuild.tool.gnu.cross.c.compiler.1590210248;cdt.managedbuild.tool.gnu.c.compiler.input.231795348">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/LibSTM32F4xx"/>
+		</configuration>
+		<configuration configurationName="Debug407"/>
+	</storageModule>
+</cproject>
