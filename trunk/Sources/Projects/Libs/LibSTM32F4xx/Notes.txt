@@ -1,0 +1,22 @@
+HAL Lib from STM32Cube_FW_F4_V1.1.0
+  Download and install seperatly to update sources.
+  Needed sources to build are in repositiory.
+
+RefreshFiles.bat to get source files from ST download package
+  Needs path to top folder of downloaded package.
+  E.g. C:\STM32Cube_FW_F4_V1.1.0.
+
+stm32f4xx_hal_conf.h modified
+  In Includes subfolder and doesn't get refreshed with RefreshFiles.bat
+
+Build without ETH module
+  stm32f4xx_hal_conf.h defines macros for ETH which user might want to change.
+  
+User needs to provide few functions
+  LibSTM32F4xx_GetHSEValue() and LibSTM32F4xx_GetExternalClockValue()
+  must be implemented in user's application.
+  E.g.
+  uint32_t LibSTM32F4xx_GetHSEValue() { return HSE_VALUE; }
+  uint32_t LibSTM32F4xx_GetExternalClockValue() { return EXTERNAL_CLOCK_VALUE; }
+  
+  
