@@ -25,11 +25,129 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
+#include "stdafx.h"
 #include "WinUSBCommSTM32F4.h"
+#include <string.h>
+
+enum EWinUSBCommSTM32F4Flags
+{
+  wucstmflNone        = 0x00,
+  wucstmflTxOverflow  = 0x01,
+  wucstmflRxOverflow  = 0x02,
+};
+
+static void winusbcommstm32f4_HostInit(SCommLayer *psCommLayer)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  psThis->m_byPendingCommand = winusbcommcommandNone;
+  psThis->m_byState = winusbcommstateIdle;
+  psThis->m_byFlags = wucstmflNone;
+  psThis->m_dwExpectedByteCount = 0;
+  psThis->m_dwReceivedByteCount = 0;
+  psThis->m_dwSendByteCount = 0;
+  psThis->m_dwSentByteCount = 0;
+  psThis->m_pbyReceivePtr = psThis->m_pbyBuffer;
+  psThis->m_pbySendPtr = psThis->m_pbyBuffer;
+}
+static COMMCOUNT winusbcommstm32f4_CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  return psThis->m_dwBufferSizeInBytes - 4;
+}
+static void winusbcommstm32f4_PacketStart(SCommLayer *psCommLayer)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  psThis->m_dwSendByteCount = 0;
+  psThis->m_dwSentByteCount = 0;
+  psThis->m_pbySendPtr = psThis->m_pbyBuffer;
+  psThis->m_byFlags &= ~wucstmflTxOverflow;
+}
+static void winusbcommstm32f4_Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  COMMCOUNT cntBufferSize = winusbcommstm32f4_CommGetBufferSize(psCommLayer, 0);
+
+  if ( psThis->m_byFlags & wucstmflTxOverflow )
+  {
+    return;
+  }
+  if ( (psThis->m_dwSendByteCount + cntByteCount) > cntBufferSize )
+  {
+    psThis->m_byFlags |= wucstmflTxOverflow;
+    return;
+  }
+  memmove(psThis->m_pbySendPtr, pbyData, cntByteCount);
+  psThis->m_dwSendByteCount += cntByteCount;
+}
+static void winusbcommstm32f4_PacketEnd(SCommLayer *psCommLayer)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  if ( psThis->m_byFlags & wucstmflTxOverflow )
+  {
+    return;
+  }
+  DWORD2LSB(psThis->m_dwSendByteCount, psThis->m_pbyBuffer);
+  psThis->m_dwSentByteCount = 0;
+  psThis->m_byState = winusbcommstateSending;
+  //USBD_LL_Transmit(&USBD_Device, WINUSBCOMM_EPIN_ADDR, USBD_Device.pClassData, WINUSBCOMM_MAX_FS_PACKET);
+}
+static ECommStatus winusbcommstm32f4_TransmitProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  if ( winusbcommstateSending != psThis->m_byState )
+  {
+    return commstatusIdle;
+  }
+  if ( psThis->m_dwSentByteCount < psThis->m_dwSendByteCount )
+  {
+    return commstatusActive;
+  }
+  psThis->m_byState = winusbcommstateIdle;
+  return commstatusIdle;
+}
+static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  if ( winusbcommstateReceiving != psThis->m_byState )
+  {
+    return commstatusIdle;
+  }
+  if ( psThis->m_dwExpectedByteCount == psThis->m_dwReceivedByteCount )
+  {
+    psThis->m_byState = winusbcommstateProcessing;
+    return commstatusNewPacket;
+  }
+  return commstatusActive;
+}
+static void winusbcommstm32f4_OnData(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+}
+static void winusbcommstm32f4_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+}
+static void winusbcommstm32f4_Disconnect(SCommLayer *psCommLayer)
+{
+  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+}
+
 
 static const ICommLayer sc_iCommLayerWinUSBCommSTM32F4 =
 {
-
+  COMM_EVENT_NULL,
+  winusbcommstm32f4_HostInit,
+  winusbcommstm32f4_CommGetBufferSize,
+  winusbcommstm32f4_PacketStart,
+  winusbcommstm32f4_Send,
+  winusbcommstm32f4_PacketEnd,
+  winusbcommstm32f4_TransmitProcess,
+  winusbcommstm32f4_ReceiveProcess,
+  COMM_EVENT_NULL,
+  winusbcommstm32f4_OnData,
+  winusbcommstm32f4_Store,
+  COMM_EVENT_NULL,
+  winusbcommstm32f4_Disconnect
 };
 
 void WinUSBCommSTM32F4_Init(SCommLayer *psCommLayer, SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4, void * pBuffer, unsigned long dwBufferSizeInBytes)
