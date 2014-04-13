@@ -25,28 +25,24 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __WINUSB_COMM_STM32F4_H__
-#define __WINUSB_COMM_STM32F4_H__
+#ifndef __WINUSB_COMM_2_SHARED_H__
+#define __WINUSB_COMM_2_SHARED_H__
 
-#include "CommCore.h"
-#include "WinUSBComm2Shared.h"
-
-///< Type for WinUSBComm USB interface data transfer context
-typedef struct _SWinUSBCommSTM32F4
+typedef enum _EWinUSBComm2Command
 {
-  unsigned char *m_pbyBuffer;
-  unsigned long m_dwBufferSizeInBytes;
-  unsigned long m_dwExpectedByteCount;  ///< Current packet length
-  unsigned char *m_pbyReceivePtr;       ///< Current receive position
-  unsigned long m_dwReceivedByteCount;  ///< Received since beginning of the packet
-  unsigned long m_dwSendByteCount;      ///< Size of packet to send
-  unsigned char *m_pbySendPtr;          ///< Current send position
-  unsigned long m_dwSentByteCount;      ///< Sent since packet received
-  unsigned char m_byPendingCommand;     ///< Of EWinUSBComm2Command
-  unsigned char m_byState;              ///< Of EWinUSBComm2State
-  unsigned char m_byFlags;              ///< Of EWinUSBCommSTM32F4Flags
-}SWinUSBCommSTM32F4;
+  winusbcommcommandNone,              ///< Device does nothing
+  winusbcommcommandReset,             ///< Device aborts all requests and commands and resets in state ready for new packet reception
+  winusbcommcommandGetPendingCommand, ///< Device sends 1 byte with value of current command (Of EWinUSBComm2Command)
+  winusbcommcommandGetState,          ///< Device sends 1 byte with value of current state (Of EWinUSBComm2State)
+}EWinUSBComm2Command;
 
-void WinUSBCommSTM32F4_Init(SCommLayer *psCommLayer, SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4, void * pBuffer, unsigned long dwBufferSizeInBytes);
+typedef enum _EWinUSBComm2State
+{
+  winusbcommstateIdle,        ///< Device will probably enter receiving state
+  winusbcommstateReceiving,   ///< Device is waiting for new packet
+  winusbcommstateProcessing,  ///< Device has properly received a packet and is now being processed
+  winusbcommstateSending,     ///< Device has finished processing and has response packet ready to send or is sending it
+}EWinUSBComm2State;
 
-#endif  //  __WINUSB_COMM_STM32F4_H__
+
+#endif // __WINUSB_COMM_2_SHARED_H__
