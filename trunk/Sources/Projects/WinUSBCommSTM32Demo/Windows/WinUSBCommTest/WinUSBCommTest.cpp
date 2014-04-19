@@ -44,6 +44,7 @@
 #include <Setupapi.h>
 
 #include "WinUSBCommShared.h"
+#include "WinUSBComm2Shared.h"
 
 #define PTRACE(...)
 
@@ -372,7 +373,7 @@ done:
 
 }
 //////////////////////////////////////////////////////////////////////////
-BOOL GetDataFromDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, EWinUSBCommControl eWinUSBCommControl, BYTE *pbyData, WORD wNumBytesCount)
+BOOL GetDataFromDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, BYTE byWinUSBCommControl, BYTE *pbyData, WORD wNumBytesCount)
 {
   if ( 0 == wNumBytesCount )
   {
@@ -396,7 +397,7 @@ BOOL GetDataFromDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, EWinUSBCo
 
   //Create the setup packet
   SetupPacket.RequestType = (BMREQUEST_DEVICE_TO_HOST << 7) | (BMREQUEST_VENDOR << 5) | BMREQUEST_TO_INTERFACE;
-  SetupPacket.Request = eWinUSBCommControl;
+  SetupPacket.Request = byWinUSBCommControl;
   SetupPacket.Value = 0;
   SetupPacket.Index = 0; // specify WinUSBComm interface
   SetupPacket.Length = wNumBytesCount;
@@ -535,6 +536,11 @@ int _tmain(int argc, _TCHAR* argv[])
   }
 
   BOOL bRepeat = FALSE;
+
+  BYTE byVersion = winusbcommversion1;
+
+  bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbcomm2commandGetVersion, (BYTE *)&byVersion, sizeof(byVersion));
+
 
   DWORD dwMaxBufferSize = 0;
   bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbctrlGETBUFFSIZE, (BYTE *)&dwMaxBufferSize, sizeof(dwMaxBufferSize));
