@@ -28,20 +28,32 @@
 #ifndef __WINUSB_COMM_2_SHARED_H__
 #define __WINUSB_COMM_2_SHARED_H__
 
+typedef enum _EWinUSBCommVersion
+{
+  winusbcommversion1a,  ///< Previous version (only one) don't have GetVersion command.
+  winusbcommversion1b,  ///< It has winusbctrlGETSTATUS command which might return 0, 1 or 2.
+  winusbcommversion1c,  ///< All these values are understood as v1.
+  winusbcommversion1,   ///< v1.
+  winusbcommversion2,   ///< v2.
+}EWinUSBCommVersion;
+
 typedef enum _EWinUSBComm2Command
 {
-  winusbcommcommandNone,              ///< Device does nothing
-  winusbcommcommandReset,             ///< Device aborts all requests and commands and resets in state ready for new packet reception
-  winusbcommcommandGetPendingCommand, ///< Device sends 1 byte with value of current command (Of EWinUSBComm2Command)
-  winusbcommcommandGetState,          ///< Device sends 1 byte with value of current state (Of EWinUSBComm2State)
+  winusbcomm2commandNone,                ///< Device does nothing
+  winusbcomm2commandReset = 0x80,        ///< Device aborts all requests and commands and resets in state ready for new packet reception
+  winusbcomm2commandGetVersion,          ///< Device sends 1 byte with WinUSB Comm version
+  winusbcomm2commandGetPendingCommand,   ///< Device sends 1 byte with value of current command (Of EWinUSBComm2Command)
+  winusbcomm2commandGetState,            ///< Device sends 1 byte with value of current state (Of EWinUSBComm2State)
+  winusbcomm2commandGetReturnSize,       ///< Device sends 4 bytes with return packet size (little endian - LSByte first in buffer)
+  winusbcomm2commandFollowingPacketSize, ///< Device receives 4 bytes with following packet size (little endian - LSByte first in buffer)
 }EWinUSBComm2Command;
 
 typedef enum _EWinUSBComm2State
 {
-  winusbcommstateIdle,        ///< Device will probably enter receiving state
-  winusbcommstateReceiving,   ///< Device is waiting for new packet
-  winusbcommstateProcessing,  ///< Device has properly received a packet and is now being processed
-  winusbcommstateSending,     ///< Device has finished processing and has response packet ready to send or is sending it
+  winusbcomm2stateIdle,        ///< Device will probably enter receiving state
+  winusbcomm2stateReceiving,   ///< Device is waiting for new packet
+  winusbcomm2stateProcessing,  ///< Device has properly received a packet and is now being processed
+  winusbcomm2stateSending,     ///< Device has finished processing and has response packet ready to send or is sending it
 }EWinUSBComm2State;
 
 
