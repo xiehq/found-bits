@@ -31,6 +31,9 @@
 #include "CommCore.h"
 #include "WinUSBComm2Shared.h"
 
+typedef void (*pfnWinUSBCommSTM32F4Receive)(void *pParam, unsigned char *pbyBuffer, unsigned long dwCount);
+typedef void (*pfnWinUSBCommSTM32F4Send)(void *pParam, unsigned char *pbyBuffer, unsigned long dwCount);
+
 ///< Type for WinUSBComm USB interface data transfer context
 typedef struct _SWinUSBCommSTM32F4
 {
@@ -45,6 +48,9 @@ typedef struct _SWinUSBCommSTM32F4
   unsigned char m_byPendingCommand;     ///< Of EWinUSBComm2Command
   unsigned char m_byState;              ///< Of EWinUSBComm2State
   unsigned char m_byFlags;              ///< Of EWinUSBCommSTM32F4Flags
+  pfnWinUSBCommSTM32F4Receive m_pfnReceiveCallback; ///< Called from winusbcommstm32f4_ReceiveProcess to receive data
+  pfnWinUSBCommSTM32F4Send m_pfnSendCallback;       ///< Called from winusbcommstm32f4_PacketEnd to send data
+  void *m_pCallbackParam;               ///< Parameter to call transfer callbacks with
 }SWinUSBCommSTM32F4;
 
 void WinUSBCommSTM32F4_Init(SCommLayer *psCommLayer, SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4, void * pBuffer, unsigned long dwBufferSizeInBytes);
