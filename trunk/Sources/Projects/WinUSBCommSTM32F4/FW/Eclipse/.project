@@ -60,6 +60,11 @@
 			<locationURI>PARENT-3-PROJECT_LOC/Libs/CommCore/CommCore.h</locationURI>
 		</link>
 		<link>
+			<name>AddToRfrsh/WinUSBComm2Shared.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/WinUSBComm/WinUSBComm2Shared.h</locationURI>
+		</link>
+		<link>
 			<name>AddToRfrsh/WinUSBCommSTM32F4.c</name>
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/Libs/WinUSBComm/WinUSBCommSTM32F4.c</locationURI>

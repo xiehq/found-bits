@@ -11,4 +11,12 @@
 #define _countof(a) (sizeof(a)/sizeof(a[0]))
 #endif
 
+#ifndef DWORD2LSB
+#define DWORD2LSB(dw, buff) *(unsigned long *)(buff) = dw
+#endif
+
+#ifndef LSB2DWORD
+#define LSB2DWORD(dw, buff) dw = *(unsigned long *)(buff)
+#endif
+
 #endif  //  __STDAFX_H__
