@@ -340,7 +340,7 @@ BOOL QueryDeviceEndpoints (WINUSB_INTERFACE_HANDLE hDeviceHandle, PIPE_ID* pipei
   return bResult;
 }
 //////////////////////////////////////////////////////////////////////////
-BOOL SendDatatoDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, EWinUSBCommControl eWinUSBCommControl, BYTE *pbyData = NULL, WORD wNumBytesCount = 0)
+BOOL SendDatatoDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, BYTE byWinUSBCommControl, BYTE *pbyData = NULL, WORD wNumBytesCount = 0)
 {
   if (hDeviceHandle==INVALID_HANDLE_VALUE)
   {
@@ -354,7 +354,7 @@ BOOL SendDatatoDefaultEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, EWinUSBCom
 
   //Create the setup packet
   SetupPacket.RequestType = (BMREQUEST_HOST_TO_DEVICE << 7) | (BMREQUEST_VENDOR << 5) | BMREQUEST_TO_INTERFACE;
-  SetupPacket.Request = eWinUSBCommControl;
+  SetupPacket.Request = byWinUSBCommControl;
   SetupPacket.Value = 0;
   SetupPacket.Index = 0; // specify WinUSBComm interface
   SetupPacket.Length = wNumBytesCount;
@@ -416,9 +416,9 @@ done:
 
 }
 //////////////////////////////////////////////////////////////////////////
-BOOL WriteToBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULONG* pcbWritten, BYTE *pbyData, WORD wNumBytesCount)
+BOOL WriteToBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULONG* pcbWritten, BYTE *pbyData, DWORD dwNumBytesCount)
 {
-  if ( 0 == wNumBytesCount )
+  if ( 0 == dwNumBytesCount )
   {
     return TRUE;
   }
@@ -436,13 +436,13 @@ BOOL WriteToBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULON
   BOOL bResult = TRUE;
   ULONG cbSent = 0;
 
-  bResult = WinUsb_WritePipe(hDeviceHandle, *pID, pbyData, wNumBytesCount, &cbSent, 0);
+  bResult = WinUsb_WritePipe(hDeviceHandle, *pID, pbyData, dwNumBytesCount, &cbSent, 0);
   if(!bResult)
   {
     goto done;
   }
 
-  PTRACE("Wrote to pipe %d: %d bytes\nActual data transferred: %d.\n", *pID, (DWORD)wNumBytesCount, cbSent);
+  PTRACE("Wrote to pipe %d: %d bytes\nActual data transferred: %d.\n", *pID, dwNumBytesCount, cbSent);
   *pcbWritten = cbSent;
 
 
@@ -451,9 +451,9 @@ done:
 
 }
 //////////////////////////////////////////////////////////////////////////
-BOOL ReadFromBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULONG cbSize, BYTE *pbyData, WORD wNumBytesCount)
+BOOL ReadFromBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULONG cbSize, BYTE *pbyData, DWORD dwNumBytesCount)
 {
-  if ( 0 == wNumBytesCount )
+  if ( 0 == dwNumBytesCount )
   {
     return TRUE;
   }
@@ -471,13 +471,13 @@ BOOL ReadFromBulkEndpoint(WINUSB_INTERFACE_HANDLE hDeviceHandle, UCHAR* pID, ULO
   BOOL bResult = TRUE;
   ULONG cbRead = 0;
 
-  bResult = WinUsb_ReadPipe(hDeviceHandle, *pID, pbyData, wNumBytesCount, &cbRead, 0);
+  bResult = WinUsb_ReadPipe(hDeviceHandle, *pID, pbyData, dwNumBytesCount, &cbRead, 0);
   if(!bResult)
   {
     goto done;
   }
 
-  PTRACE("Read from pipe %d: %d bytes\nActual data read: %d.\n", *pID, wNumBytesCount, cbRead);
+  PTRACE("Read from pipe %d: %d bytes\nActual data read: %d.\n", *pID, dwNumBytesCount, cbRead);
 
 
 done:
@@ -540,10 +540,15 @@ int _tmain(int argc, _TCHAR* argv[])
   BYTE byVersion = winusbcommversion1;
 
   bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbcomm2commandGetVersion, (BYTE *)&byVersion, sizeof(byVersion));
+  
+  EWinUSBCommVersion eVersion = ( byVersion <= winusbcommversion1 ) ? winusbcommversion1 : (EWinUSBCommVersion)byVersion;
 
+  BYTE byGetCommBufferSizeCmd = ( winusbcommversion1 == eVersion ) ? winusbctrlGETBUFFSIZE : winusbcomm2commandGetBufferSize;
+  BYTE byResetCmd = ( winusbcommversion1 == eVersion ) ? winusbctrlRESET : winusbcomm2commandReset;
+  BYTE byGetReturnSizeCmd = ( winusbcommversion1 == eVersion ) ? winusbctrlGETDATASIZE : winusbcomm2commandGetReturnSize;
 
   DWORD dwMaxBufferSize = 0;
-  bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbctrlGETBUFFSIZE, (BYTE *)&dwMaxBufferSize, sizeof(dwMaxBufferSize));
+  bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, byGetCommBufferSizeCmd, (BYTE *)&dwMaxBufferSize, sizeof(dwMaxBufferSize));
   if(!bResult)
   {
     goto done;
@@ -561,21 +566,33 @@ int _tmain(int argc, _TCHAR* argv[])
   DWORD dwNumLoops = 100;
   QueryPerformanceCounter(&countStart);
 
-  // send some data over control EP
-  BYTE abyCtrlEPTestData[4] = { 4, 3, '2', '1' };
-  bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlEXAMPLEDATA4B, abyCtrlEPTestData, 4);
-  if(!bResult)
+  if ( winusbcommversion1 == eVersion )
   {
-    goto done;
-  }
-
-  do
-  {
-    // put device to receiving state
-    bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlRESET);
+    // send some data over control EP
+    BYTE abyCtrlEPTestData[4] = { 4, 3, '2', '1' };
+    bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlEXAMPLEDATA4B, abyCtrlEPTestData, 4);
     if(!bResult)
     {
       goto done;
+    }
+  }
+  do
+  {
+    // put device to receiving state
+    bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, byResetCmd);
+    if(!bResult)
+    {
+      goto done;
+    }
+
+    if ( winusbcommversion1 != eVersion )
+    {
+      // notify device how much data will be sent next
+      bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbcomm2commandFollowingPacketSize, (BYTE *)&dwMaxBufferSize, 4);
+      if(!bResult)
+      {
+        goto done;
+      }
     }
 
     // send the data
@@ -587,39 +604,46 @@ int _tmain(int argc, _TCHAR* argv[])
 
     dwNumDataTransered += dwMaxBufferSize;
 
-    // notify device that all is sent
-    bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlTXDONE);
-    if(!bResult)
+    if ( winusbcommversion1 == eVersion )
     {
-      goto done;
-    }
-
-    // poll status and wait until idle
-    BYTE byCommStatus = winusbcommPROCESSING;
-    while ( winusbcommPROCESSING == byCommStatus )
-    {
-      bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbctrlGETSTATUS, &byCommStatus, sizeof(byCommStatus));
+      // notify device that all is sent
+      bResult = SendDatatoDefaultEndpoint(hWinUSBHandle, winusbctrlTXDONE);
       if(!bResult)
       {
         goto done;
       }
-      dwNumDataTransered += 1;
-    }
 
-    // check if idle
-    if ( winusbcommIDLE != byCommStatus )
-    {
-      goto done;
+      // poll status and wait until idle
+      BYTE byCommStatus = winusbcommPROCESSING;
+      while ( winusbcommPROCESSING == byCommStatus )
+      {
+        bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbctrlGETSTATUS, &byCommStatus, sizeof(byCommStatus));
+        if(!bResult)
+        {
+          goto done;
+        }
+        dwNumDataTransered += 1;
+        // timeout here if needed
+      }
+
+      // check if idle
+      if ( winusbcommIDLE != byCommStatus )
+      {
+        goto done;
+      }
     }
 
     // get how much data is to read from device
     DWORD dwResponseByteCount = 0;
-    bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, winusbctrlGETDATASIZE, (BYTE *)&dwResponseByteCount, sizeof(dwResponseByteCount));
-    if(!bResult)
+    do
     {
-      goto done;
-    }
-
+      bResult = GetDataFromDefaultEndpoint(hWinUSBHandle, byGetReturnSizeCmd, (BYTE *)&dwResponseByteCount, sizeof(dwResponseByteCount));
+      if(!bResult)
+      {
+        goto done;
+      }
+      // timeout here if needed
+    } while ( !dwResponseByteCount );
     dwNumDataTransered += sizeof(dwResponseByteCount);
     
     // response byte count must match sent count; application XORs the data and sends it back
