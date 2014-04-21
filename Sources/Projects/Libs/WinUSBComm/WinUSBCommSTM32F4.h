@@ -31,26 +31,23 @@
 #include "CommCore.h"
 #include "WinUSBComm2Shared.h"
 
-typedef void (*pfnWinUSBCommSTM32F4Receive)(void *pParam, unsigned char *pbyBuffer, unsigned long dwCount);
-typedef void (*pfnWinUSBCommSTM32F4Send)(void *pParam, unsigned char *pbyBuffer, unsigned long dwCount);
-
 ///< Type for WinUSBComm USB interface data transfer context
 typedef struct _SWinUSBCommSTM32F4
 {
-  unsigned char *m_pbyBuffer;
-  unsigned long m_dwBufferSizeInBytes;
-  unsigned long m_dwExpectedByteCount;  ///< Current packet length
-  unsigned char *m_pbyReceivePtr;       ///< Current receive position
-  unsigned long m_dwReceivedByteCount;  ///< Received since beginning of the packet
-  unsigned long m_dwSendByteCount;      ///< Size of packet to send
-  unsigned char *m_pbySendPtr;          ///< Current send position
-  unsigned long m_dwSentByteCount;      ///< Sent since packet received
-  unsigned char m_byPendingCommand;     ///< Of EWinUSBComm2Command
-  unsigned char m_byState;              ///< Of EWinUSBComm2State
-  unsigned char m_byFlags;              ///< Of EWinUSBCommSTM32F4Flags
-  pfnWinUSBCommSTM32F4Receive m_pfnReceiveCallback; ///< Called from winusbcommstm32f4_ReceiveProcess to receive data
-  pfnWinUSBCommSTM32F4Send m_pfnSendCallback;       ///< Called from winusbcommstm32f4_PacketEnd to send data
-  void *m_pCallbackParam;               ///< Parameter to call transfer callbacks with
+  unsigned char *m_pbyBuffer;               ///< Pointer to comm buffer
+  unsigned long m_dwBufferSizeInBytes;      ///< Size of comm buffer
+
+  unsigned char *m_pbyStorePtr;             ///< Where to put incoming data in Store calls from upper layers while receiving
+  unsigned char *m_pbyWritePtr;             ///< Where to put response data in Send calls from upper layers while processing
+
+  unsigned long m_dwExpectedByteCountUSB;   ///< Current packet length
+  unsigned char *m_pbyReceivePtrUSB;        ///< Current receive position
+
+  unsigned long m_dwSendByteCountUSB;       ///< Size of packet to send
+  unsigned char *m_pbySendPtrUSB;           ///< Current send position
+
+  unsigned char m_byFlags;                  ///< Of EWinUSBCommSTM32F4Flags
+  unsigned char m_byStateUSB;               ///< Of EWinUSBComm2State
 }SWinUSBCommSTM32F4;
 
 void WinUSBCommSTM32F4_Init(SCommLayer *psCommLayer, SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4, void * pBuffer, unsigned long dwBufferSizeInBytes);

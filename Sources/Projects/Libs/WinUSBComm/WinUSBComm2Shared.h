@@ -42,18 +42,19 @@ typedef enum _EWinUSBComm2Command
   winusbcomm2commandNone,                ///< Device does nothing
   winusbcomm2commandReset = 0x80,        ///< Device aborts all requests and commands and resets in state ready for new packet reception
   winusbcomm2commandGetVersion,          ///< Device sends 1 byte with WinUSB Comm version
-  winusbcomm2commandGetPendingCommand,   ///< Device sends 1 byte with value of current command (Of EWinUSBComm2Command)
   winusbcomm2commandGetState,            ///< Device sends 1 byte with value of current state (Of EWinUSBComm2State)
+  winusbcomm2commandGetBufferSize,       ///< Device sends 4 bytes with comm buffer size (little endian - LSByte first in buffer)
   winusbcomm2commandGetReturnSize,       ///< Device sends 4 bytes with return packet size (little endian - LSByte first in buffer)
   winusbcomm2commandFollowingPacketSize, ///< Device receives 4 bytes with following packet size (little endian - LSByte first in buffer)
 }EWinUSBComm2Command;
 
 typedef enum _EWinUSBComm2State
 {
-  winusbcomm2stateIdle,        ///< Device will probably enter receiving state
-  winusbcomm2stateReceiving,   ///< Device is waiting for new packet
-  winusbcomm2stateProcessing,  ///< Device has properly received a packet and is now being processed
-  winusbcomm2stateSending,     ///< Device has finished processing and has response packet ready to send or is sending it
+  winusbcomm2stateIdle,         ///< Device will probably enter receiving state
+  winusbcomm2stateReceiving,    ///< Device is waiting for new packet
+  winusbcomm2stateProcessing,   ///< Device has properly received a packet and is now being processed
+  winusbcomm2stateSending,      ///< Device has finished processing and has response packet ready to send or is sending it
+  winusbcomm2stateError,        ///< Device in bad state
 }EWinUSBComm2State;
 
 
