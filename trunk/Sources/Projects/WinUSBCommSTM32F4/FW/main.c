@@ -83,10 +83,6 @@ int main()
   COMMCOUNT cntNumBytes = 0;
   ECommStatus eCommStatus = commstatusIdle;
 
-  sSTM32F4USB.m_sWinUSBCommSTM32F4.m_pCallbackParam = &USBD_Device;
-  sSTM32F4USB.m_sWinUSBCommSTM32F4.m_pfnReceiveCallback = &USBD_WinUSBComm_Receive;
-  sSTM32F4USB.m_sWinUSBCommSTM32F4.m_pfnSendCallback= &USBD_WinUSBComm_Send;
-
   USBD_Device.pUserData = &sSTM32F4USB;
 
   WinUSBCommSTM32F4_Init(&sCommLayerWinUSBComm, &sSTM32F4USB.m_sWinUSBCommSTM32F4, &_sram, 0x4000); // 16kB comm buffer
@@ -129,12 +125,13 @@ int main()
 
     CommStack_PacketStart(hComm);
     // TODO: process and send response packet
+    CommStack_Send(hComm, &_sram, cntNumBytes);
     CommStack_PacketEnd(hComm);
 
-    while ( commstatusActive == eCommStatus )
+    do
     {
       eCommStatus = CommStack_TransmitProcess(hComm, &cntNumBytes);
-    }
+    }while ( commstatusActive == eCommStatus );
   }
 
   //USBD_DeInit(&USBD_Device);
