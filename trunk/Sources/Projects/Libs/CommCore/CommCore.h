@@ -105,6 +105,21 @@ typedef struct _ICommLayer
                                                 ///< Same call to lower layer is made by framework regardless if layer implements this call.
 }ICommLayer;
 
+/*
+layerImpl_ClientInit,            // ClientInit
+layerImpl_HostInit,              // HostInit
+layerImpl_CommGetBufferSize,     // CommGetBufferSize
+layerImpl_PacketStart,           // PacketStart
+layerImpl_Send,                  // Send
+layerImpl_PacketEnd,             // PacketEnd
+layerImpl_TransmitProcess,       // TransmitProcess
+layerImpl_ReceiveProcess,        // ReceiveProcess
+layerImpl_OnNewPacket,           // OnNewPacket
+layerImpl_OnData,                // OnData
+layerImpl_Store,                 // Store
+layerImpl_OnPacketEnd,           // OnPacketEnd
+layerImpl_Disconnect             // Disconnect
+*/
 
 #define COMM_EVENT_NULL         (pfnCommEvent)NULL
 #define COMM_TRANSFER_NULL      (pfnCommTransfer)NULL
