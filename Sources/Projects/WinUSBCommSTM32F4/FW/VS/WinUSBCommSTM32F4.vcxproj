@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ADFA0173-D1CD-4C82-8E62-739C4533D546}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>\Tools\Compilers\ARMGCC\gcc-arm-none-eabi-4_8-2013q4-20131204-win32\bin\arm-none-eabi-gcc.exe</NMakeBuildCommandLine>
+    <NMakeOutput>WinUSBCommSTM32F4.out</NMakeOutput>
+    <NMakeCleanCommandLine>cleanCMD</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rbldCMD</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>STM32F407;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>\some\Path;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>buildCMD</NMakeBuildCommandLine>
+    <NMakeOutput>WinUSBCommSTM32F4.out</NMakeOutput>
+    <NMakeCleanCommandLine>cleanCMD</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rbldCMD</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>STM32F407;WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>\some\Path;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\ExtLib\startup_stm32f407xx.s" />
+    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Libs\CommCore\CommCore.c" />
+    <ClCompile Include="..\..\..\Libs\WinUSBComm\WinUSBCommSTM32F4.c" />
+    <ClCompile Include="..\ExtLib\system_stm32f4xx.c" />
+    <ClCompile Include="..\ExtLib\usbd_core.c" />
+    <ClCompile Include="..\ExtLib\usbd_ctlreq.c" />
+    <ClCompile Include="..\ExtLib\usbd_ioreq.c" />
+    <CustomBuild Include="..\main.c" />
+    <ClCompile Include="..\stm32f4xx_it.c" />
+    <ClCompile Include="..\usbd_conf.c" />
+    <ClCompile Include="..\usbd_desc.c" />
+    <ClCompile Include="..\usbd_WinUSBComm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Libs\CommCore\CommCore.h" />
+    <ClInclude Include="..\..\..\Libs\WinUSBComm\WinUSBComm2Shared.h" />
+    <ClInclude Include="..\..\..\Libs\WinUSBComm\WinUSBCommSTM32F4.h" />
+    <ClInclude Include="..\Conf.h" />
+    <ClInclude Include="..\ExtLib\usbd_core.h" />
+    <ClInclude Include="..\ExtLib\usbd_ctlreq.h" />
+    <ClInclude Include="..\ExtLib\usbd_def.h" />
+    <ClInclude Include="..\ExtLib\usbd_ioreq.h" />
+    <ClInclude Include="..\stdafx.h" />
+    <ClInclude Include="..\stm32f4xx_hal_conf.h" />
+    <ClInclude Include="..\usbd_conf.h" />
+    <ClInclude Include="..\usbd_desc.h" />
+    <ClInclude Include="..\usbd_WinUSBComm.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

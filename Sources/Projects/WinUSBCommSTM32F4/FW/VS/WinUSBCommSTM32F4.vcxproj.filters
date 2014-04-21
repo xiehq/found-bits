@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ExtLib">
+      <UniqueIdentifier>{45f7eb8d-967d-4c65-8a47-5bd44d15ab43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AddToRfrsh">
+      <UniqueIdentifier>{163e1416-5507-4c42-91bc-6a61e93c0d1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.txt" />
+    <None Include="..\ExtLib\startup_stm32f407xx.s">
+      <Filter>ExtLib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\stm32f4xx_it.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\usbd_conf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\usbd_desc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\usbd_WinUSBComm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ExtLib\system_stm32f4xx.c">
+      <Filter>ExtLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ExtLib\usbd_core.c">
+      <Filter>ExtLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ExtLib\usbd_ctlreq.c">
+      <Filter>ExtLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ExtLib\usbd_ioreq.c">
+      <Filter>ExtLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Libs\WinUSBComm\WinUSBCommSTM32F4.c">
+      <Filter>AddToRfrsh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Libs\CommCore\CommCore.c">
+      <Filter>AddToRfrsh</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32f4xx_hal_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\usbd_conf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\usbd_desc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\usbd_WinUSBComm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ExtLib\usbd_core.h">
+      <Filter>ExtLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ExtLib\usbd_ctlreq.h">
+      <Filter>ExtLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ExtLib\usbd_def.h">
+      <Filter>ExtLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ExtLib\usbd_ioreq.h">
+      <Filter>ExtLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Libs\WinUSBComm\WinUSBCommSTM32F4.h">
+      <Filter>AddToRfrsh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Libs\WinUSBComm\WinUSBComm2Shared.h">
+      <Filter>AddToRfrsh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Libs\CommCore\CommCore.h">
+      <Filter>AddToRfrsh</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\main.c">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
