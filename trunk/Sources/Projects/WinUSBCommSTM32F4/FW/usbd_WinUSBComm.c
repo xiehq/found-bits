@@ -121,6 +121,7 @@ static uint8_t  USBD_WinUSBComm_IsoINIncomplete (USBD_HandleTypeDef *pdev, uint8
 
 static uint8_t  USBD_WinUSBComm_IsoOutIncomplete (USBD_HandleTypeDef *pdev, uint8_t epnum);
 
+static uint8_t * USBD_WinUSBComm_GetUsrStrDescriptor(struct _USBD_HandleTypeDef *pdev, uint8_t index,  uint16_t *length);
 /**
   * @}
   */ 
@@ -146,6 +147,7 @@ USBD_ClassTypeDef  USBD_WinUSBComm_ClassDriver =
   USBD_WinUSBComm_GetCfgDesc,
   USBD_WinUSBComm_GetCfgDesc,
   USBD_WinUSBComm_GetDeviceQualifierDesc,
+  USBD_WinUSBComm_GetUsrStrDescriptor
 };
 
 /* USB WinUSBComm device Configuration Descriptor */
@@ -290,6 +292,48 @@ __ALIGN_BEGIN  uint8_t USBD_WinUSBComm_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER
   0x01,
   0x00,
 };
+
+__ALIGN_BEGIN uint8_t USBD_WinUSBComm_MS_OS_StringDescriptor[]  __ALIGN_END =
+{
+  0x12,           //  bLength           1 0x12  Length of the descriptor
+  0x03,           //  bDescriptorType   1 0x03  Descriptor type
+                  //  qwSignature      14 ‘MSFT100’ Signature field
+  0x4D, 0x00,     //  'M'
+  0x53, 0x00,     //  'S'
+  0x46, 0x00,     //  'F'
+  0x54, 0x00,     //  'T'
+  0x31, 0x00,     //  '1'
+  0x30, 0x00,     //  '0'
+  0x30, 0x00,     //  '0'
+  MS_VendorCode,  //  bMS_VendorCode    1 Vendor-specific Vendor code
+  0x00            //  bPad              1 0x00  Pad field
+};
+
+__ALIGN_BEGIN uint8_t USBD_WinUSBComm_CompatID_Desc[0x28]  __ALIGN_END =
+{
+                            //    +-- Offset in descriptor
+                            //    |             +-- Size
+                            //    v             v
+  0x28, 0x00, 0x00, 0x00,   //    0 dwLength    4 DWORD The length, in bytes, of the complete extended compat ID descriptor
+  0x00, 0x01,               //    4 bcdVersion  2 BCD The descriptor’s version number, in binary coded decimal (BCD) format
+  0x04, 0x00,               //    6 wIndex      2 WORD  An index that identifies the particular OS feature descriptor
+  0x01,                     //    8 bCount      1 BYTE  The number of custom property sections
+  0, 0, 0, 0, 0, 0, 0,      //    9 RESERVED    7 BYTEs Reserved
+                            //    =====================
+                            //                 16
+
+                                                    //   +-- Offset from function section start
+                                                    //   |                        +-- Size
+                                                    //   v                        v
+  0,                                                //   0  bFirstInterfaceNumber 1 BYTE  The interface or function number
+  0,                                                //   1  RESERVED              1 BYTE  Reserved
+  0x57, 0x49, 0x4E, 0x55, 0x53, 0x42, 0x00, 0x00,   //   2  compatibleID          8 BYTEs The function’s compatible ID      ("WINUSB")
+  0, 0, 0, 0, 0, 0, 0, 0,                           //  10  subCompatibleID       8 BYTEs The function’s subcompatible ID
+  0, 0, 0, 0, 0, 0,                                 //  18  RESERVED              6 BYTEs Reserved
+                                                    //  =================================
+                                                    //                           24
+};
+
 #endif  //  Descriptors
 
 static uint8_t s_byWinUSBCommVersion = winusbcommversion2;
@@ -426,6 +470,17 @@ static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTy
   case USB_REQ_TYPE_CLASS :
     switch (req->bRequest)
     {
+    case MS_VendorCode:
+      switch (req->wIndex)
+      {
+      case 0x04:
+        USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
+        break;
+      default:
+       USBD_CtlError(pdev , req);
+       return USBD_FAIL;
+      }
+      break;
     default:
        USBD_CtlError(pdev , req);
        return USBD_FAIL;
@@ -684,12 +739,30 @@ static uint8_t  USBD_WinUSBComm_DataOut (USBD_HandleTypeDef *pdev, uint8_t epnum
 * @param  length : pointer data length
 * @retval pointer to descriptor buffer
 */
-uint8_t  *USBD_WinUSBComm_GetDeviceQualifierDesc (uint16_t *length)
+static uint8_t  *USBD_WinUSBComm_GetDeviceQualifierDesc (uint16_t *length)
 {
   *length = sizeof (USBD_WinUSBComm_DeviceQualifierDesc);
   return USBD_WinUSBComm_DeviceQualifierDesc;
 }
 
+/**
+* @brief  GetUsrStrDescriptor
+*         return non standard string descriptor (OS String Descriptor)
+* @param  pdev: device instance
+* @param  index : descriptor index (0xEE for MS OS String Descriptor)
+* @param  length : pointer data length
+* @retval pointer to descriptor buffer
+*/
+static uint8_t * USBD_WinUSBComm_GetUsrStrDescriptor(struct _USBD_HandleTypeDef *pdev, uint8_t index,  uint16_t *length)
+{
+  *length = 0;
+  if ( 0xEE == index )
+  {
+    *length = sizeof (USBD_WinUSBComm_MS_OS_StringDescriptor);
+    return USBD_WinUSBComm_MS_OS_StringDescriptor;
+  }
+  return NULL;
+}
 /**
   * @}
   */ 
