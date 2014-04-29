@@ -463,29 +463,24 @@ static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTy
   SSTM32F4USB *psSTM32F4USB = (SSTM32F4USB *)pdev->pUserData;
   SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4 = &psSTM32F4USB->m_sWinUSBCommSTM32F4;
 
+//  if ( ( 0xC0 == req->bmRequest ) && ( MS_VendorCode == req->bRequest ) && ( 0x04 == req->wIndex ) )
+//  {
+//    if ( ( 0x10 != req->wLength ) || (  0x28 != req->wLength ) )
+//    {
+//      USBD_CtlError(pdev , req);
+//      return USBD_FAIL;
+//    }
+//    USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
+//    return USBD_OK;
+//  }
+
   switch (req->bmRequest & USB_REQ_TYPE_MASK)
   {
 
   /* Class request */
   case USB_REQ_TYPE_CLASS :
-    switch (req->bRequest)
-    {
-    case MS_VendorCode:
-      switch (req->wIndex)
-      {
-      case 0x04:
-        USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
-        break;
-      default:
        USBD_CtlError(pdev , req);
        return USBD_FAIL;
-      }
-      break;
-    default:
-       USBD_CtlError(pdev , req);
-       return USBD_FAIL;
-    }
-    break;
   /* Interface & Endpoint request */
   case USB_REQ_TYPE_STANDARD:
     switch (req->bRequest)
@@ -535,6 +530,29 @@ static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTy
     }
     break;
   case USB_REQ_TYPE_VENDOR:
+
+    if ( USB_REQ_RECIPIENT_DEVICE == (req->bmRequest & USB_REQ_RECIPIENT_MASK) )
+    {
+      switch (req->bRequest)
+      {
+      case MS_VendorCode:
+        switch (req->wIndex)
+        {
+        case 0x04:
+          USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
+          break;
+        default:
+         USBD_CtlError(pdev , req);
+         return USBD_FAIL;
+        }
+        break;
+      default:
+         USBD_CtlError(pdev , req);
+         return USBD_FAIL;
+      }
+      return USBD_OK;
+    }
+
     switch ( req->wIndex )
     {
     case stm32f4usbinterface_WinUSBComm:
