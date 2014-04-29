@@ -28,6 +28,8 @@
 #ifndef __WINUSB_COMM_2_SHARED_H__
 #define __WINUSB_COMM_2_SHARED_H__
 
+#define MS_VendorCode 'P'
+
 typedef enum _EWinUSBCommVersion
 {
   winusbcommversion1a,  ///< Previous version (only one) don't have GetVersion command.
