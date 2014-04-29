@@ -32,8 +32,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define USBD_VID                      0x16C0
-#define USBD_PID                      0x03F1
+#define USBD_VID                      0x06F9
+#define USBD_PID                      0x5555
 #define USBD_LANGID_STRING            0x0409
 #define USBD_MANUFACTURER_STRING      "Awesome Embedded Developer"
 #define USBD_PRODUCT_HS_STRING        "WinUSBComm Device in HS Mode"
