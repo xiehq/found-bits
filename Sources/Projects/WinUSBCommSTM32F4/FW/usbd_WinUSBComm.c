@@ -163,7 +163,7 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgHSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ] 
   0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
   0x01,   /* bConfigurationValue: */
   USBD_IDX_CONFIG_STR,   /* iConfiguration: */
-  0xC0,   /* bmAttributes: */
+  0x80,   /* bmAttributes: */
   0xFA,   /* MaxPower 500 mA */
 
   /********************  Mass Storage interface ********************/
@@ -205,7 +205,7 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgFSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ] 
   0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
   0x01,   /* bConfigurationValue: */
   USBD_IDX_CONFIG_STR,   /* iConfiguration: */
-  0xC0,   /* bmAttributes: */
+  0x80,   /* bmAttributes: */
   0xFA,   /* MaxPower 500 mA */
 
   /********************  Mass Storage interface ********************/
@@ -247,7 +247,7 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_OtherSpeedCfgDesc[USB_WINUSBCOMM_CONFIG_DE
   0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
   0x01,   /* bConfigurationValue: */
   USBD_IDX_CONFIG_STR,   /* iConfiguration: */
-  0xC0,   /* bmAttributes: */
+  0x80,   /* bmAttributes: */
   0xFA,   /* MaxPower 500 mA */
 
   /********************  Mass Storage interface ********************/
@@ -293,6 +293,11 @@ __ALIGN_BEGIN  uint8_t USBD_WinUSBComm_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER
   0x00,
 };
 
+// MS OS String descriptor to tell Windows that it may query for other descriptors
+// It's a standard string descriptor.
+// Windows will only query for OS descriptors once!
+// Delete the information about already queried devices in registry by deleting:
+// HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\VVVVPPPPRRRR
 __ALIGN_BEGIN uint8_t USBD_WinUSBComm_MS_OS_StringDescriptor[]  __ALIGN_END =
 {
   0x12,           //  bLength           1 0x12  Length of the descriptor
@@ -309,7 +314,9 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_MS_OS_StringDescriptor[]  __ALIGN_END =
   0x00            //  bPad              1 0x00  Pad field
 };
 
-__ALIGN_BEGIN uint8_t USBD_WinUSBComm_CompatID_Desc[0x28]  __ALIGN_END =
+
+// This associates winusb driver with the device
+__ALIGN_BEGIN uint8_t USBD_WinUSBComm_Extended_Compat_ID_OS_Desc[0x28]  __ALIGN_END =
 {
                             //    +-- Offset in descriptor
                             //    |             +-- Size
@@ -333,6 +340,68 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CompatID_Desc[0x28]  __ALIGN_END =
                                                     //  =================================
                                                     //                           24
 };
+
+// Properties are added to:
+// HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\VID_xxxx&PID_xxxx\sssssssss\Device Parameters
+// Use USBDeview or similar to uninstall
+
+__ALIGN_BEGIN uint8_t USBD_WinUSBComm_Extended_Properties_OS_Desc[0xCC]  __ALIGN_END =
+{
+  0xCC, 0x00, 0x00, 0x00,   // 0 dwLength   4 DWORD The length, in bytes, of the complete extended properties descriptor
+  0x00, 0x01,               // 4 bcdVersion 2 BCD   The descriptor’s version number, in binary coded decimal (BCD) format
+  0x05, 0x00,               // 6 wIndex     2 WORD  The index for extended properties OS descriptors
+  0x02, 0x00,               // 8 wCount     2 WORD  The number of custom property sections that follow the header section
+                            // ====================
+                            //             10
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  0x84, 0x00, 0x00, 0x00,   //  0       dwSize                  4 DWORD             The size of this custom properties section
+  0x01, 0x00, 0x00, 0x00,   //  4       dwPropertyDataType      4 DWORD             Property data format
+  0x28, 0x00,               //  8       wPropertyNameLength     2 DWORD             Property name length
+                            // ========================================
+                            //                                 10
+                            // 10       bPropertyName         PNL WCHAR[]           The property name
+  'D',0, 'e',0, 'v',0, 'i',0, 'c',0, 'e',0, 'I',0, 'n',0,
+  't',0, 'e',0, 'r',0, 'f',0, 'a',0, 'c',0, 'e',0, 'G',0,
+  'U',0, 'I',0, 'D',0, 0,0,
+                            // ========================================
+                            //                                 40 (0x28)
+
+  0x4E, 0x00, 0x00, 0x00,   // 10 + PNL dwPropertyDataLength    4 DWORD             Length of the buffer holding the property data
+                            // ========================================
+                            //                                  4
+    // 14 + PNL bPropertyData         PDL Format-dependent  Property data
+  '{',0, 'E',0, 'A',0, '0',0, 'B',0, 'D',0, '5',0, 'C',0,
+  '3',0, '-',0, '5',0, '0',0, 'F',0, '3',0, '-',0, '4',0,
+  '8',0, '8',0, '8',0, '-',0, '8',0, '4',0, 'B',0, '4',0,
+  '-',0, '7',0, '4',0, 'E',0, '5',0, '0',0, 'E',0, '1',0,
+  '6',0, '4',0, '9',0, 'D',0, 'B',0, '}',0,  0 ,0,
+                            // ========================================
+                            //                                 78 (0x4E)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  0x3E, 0x00, 0x00, 0x00,   //  0 dwSize 0x00000030 (62 bytes)
+  0x01, 0x00, 0x00, 0x00,   //  4 dwPropertyDataType 0x00000001 (Unicode string)
+  0x0C, 0x00,               //  8 wPropertyNameLength 0x000C (12 bytes)
+                            // ========================================
+                            //                                  10
+  'L',0, 'a',0, 'b',0, 'e',0, 'l',0, 0,0,
+                            // 10 bPropertyName “Label”
+                            // ========================================
+                            //                                  12
+  0x24, 0x00, 0x00, 0x00,   // 22 dwPropertyDataLength 0x00000016 (36 bytes)
+                            // ========================================
+                            //                                  4
+  'W',0, 'i',0, 'n',0, 'U',0, 'S',0, 'B',0, 'C',0, 'o',0, 'm',0, 'm',0, ' ',0, 'd',0, 'e',0, 'v',0, 'i',0, 'c',0, 'e',0, 0,0
+                            // 26 bPropertyData “WinUSBComm Device”
+                            // ========================================
+                            //                                  36
+
+};
+
+// Experiment with these to try to remove device from "Safely Remove Hardware" list:
+// HKR,,"SurpriseRemovalOK",0x00010001,1
+// HKR,,"Removable",0x00010001,1
+// HKR,,"RemovalPolicy",0x00010001,3
+
 
 #endif  //  Descriptors
 
@@ -450,112 +519,75 @@ static void USBD_WinUSBComm_UpdateState(SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4)
   psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateIdle;
 }
 
+static uint8_t  USBD_WinUSBComm_SetupStandrad(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  SSTM32F4USB *psSTM32F4USB = (SSTM32F4USB *)pdev->pUserData;
 
-/**
-  * @brief  USBD_WinUSBComm_Setup
-  *         Handle the WinUSBComm specific requests
-  * @param  pdev: instance
-  * @param  req: usb requests
-  * @retval status
-  */
-static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+  switch (req->bRequest)
+  {
+  case USB_REQ_GET_INTERFACE :
+    USBD_CtlSendData (pdev, (uint8_t *)&psSTM32F4USB->m_eCurrentInterface, 1);
+    break;
+
+  case USB_REQ_SET_INTERFACE :
+    psSTM32F4USB->m_eCurrentInterface = (uint8_t)(req->wValue);
+    break;
+
+  case USB_REQ_CLEAR_FEATURE:
+
+    /* Flush the FIFO and Clear the stall status */
+    USBD_LL_FlushEP(pdev, (uint8_t)req->wIndex);
+
+    /* Re-activate the EP */
+    USBD_LL_CloseEP (pdev , (uint8_t)req->wIndex);
+    if((((uint8_t)req->wIndex) & 0x80) == 0x80)
+    {
+      if(pdev->dev_speed == USBD_SPEED_HIGH  )
+      {
+        /* Open EP IN */
+        USBD_LL_OpenEP(pdev, WINUSBCOMM_EPIN_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_HS_PACKET);
+      }
+      else
+      {
+        /* Open EP IN */
+        USBD_LL_OpenEP(pdev, WINUSBCOMM_EPIN_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_FS_PACKET);
+      }
+    }
+    else
+    {
+      if(pdev->dev_speed == USBD_SPEED_HIGH  )
+      {
+        /* Open EP IN */
+        USBD_LL_OpenEP(pdev, WINUSBCOMM_EPOUT_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_HS_PACKET);
+      }
+      else
+      {
+        /* Open EP IN */
+        USBD_LL_OpenEP(pdev, WINUSBCOMM_EPOUT_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_FS_PACKET);
+      }
+    }
+    break;
+  default:
+    USBD_CtlError(pdev , req);
+    return USBD_FAIL;
+  }
+  return USBD_OK;
+}
+
+static uint8_t  USBD_WinUSBComm_SetupVendorDevice(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  USBD_CtlError(pdev , req);
+  return USBD_FAIL;
+}
+
+static uint8_t  USBD_WinUSBComm_SetupVendorInterface(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
 {
   SSTM32F4USB *psSTM32F4USB = (SSTM32F4USB *)pdev->pUserData;
   SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4 = &psSTM32F4USB->m_sWinUSBCommSTM32F4;
 
-//  if ( ( 0xC0 == req->bmRequest ) && ( MS_VendorCode == req->bRequest ) && ( 0x04 == req->wIndex ) )
-//  {
-//    if ( ( 0x10 != req->wLength ) || (  0x28 != req->wLength ) )
-//    {
-//      USBD_CtlError(pdev , req);
-//      return USBD_FAIL;
-//    }
-//    USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
-//    return USBD_OK;
-//  }
-
-  switch (req->bmRequest & USB_REQ_TYPE_MASK)
+  switch ( req->wIndex )
   {
-
-  /* Class request */
-  case USB_REQ_TYPE_CLASS :
-       USBD_CtlError(pdev , req);
-       return USBD_FAIL;
-  /* Interface & Endpoint request */
-  case USB_REQ_TYPE_STANDARD:
-    switch (req->bRequest)
-    {
-    case USB_REQ_GET_INTERFACE :
-      USBD_CtlSendData (pdev, (uint8_t *)&psSTM32F4USB->m_eCurrentInterface, 1);
-      break;
-
-    case USB_REQ_SET_INTERFACE :
-      psSTM32F4USB->m_eCurrentInterface = (uint8_t)(req->wValue);
-      break;
-    
-    case USB_REQ_CLEAR_FEATURE:
-
-      /* Flush the FIFO and Clear the stall status */
-      USBD_LL_FlushEP(pdev, (uint8_t)req->wIndex);
-
-      /* Re-activate the EP */
-      USBD_LL_CloseEP (pdev , (uint8_t)req->wIndex);
-      if((((uint8_t)req->wIndex) & 0x80) == 0x80)
-      {
-        if(pdev->dev_speed == USBD_SPEED_HIGH  )
-        {
-          /* Open EP IN */
-          USBD_LL_OpenEP(pdev, WINUSBCOMM_EPIN_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_HS_PACKET);
-        }
-        else
-        {
-          /* Open EP IN */
-          USBD_LL_OpenEP(pdev, WINUSBCOMM_EPIN_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_FS_PACKET);
-        }
-      }
-      else
-      {
-        if(pdev->dev_speed == USBD_SPEED_HIGH  )
-        {
-          /* Open EP IN */
-          USBD_LL_OpenEP(pdev, WINUSBCOMM_EPOUT_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_HS_PACKET);
-        }
-        else
-        {
-          /* Open EP IN */
-          USBD_LL_OpenEP(pdev, WINUSBCOMM_EPOUT_ADDR, USBD_EP_TYPE_BULK, WINUSBCOMM_MAX_FS_PACKET);
-        }
-      }
-      break;
-    }
-    break;
-  case USB_REQ_TYPE_VENDOR:
-
-    if ( USB_REQ_RECIPIENT_DEVICE == (req->bmRequest & USB_REQ_RECIPIENT_MASK) )
-    {
-      switch (req->bRequest)
-      {
-      case MS_VendorCode:
-        switch (req->wIndex)
-        {
-        case 0x04:
-          USBD_CtlSendData (pdev, USBD_WinUSBComm_CompatID_Desc, req->wLength);
-          break;
-        default:
-         USBD_CtlError(pdev , req);
-         return USBD_FAIL;
-        }
-        break;
-      default:
-         USBD_CtlError(pdev , req);
-         return USBD_FAIL;
-      }
-      return USBD_OK;
-    }
-
-    switch ( req->wIndex )
-    {
-    case stm32f4usbinterface_WinUSBComm:
+  case stm32f4usbinterface_WinUSBComm:
     switch ( req->bRequest )
     {
     case winusbcomm2commandReset:
@@ -592,16 +624,83 @@ static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTy
       USBD_CtlError(pdev , req);
       return USBD_FAIL;
     }
-      break;
-    default:
-      USBD_CtlError(pdev , req);
-      return USBD_FAIL;
-    }
     break;
+  default:
+    USBD_CtlError(pdev , req);
+    return USBD_FAIL;
+  }
+  return USBD_OK;
+}
+static uint8_t  USBD_WinUSBComm_GetMSExtendedCompatIDOSDescriptor (USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  switch (req->wIndex)
+  {
+  case 0x04:
+    USBD_CtlSendData (pdev, USBD_WinUSBComm_Extended_Compat_ID_OS_Desc, req->wLength);
+    break;
+  default:
+   USBD_CtlError(pdev , req);
+   return USBD_FAIL;
+  }
+  return USBD_OK;
+}
+static uint8_t  USBD_WinUSBComm_GetMSExtendedPropertiesOSDescriptor (USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  uint8_t byInterfaceIndex = (uint8_t)req->wValue;
+  if ( req->wIndex != 0x05 )
+  {
+    USBD_CtlError(pdev , req);
+    return USBD_FAIL;
+  }
+  switch ( byInterfaceIndex )
+  {
+  case stm32f4usbinterface_WinUSBComm:
+    USBD_CtlSendData (pdev, USBD_WinUSBComm_Extended_Properties_OS_Desc, req->wLength);
+    break;
+  default:
+    USBD_CtlError(pdev , req);
+    return USBD_FAIL;
+  }
+  return USBD_OK;
+}
+static uint8_t  USBD_WinUSBComm_SetupVendor(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  switch ( req->bmRequest & USB_REQ_RECIPIENT_MASK )
+  {
+  case USB_REQ_RECIPIENT_DEVICE:
+    return ( MS_VendorCode == req->bRequest ) ? USBD_WinUSBComm_GetMSExtendedCompatIDOSDescriptor(pdev, req) : USBD_WinUSBComm_SetupVendorDevice(pdev, req);
+  case USB_REQ_RECIPIENT_INTERFACE:
+    return ( MS_VendorCode == req->bRequest ) ? USBD_WinUSBComm_GetMSExtendedPropertiesOSDescriptor(pdev, req) : USBD_WinUSBComm_SetupVendorInterface(pdev, req);
+  case USB_REQ_RECIPIENT_ENDPOINT:
+    // fall through
   default:
     break;
   }
-  return USBD_OK;
+  USBD_CtlError(pdev , req);
+  return USBD_FAIL;
+}
+/**
+  * @brief  USBD_WinUSBComm_Setup
+  *         Handle the WinUSBComm specific requests
+  * @param  pdev: instance
+  * @param  req: usb requests
+  * @retval status
+  */
+static uint8_t  USBD_WinUSBComm_Setup (USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
+{
+  switch (req->bmRequest & USB_REQ_TYPE_MASK)
+  {
+  case USB_REQ_TYPE_CLASS:
+    break;
+  case USB_REQ_TYPE_STANDARD:
+    return USBD_WinUSBComm_SetupStandrad(pdev, req);
+  case USB_REQ_TYPE_VENDOR:
+    return USBD_WinUSBComm_SetupVendor(pdev, req);
+  default:
+    break;
+  }
+  USBD_CtlError(pdev , req);
+  return USBD_FAIL;
 }
 
 

@@ -189,7 +189,7 @@ void HAL_PCD_SetupStageCallback(PCD_HandleTypeDef *hpcd)
   USBD_HandleTypeDef *pdev = hpcd->pData;
   USBD_SetupReqTypedef    *req = &pdev->request;
   USBD_ParseSetupRequest(req, (uint8_t *)hpcd->Setup);
-  if ( ( USB_REQ_TYPE_VENDOR == (req->bmRequest & USB_REQ_TYPE_MASK) ) && ( USB_REQ_RECIPIENT_DEVICE == (req->bmRequest & USB_REQ_RECIPIENT_MASK) ) )
+  if ( ( USB_REQ_TYPE_VENDOR == (req->bmRequest & USB_REQ_TYPE_MASK) ) && ( MS_VendorCode == req->bRequest ) )
   {
     pdev->ep0_state = USBD_EP0_SETUP;
     pdev->ep0_data_len = pdev->request.wLength;
