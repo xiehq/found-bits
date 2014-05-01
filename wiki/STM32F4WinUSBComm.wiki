@@ -1,0 +1,12 @@
+#summary WinUSBComm implementation on STM32F4.
+
+= Introduction =
+
+This is detailed information about USB communication with STM32F4 via WinUsb driver. Firmware supports MS OS Descriptors to avoid using any Windows side driver information files. In other words device gets installed automatically when plugged in USB.
+
+
+= Details =
+
+Overview is posted as blog post. More detailed technical information is listed here.
+
+TODO
