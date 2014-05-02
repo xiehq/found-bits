@@ -7,6 +7,9 @@ This is detailed information about USB communication with STM32F4 via WinUsb dri
 
 = Details =
 
-Overview is posted as blog post. More detailed technical information is listed here.
+WinUSB deatails are posted as blog post. More detailed project information is listed here.
 
-TODO
+It's an Eclipse based CDT project. GCC compiler build by ARM was used. Path to compiler should be specified as project variable. Eclipse project files are located in separate subfolder without any sources. All sources are added in project virtual folders with relative paths. This has a disadvantage of Subclipse not picking up files in virtual folders (learned this after setting up the project).
+EclipseSWorkarund.asm including startup_stm32f407xx.s is added to project to get around Eclipse CDT not recognizing assembler files with lower case .s file extension as source files.
+buildWorkarunds.c with empty void __libc_init_array() function is added for project to link.
+Project is linked with STM32F4 library build in separate project to avoid long rebuilds of HAL library provided by ST. HAL library needs couple of
