@@ -45,15 +45,32 @@
 
 /** @defgroup USBD_WinUSBComm_Exported_Defines
   * @{
-  */ 
+  */
+
+//#define WINUSBCOMM_DUAL_INTERFACE_TEST  ///< Define to test behavior when device exposes more WinUSB associated drivers.
+
 #define WINUSBCOMM_EPIN_ADDR                 0x81
 #define WINUSBCOMM_EPOUT_ADDR                0x02
+
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+#define WINUSBCOMM_EPIN_ADDR_2              0x83
+#define WINUSBCOMM_EPOUT_ADDR_2             0x04
+#endif
 
 #define WINUSBCOMM_MAX_FS_PACKET            0x40
 #define WINUSBCOMM_MAX_HS_PACKET            0x200
 
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+#define USB_WINUSBCOMM_CONFIG_DESC_SIZ       (9 + 9+7+7 + 9+7+7)
+#else
+#define USB_WINUSBCOMM_CONFIG_DESC_SIZ       (9 + 9+7+7)
+#endif
 
-#define USB_WINUSBCOMM_CONFIG_DESC_SIZ       64
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+#define USB_WINUSBCOMM_COMPAT_ID_OS_DESC_SIZ       (16 + 24 + 24)
+#else
+#define USB_WINUSBCOMM_COMPAT_ID_OS_DESC_SIZ       (16 + 24)
+#endif
 
 /**
   * @}
@@ -67,6 +84,9 @@
 typedef enum _ESTM32F4USBInterfaces
 {
   stm32f4usbinterface_WinUSBComm,
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+  stm32f4usbinterface_WinUSBComm2,
+#endif
 
   stm32f4usbinterface_NumInterfaces
 }ESTM32F4USBInterfaces;

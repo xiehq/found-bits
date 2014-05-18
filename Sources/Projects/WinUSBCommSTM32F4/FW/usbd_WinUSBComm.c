@@ -150,50 +150,6 @@ USBD_ClassTypeDef  USBD_WinUSBComm_ClassDriver =
   USBD_WinUSBComm_GetUsrStrDescriptor
 };
 
-/* USB WinUSBComm device Configuration Descriptor */
-/*   All Descriptors (Configuration, Interface, Endpoint, Class, Vendor */
-__ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgHSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ]  __ALIGN_END =
-{
-
-  0x09,   /* bLength: Configuation Descriptor size */
-  USB_DESC_TYPE_CONFIGURATION,   /* bDescriptorType: Configuration */
-  USB_WINUSBCOMM_CONFIG_DESC_SIZ,
-
-  0x00,
-  0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
-  0x01,   /* bConfigurationValue: */
-  USBD_IDX_CONFIG_STR,   /* iConfiguration: */
-  0x80,   /* bmAttributes: */
-  0xFA,   /* MaxPower 500 mA */
-
-  /********************  Mass Storage interface ********************/
-  0x09,   /* bLength: Interface Descriptor size */
-  0x04,   /* bDescriptorType: */
-  0x00,   /* bInterfaceNumber: Number of Interface */
-  0x00,   /* bAlternateSetting: Alternate setting */
-  0x02,   /* bNumEndpoints*/
-  0xFF,   /* bInterfaceClass: Vendor  Class */
-  0x00,   /* bInterfaceSubClass : none*/
-  0x00,   /* nInterfaceProtocol */
-  USBD_IDX_INTERFACE_STR,          /* iInterface: */
-  /********************  Mass Storage Endpoints ********************/
-  0x07,   /*Endpoint descriptor length = 7*/
-  0x05,   /*Endpoint descriptor type */
-  WINUSBCOMM_EPIN_ADDR,   /*Endpoint address (IN, address 1) */
-  0x02,   /*Bulk endpoint type */
-  LOBYTE(WINUSBCOMM_MAX_HS_PACKET),
-  HIBYTE(WINUSBCOMM_MAX_HS_PACKET),
-  0x00,   /*Polling interval in milliseconds */
-
-  0x07,   /*Endpoint descriptor length = 7 */
-  0x05,   /*Endpoint descriptor type */
-  WINUSBCOMM_EPOUT_ADDR,   /*Endpoint address (OUT, address 1) */
-  0x02,   /*Bulk endpoint type */
-  LOBYTE(WINUSBCOMM_MAX_HS_PACKET),
-  HIBYTE(WINUSBCOMM_MAX_HS_PACKET),
-  0x00     /*Polling interval in milliseconds*/
-};
-
 __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgFSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
 
@@ -202,13 +158,13 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgFSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ] 
   USB_WINUSBCOMM_CONFIG_DESC_SIZ,
 
   0x00,
-  0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
+  stm32f4usbinterface_NumInterfaces,   /* bNumInterfaces */
   0x01,   /* bConfigurationValue: */
   USBD_IDX_CONFIG_STR,   /* iConfiguration: */
   0x80,   /* bmAttributes: */
   0xFA,   /* MaxPower 500 mA */
 
-  /********************  Mass Storage interface ********************/
+  /******************** Some interface over WinUSB ********************/
   0x09,   /* bLength: Interface Descriptor size */
   0x04,   /* bDescriptorType: */
   0x00,   /* bInterfaceNumber: Number of Interface */
@@ -218,7 +174,7 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgFSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ] 
   0x00,   /* bInterfaceSubClass : none*/
   0x00,   /* nInterfaceProtocol */
   USBD_IDX_INTERFACE_STR,          /* iInterface: */
-  /********************  Mass Storage Endpoints ********************/
+  /******************** Some interface over WinUSB Endpoints ********************/
   0x07,   /*Endpoint descriptor length = 7*/
   0x05,   /*Endpoint descriptor type */
   WINUSBCOMM_EPIN_ADDR,   /*Endpoint address (IN, address 1) */
@@ -233,49 +189,36 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_CfgFSDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ] 
   0x02,   /*Bulk endpoint type */
   LOBYTE(WINUSBCOMM_MAX_FS_PACKET),
   HIBYTE(WINUSBCOMM_MAX_FS_PACKET),
-  0x00     /*Polling interval in milliseconds*/
-};
+  0x00,    /*Polling interval in milliseconds*/
 
-__ALIGN_BEGIN uint8_t USBD_WinUSBComm_OtherSpeedCfgDesc[USB_WINUSBCOMM_CONFIG_DESC_SIZ]   __ALIGN_END  =
-{
-  
-  0x09,   /* bLength: Configuation Descriptor size */
-  USB_DESC_TYPE_OTHER_SPEED_CONFIGURATION,
-  USB_WINUSBCOMM_CONFIG_DESC_SIZ,
-
-  0x00,
-  0x01,   /* bNumInterfaces: 1 s_byCurrentInterface */
-  0x01,   /* bConfigurationValue: */
-  USBD_IDX_CONFIG_STR,   /* iConfiguration: */
-  0x80,   /* bmAttributes: */
-  0xFA,   /* MaxPower 500 mA */
-
-  /********************  Mass Storage interface ********************/
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+  /******************** Some other interface over WinUSB ********************/
   0x09,   /* bLength: Interface Descriptor size */
   0x04,   /* bDescriptorType: */
-  0x00,   /* bInterfaceNumber: Number of Interface */
+  0x01,   /* bInterfaceNumber: Number of Interface */
   0x00,   /* bAlternateSetting: Alternate setting */
   0x02,   /* bNumEndpoints*/
   0xFF,   /* bInterfaceClass: Vendor  Class */
   0x00,   /* bInterfaceSubClass : none*/
   0x00,   /* nInterfaceProtocol */
   USBD_IDX_INTERFACE_STR,          /* iInterface: */
-  /********************  Mass Storage Endpoints ********************/
+  /******************** Some interface over WinUSB Endpoints ********************/
   0x07,   /*Endpoint descriptor length = 7*/
   0x05,   /*Endpoint descriptor type */
-  WINUSBCOMM_EPIN_ADDR,   /*Endpoint address (IN, address 1) */
+  WINUSBCOMM_EPIN_ADDR_2,   /*Endpoint address (IN, address 1) */
   0x02,   /*Bulk endpoint type */
-  0x40,
-  0x00,
+  LOBYTE(WINUSBCOMM_MAX_FS_PACKET),
+  HIBYTE(WINUSBCOMM_MAX_FS_PACKET),
   0x00,   /*Polling interval in milliseconds */
 
   0x07,   /*Endpoint descriptor length = 7 */
   0x05,   /*Endpoint descriptor type */
-  WINUSBCOMM_EPOUT_ADDR,   /*Endpoint address (OUT, address 1) */
+  WINUSBCOMM_EPOUT_ADDR_2,   /*Endpoint address (OUT, address 1) */
   0x02,   /*Bulk endpoint type */
-  0x40,
-  0x00,
+  LOBYTE(WINUSBCOMM_MAX_FS_PACKET),
+  HIBYTE(WINUSBCOMM_MAX_FS_PACKET),
   0x00     /*Polling interval in milliseconds*/
+#endif
 };
 
 /* USB Standard Device Descriptor */
@@ -316,29 +259,41 @@ __ALIGN_BEGIN uint8_t USBD_WinUSBComm_MS_OS_StringDescriptor[]  __ALIGN_END =
 
 
 // This associates winusb driver with the device
-__ALIGN_BEGIN uint8_t USBD_WinUSBComm_Extended_Compat_ID_OS_Desc[0x28]  __ALIGN_END =
+__ALIGN_BEGIN uint8_t USBD_WinUSBComm_Extended_Compat_ID_OS_Desc[USB_WINUSBCOMM_COMPAT_ID_OS_DESC_SIZ]  __ALIGN_END =
 {
-                            //    +-- Offset in descriptor
-                            //    |             +-- Size
-                            //    v             v
-  0x28, 0x00, 0x00, 0x00,   //    0 dwLength    4 DWORD The length, in bytes, of the complete extended compat ID descriptor
-  0x00, 0x01,               //    4 bcdVersion  2 BCD The descriptor’s version number, in binary coded decimal (BCD) format
-  0x04, 0x00,               //    6 wIndex      2 WORD  An index that identifies the particular OS feature descriptor
-  0x01,                     //    8 bCount      1 BYTE  The number of custom property sections
-  0, 0, 0, 0, 0, 0, 0,      //    9 RESERVED    7 BYTEs Reserved
-                            //    =====================
-                            //                 16
+                                                    //    +-- Offset in descriptor
+                                                    //    |             +-- Size
+                                                    //    v             v
+  USB_WINUSBCOMM_COMPAT_ID_OS_DESC_SIZ, 0, 0, 0,    //    0 dwLength    4 DWORD The length, in bytes, of the complete extended compat ID descriptor
+  0x00, 0x01,                                       //    4 bcdVersion  2 BCD The descriptor’s version number, in binary coded decimal (BCD) format
+  0x04, 0x00,                                       //    6 wIndex      2 WORD  An index that identifies the particular OS feature descriptor
+  stm32f4usbinterface_NumInterfaces,                //    8 bCount      1 BYTE  The number of custom property sections
+  0, 0, 0, 0, 0, 0, 0,                              //    9 RESERVED    7 BYTEs Reserved
+                                                    //    =====================
+                                                    //                 16
 
                                                     //   +-- Offset from function section start
                                                     //   |                        +-- Size
                                                     //   v                        v
-  0,                                                //   0  bFirstInterfaceNumber 1 BYTE  The interface or function number
+  stm32f4usbinterface_WinUSBComm,                   //   0  bFirstInterfaceNumber 1 BYTE  The interface or function number
   0,                                                //   1  RESERVED              1 BYTE  Reserved
   0x57, 0x49, 0x4E, 0x55, 0x53, 0x42, 0x00, 0x00,   //   2  compatibleID          8 BYTEs The function’s compatible ID      ("WINUSB")
   0, 0, 0, 0, 0, 0, 0, 0,                           //  10  subCompatibleID       8 BYTEs The function’s subcompatible ID
   0, 0, 0, 0, 0, 0,                                 //  18  RESERVED              6 BYTEs Reserved
                                                     //  =================================
                                                     //                           24
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+                                                    //   +-- Offset from function section start
+                                                    //   |                        +-- Size
+                                                    //   v                        v
+  stm32f4usbinterface_WinUSBComm2,                  //   0  bFirstInterfaceNumber 1 BYTE  The interface or function number
+  0,                                                //   1  RESERVED              1 BYTE  Reserved
+  0x57, 0x49, 0x4E, 0x55, 0x53, 0x42, 0x00, 0x00,   //   2  compatibleID          8 BYTEs The function’s compatible ID      ("WINUSB")
+  0, 0, 0, 0, 0, 0, 0, 0,                           //  10  subCompatibleID       8 BYTEs The function’s subcompatible ID
+  0, 0, 0, 0, 0, 0,                                 //  18  RESERVED              6 BYTEs Reserved
+                                                    //  =================================
+                                                    //                           24
+#endif
 };
 
 // Properties are added to:
@@ -655,6 +610,9 @@ static uint8_t  USBD_WinUSBComm_GetMSExtendedPropertiesOSDescriptor (USBD_Handle
   switch ( byInterfaceIndex )
   {
   case stm32f4usbinterface_WinUSBComm:
+#ifdef WINUSBCOMM_DUAL_INTERFACE_TEST
+  case stm32f4usbinterface_WinUSBComm2:
+#endif
     USBD_CtlSendData (pdev, USBD_WinUSBComm_Extended_Properties_OS_Desc, req->wLength);
     break;
   default:
