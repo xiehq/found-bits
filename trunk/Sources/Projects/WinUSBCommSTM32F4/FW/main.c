@@ -85,7 +85,7 @@ int main()
 
   USBD_Device.pUserData = &sSTM32F4USB;
 
-  WinUSBCommSTM32F4_Init(&sCommLayerWinUSBComm, &sSTM32F4USB.m_sWinUSBCommSTM32F4, &_sram, 0x4000); // 16kB comm buffer
+  WinUSBCommSTM32F4_Init(&sCommLayerWinUSBComm, &sSTM32F4USB.m_sWinUSBCommSTM32F4, &_sram, 0x8FF0); // 64kB comm buffer
 
   hComm = CommStack_Init(commstackflSideHost, &sCommStack, apsCommLayers, _countof(apsCommLayers));
 
