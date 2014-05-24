@@ -4,7 +4,7 @@
 		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" moduleId="org.eclipse.cdt.core.settings" name="Debug407">
 				<macros>
-					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\ARMGCC\gcc-arm-none-eabi-4_8-2013q4-20131204-win32"/>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\arm-4_8-2014-q1"/>
 					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}\bin"/>
 					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
 				</macros>
@@ -42,7 +42,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../Includes&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.946871642" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-pipe -x c -march=armv7-m -mthumb -mfpu=vfp -g3 -gdwarf-2 -c -Wimplicit -ffunction-sections" valueType="string"/>
-								<option id="gnu.c.compiler.option.include.files.1834789686" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false" valueType="includeFiles"/>
+								<option id="gnu.c.compiler.option.include.files.1834789686" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.231795348" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1156453200" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
