@@ -139,9 +139,10 @@ def checkLicenses(path):
             checkForLicense(filePath, lang.comment)
       
       
-checkLicenses("\\Sources\\Common\\")  
-checkLicenses("\\Sources\\LinkerScripts\\")
-checkLicenses("\\Sources\\Projects\\")
+#checkLicenses("\\Sources\\Common\\")  
+#checkLicenses("\\Sources\\LinkerScripts\\")
+#checkLicenses("\\Sources\\Projects\\")
+checkLicenses("\\Sources\\Projects\\Libs\\")
   
   
   
