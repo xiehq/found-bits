@@ -49,7 +49,6 @@
 #include "usbd_ctlreq.h"
 
 #include "WinUSBCommShared.h"
-#include "WinUSBComm.h"
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
   * @{
