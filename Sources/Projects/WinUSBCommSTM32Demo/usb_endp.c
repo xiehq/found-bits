@@ -27,7 +27,7 @@
 
 #include "usb_lib.h"
 #include "usb_istr.h"
-#include "WinUSBComm.h"
+#include "WinUSBCommSTM32F103.h"
 
 void EP1_IN_Callback(void)
 {

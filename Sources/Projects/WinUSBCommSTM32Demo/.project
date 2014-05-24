@@ -177,19 +177,19 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Libs/STM32/ST/Libraries/STM32_USB-FS-Device_Driver/src/usb_sil.c</locationURI>
 		</link>
 		<link>
-			<name>WinUSBComm/WinUSBComm.c</name>
+			<name>WinUSBComm/WinUSBCommSTM32F103.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Libs/WinUSBComm/WinUSBComm.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommSTM32F103.c</locationURI>
 		</link>
 		<link>
-			<name>WinUSBComm/WinUSBComm.h</name>
+			<name>WinUSBComm/WinUSBCommSTM32F103.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Libs/WinUSBComm/WinUSBComm.h</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommSTM32F103.h</locationURI>
 		</link>
 		<link>
 			<name>WinUSBComm/WinUSBCommShared.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Libs/WinUSBComm/WinUSBCommShared.h</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommShared.h</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

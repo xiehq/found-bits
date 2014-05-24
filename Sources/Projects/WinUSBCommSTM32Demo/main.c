@@ -28,7 +28,7 @@
 #include "Conf.h"
 #include "usb_lib.h"
 #include "usb_pwr.h"
-#include "WinUSBComm.h"
+#include "WinUSBCommSTM32F103.h"
 
 int main(void)
 {
