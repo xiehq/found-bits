@@ -5,7 +5,7 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1162137535" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<macros>
 					<stringMacro name="LinkerFilePath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\STM32F407xG.ind"/>
-					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\ARMGCC\gcc-arm-none-eabi-4_8-2013q4-20131204-win32"/>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\arm-4_8-2014-q1"/>
 					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}\bin"/>
 					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
 				</macros>
@@ -38,8 +38,8 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\ExtLib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\LibSTM32F4xx&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\WinUSBComm&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\CommCore&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\Comm\WinUSB&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}\..\..\..\Libs\Comm\Core&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.914525148" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-x c -march=armv7-m -mthumb -mfpu=vfp -g3 -gdwarf-2 -c -Wimplicit -ffunction-sections" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.142454167" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>

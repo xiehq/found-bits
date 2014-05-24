@@ -25,12 +25,12 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>AddToRfrsh</name>
+			<name>BuildFiles</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>BuildFiles</name>
+			<name>Comm</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -48,31 +48,6 @@
 			<name>Sources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>AddToRfrsh/CommCore.c</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Libs/CommCore/CommCore.c</locationURI>
-		</link>
-		<link>
-			<name>AddToRfrsh/CommCore.h</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Libs/CommCore/CommCore.h</locationURI>
-		</link>
-		<link>
-			<name>AddToRfrsh/WinUSBComm2Shared.h</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Libs/WinUSBComm/WinUSBComm2Shared.h</locationURI>
-		</link>
-		<link>
-			<name>AddToRfrsh/WinUSBCommSTM32F4.c</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Libs/WinUSBComm/WinUSBCommSTM32F4.c</locationURI>
-		</link>
-		<link>
-			<name>AddToRfrsh/WinUSBCommSTM32F4.h</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Libs/WinUSBComm/WinUSBCommSTM32F4.h</locationURI>
 		</link>
 		<link>
 			<name>BuildFiles/GCCFLASH_CCM.ind</name>
@@ -98,6 +73,36 @@
 			<name>BuildFiles/STM32F4xxxG.ind</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/STM32F4xxxG.ind</locationURI>
+		</link>
+		<link>
+			<name>Comm/CommCore.c</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/Core/CommCore.c</locationURI>
+		</link>
+		<link>
+			<name>Comm/CommCore.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/Core/CommCore.h</locationURI>
+		</link>
+		<link>
+			<name>Comm/WinUSBComm2Shared.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBComm2Shared.h</locationURI>
+		</link>
+		<link>
+			<name>Comm/WinUSBCommSTM32F4.c</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommSTM32F4.c</locationURI>
+		</link>
+		<link>
+			<name>Comm/WinUSBCommSTM32F4.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommSTM32F4.h</locationURI>
+		</link>
+		<link>
+			<name>Comm/WinUSBCommShared.h</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommShared.h</locationURI>
 		</link>
 		<link>
 			<name>ExtLib/startup_stm32f407xx.s</name>
