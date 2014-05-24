@@ -27,7 +27,7 @@
 
 #include "Conf.h"
 #include "WinUSBCommShared.h"
-#include "WinUSBComm.h"
+#include "WinUSBCommSTM32F103.h"
 #include <string.h>
 
 #define WINUSB_RX_BUFFER_SIZE 0x2000
