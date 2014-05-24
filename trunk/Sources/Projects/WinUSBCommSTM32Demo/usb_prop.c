@@ -30,7 +30,7 @@
 #include "usb_pwr.h"
 #include "hw_config.h"
 #include "usb_prop.h"
-#include "WinUSBComm.h"
+#include "WinUSBCommSTM32F103.h"
 
 static uint8_t * s_pbyControlRequestData = NULL;
 static uint16_t s_wControlRequestDataSize = 0;
