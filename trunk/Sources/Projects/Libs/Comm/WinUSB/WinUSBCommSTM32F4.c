@@ -25,7 +25,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
 #include "WinUSBCommSTM32F4.h"
 #include <string.h>
 
@@ -89,7 +88,7 @@ static void winusbcommstm32f4_PacketEnd(SCommLayer *psCommLayer)
   psThis->m_dwSendByteCountUSB = psThis->m_pbyWritePtr - psThis->m_pbyBuffer;
 }
 
-static ECommStatus winusbcommstm32f4_TransmitProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount)
+static ECommStatus winusbcommstm32f4_TransmitProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount, unsigned char **ppData)
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
   EWinUSBComm2State eWinUSBComm2State = psThis->m_byStateUSB;
@@ -106,7 +105,7 @@ static ECommStatus winusbcommstm32f4_TransmitProcess(SCommLayer *psCommLayer, CO
   }
   return commstatusError;
 }
-static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount)
+static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount, unsigned char **ppData)
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
   EWinUSBComm2State eWinUSBComm2State = psThis->m_byStateUSB;
@@ -122,6 +121,7 @@ static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COM
   case winusbcomm2stateProcessing:
     Comm_OnNewPacket(psCommLayer);
     COMM_ONDATA(psThis->m_pbyBuffer, (COMMCOUNT)dwReceivedByteCountUSB);
+    *ppData = psThis->m_pbyBuffer;
     return commstatusNewPacket;
   default: break;
   }
@@ -134,6 +134,7 @@ static void winusbcommstm32f4_OnNewPacket(SCommLayer *psCommLayer)
   psThis->m_pbyStorePtr = psThis->m_pbyBuffer;
   psThis->m_pbyWritePtr = psThis->m_pbyBuffer;
   psThis->m_byFlags &= ~wucstmflRxOverflow;
+  psThis->m_dwSendByteCountUSB = 0;
 }
 
 static void winusbcommstm32f4_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)

@@ -72,6 +72,8 @@ void WinUSBComm_ProcessNewData()
   if ( winusbcommPROCESSING != s_eWinUSBCommStatus )
   { return; }
 
+  s_dwOutgoingDataSize = 0;
+
   s_pReadData = s_abyIncomingBuffer;
   s_pWriteData = s_abyOutgoingBuffer;
   WinUSBComm_OnNewData();
