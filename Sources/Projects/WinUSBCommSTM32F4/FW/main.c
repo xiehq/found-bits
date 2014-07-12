@@ -72,22 +72,20 @@ int main()
 {
   USBD_HandleTypeDef USBD_Device;
   SSTM32F4USB sSTM32F4USB;
-  SCommLayer sCommLayerWinUSBComm;
-  SCommLayer *apsCommLayers[] =
-  {
-    &sCommLayerWinUSBComm
-  };
+  SCommLayer asCommLayers[1] = { { 0 } };
 
   SCommStack sCommStack;
   HCOMMSTACK hComm;
   COMMCOUNT cntNumBytes = 0;
   ECommStatus eCommStatus = commstatusIdle;
 
+  unsigned char *pbyReceived = NULL;
+
   USBD_Device.pUserData = &sSTM32F4USB;
 
-  WinUSBCommSTM32F4_Init(&sCommLayerWinUSBComm, &sSTM32F4USB.m_sWinUSBCommSTM32F4, &_sram, 0x8FF0); // 64kB comm buffer
+  WinUSBCommSTM32F4_Init(&asCommLayers[0], &sSTM32F4USB.m_sWinUSBCommSTM32F4, &_sram, 0x8FF0); // 64kB comm buffer
 
-  hComm = CommStack_Init(commstackflSideHost, &sCommStack, apsCommLayers, _countof(apsCommLayers));
+  hComm = CommStack_Init(commstackflSideHost, &sCommStack, asCommLayers, _countof(asCommLayers));
 
   /* STM32F4xx HAL library initialization:
        - Configure the Flash prefetch, instruction and Data caches
@@ -114,7 +112,7 @@ int main()
   {
     while ( ( commstatusIdle == eCommStatus ) || ( commstatusActive == eCommStatus ) )
     {
-      eCommStatus = CommStack_ReceiveProcess(hComm, &cntNumBytes);
+      eCommStatus = CommStack_ReceiveProcess(hComm, &cntNumBytes, &pbyReceived);
     }
 
     if ( commstatusNewPacket != eCommStatus )
@@ -125,12 +123,12 @@ int main()
 
     CommStack_PacketStart(hComm);
     // TODO: process and send response packet
-    CommStack_Send(hComm, &_sram, cntNumBytes);
+    CommStack_Send(hComm, pbyReceived, cntNumBytes);
     CommStack_PacketEnd(hComm);
 
     do
     {
-      eCommStatus = CommStack_TransmitProcess(hComm, &cntNumBytes);
+      eCommStatus = CommStack_TransmitProcess(hComm);
     }while ( commstatusActive == eCommStatus );
   }
 
