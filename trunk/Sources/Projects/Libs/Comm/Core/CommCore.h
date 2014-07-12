@@ -56,8 +56,8 @@ typedef enum _ECommStatus
 }ECommStatus;
 
 typedef void (*pfnCommEvent)(SCommLayer *psCommLayer);  ///< Layer event notification (init, packet start/end, disconnect etc.)
-typedef void (*pfnCommTransfer)(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount); ///< Data tranfer (data received, store, send)
-typedef ECommStatus (*pfnCommProcess)(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount); ///< Comm process (receive, transmit)
+typedef void (*pfnCommTransfer)(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount); ///< Data transfer (data received, store, send)
+typedef ECommStatus (*pfnCommProcess)(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount, unsigned char **ppbyReceivedData); ///< Comm process (receive, transmit)
 
 typedef COMMCOUNT (*pfnCommGetBufferSize)(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize);
 
@@ -75,12 +75,12 @@ typedef struct _ICommLayer
   pfnCommTransfer m_pfnSend;                    ///< Called from application or upper layer to send data.
                                                 ///< Nothing should be sent on physical layer until PacketEnd call.
                                                 ///< If layer implements this call it must also make this call to lower layer.
-                                                ///< Layer can optionaly modify, append, encode etc. data here before forwarding call to lower layer.
-                                                ///< In lowest layer the data is stored in communication buffer as it shold be sent on PacketEnd.
+                                                ///< Layer can optionally modify, append, encode etc. data here before forwarding call to lower layer.
+                                                ///< In lowest layer the data is stored in communication buffer as it should be sent on PacketEnd.
   pfnCommEvent m_pfnPacketEnd;                  ///< Called from application or upper layer after all data for current packet was provided and before same call to lower layer.
                                                 ///< Same call to lower layer is made by framework regardless if layer implements this call.
 
-  pfnCommProcess m_pfnTransmitProcess;          ///< Repeatedly called from application or upper layer to determine when and if packet is succesfully sent.
+  pfnCommProcess m_pfnTransmitProcess;          ///< Repeatedly called from application or upper layer to determine when and if packet is successfully sent.
                                                 ///< Layer should do transmit work in this call. This shouldn't be a blocking call.
                                                 ///< Return count holds sent byte count until this call.
                                                 ///< Total bytes send in return count can differ from actual packet size.
@@ -94,7 +94,7 @@ typedef struct _ICommLayer
                                                 ///< Same call to upper layer is made by framework regardless if layer implements this call.
   pfnCommTransfer m_pfnOnData;                  ///< Called from lower layer when new data received.
                                                 ///< If layer implements this call it must also make this call to upper layer.
-                                                ///< Layer can optionaly modify, strip, decode etc. data here before forwarding call to upper layer.
+                                                ///< Layer can optionally modify, strip, decode etc. data here before forwarding call to upper layer.
                                                 ///< If top most layer doesn't implement this call Store is called on stack.
   pfnCommTransfer m_pfnStore;                   ///< OnData callback to lower layer to store the data in receive buffer.
                                                 ///< If layer implements this call it must also make this call to lower layer.
@@ -149,7 +149,8 @@ struct _SCommStack
 {
   SCommLayer *m_psCommLayer;      ///< Pointer to array of comm layers. Lowest layer (physical) at index 0.
   COMMCOUNT m_cntNumberOfLayers;  ///< Number of layers in array.
-  unsigned char m_byFlags;                 ///< Of ECommStackFlags.
+  unsigned char m_byFlags;        ///< Of ECommStackFlags.
+  unsigned char m_byLastError;
 };
 
 void Comm_PacketStart(SCommLayer *psCommLayer);
@@ -163,12 +164,12 @@ void Comm_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT
 void Comm_OnPacketEnd(SCommLayer *psCommLayer);
 COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer);
 
-HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer **ppsCommLayers, COMMCOUNT cntLayerCount);
+HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer *psCommLayers, COMMCOUNT cntLayerCount);
 void CommStack_PacketStart(HCOMMSTACK hCommStack);
 void CommStack_Send(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 void CommStack_PacketEnd(HCOMMSTACK hCommStack);
-ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes);
-ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes);
+ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack);
+ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes, unsigned char **ppbyReceivedData);
 COMMCOUNT CommStack_GetBufferSize(HCOMMSTACK hCommStack);
 void CommStack_Disconnect(HCOMMSTACK hCommStack);
 

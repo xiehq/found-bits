@@ -25,8 +25,11 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
 #include "CommCore.h"
+
+#ifndef NULL
+#define NULL (void *)0
+#endif
 
 void Comm_PacketStart(SCommLayer *psCommLayer)
 {
@@ -97,13 +100,12 @@ void Comm_OnPacketEnd(SCommLayer *psCommLayer)
   { Comm_OnPacketEnd(COMM_UPPER()); }
 }
 
-ECommStatus Comm_TransmitProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumBytes)
+ECommStatus Comm_TransmitProcess(SCommLayer *psCommLayer)
 {
   unsigned char byStatus = commstatusIdle;
-  *pcntNumBytes = 0;
   if ( psCommLayer->m_piCommLayer->m_pfnTransmitProcess)
   {
-    byStatus = psCommLayer->m_piCommLayer->m_pfnTransmitProcess(psCommLayer, pcntNumBytes);
+    byStatus = psCommLayer->m_piCommLayer->m_pfnTransmitProcess(psCommLayer, (COMMCOUNT *)NULL, (unsigned char **)NULL);
   }
   if ( commstatusError == byStatus )
   {
@@ -111,18 +113,18 @@ ECommStatus Comm_TransmitProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumByte
   }
   if ( COMM_LOWER() )
   {
-    byStatus = Comm_TransmitProcess(COMM_LOWER(), pcntNumBytes);
+    byStatus = Comm_TransmitProcess(COMM_LOWER());
   }
-  return byStatus;
+  return (ECommStatus)byStatus;
 }
 
-ECommStatus Comm_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumBytes)
+ECommStatus Comm_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumBytes, unsigned char **ppbyReceivedData)
 {
   unsigned char byStatus = commstatusIdle;
   *pcntNumBytes = 0;
   if ( COMM_LOWER() )
   {
-    byStatus = Comm_ReceiveProcess(COMM_LOWER(), pcntNumBytes);
+    byStatus = Comm_ReceiveProcess(COMM_LOWER(), pcntNumBytes, ppbyReceivedData);
   }
   if ( commstatusError == byStatus )
   {
@@ -130,9 +132,9 @@ ECommStatus Comm_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumBytes
   }
   if ( psCommLayer->m_piCommLayer->m_pfnReceiveProcess)
   {
-    byStatus = psCommLayer->m_piCommLayer->m_pfnReceiveProcess(psCommLayer, pcntNumBytes);
+    byStatus = psCommLayer->m_piCommLayer->m_pfnReceiveProcess(psCommLayer, pcntNumBytes, ppbyReceivedData);
   }
-  return byStatus;
+  return (ECommStatus)byStatus;
 }
 
 COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer)
@@ -155,7 +157,7 @@ void Comm_Disconnect(SCommLayer *psCommLayer)
   { Comm_Disconnect(COMM_LOWER()); }
 }
 
-HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer **ppsCommLayers, COMMCOUNT cntLayerCount)
+HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer *psCommLayers, COMMCOUNT cntLayerCount)
 {
   COMMCOUNT cntLayerIndex;
   SCommLayer *psCurrentLayer = (SCommLayer *)NULL;
@@ -164,13 +166,14 @@ HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SComm
 
   hComm->m_cntNumberOfLayers = cntLayerCount;
   hComm->m_byFlags = byFlags;
+  hComm->m_byLastError = 0;
 
   for ( cntLayerIndex = 0; cntLayerIndex < cntLayerCount; cntLayerIndex++ )
   {
-    ppsCommLayers[cntLayerIndex]->m_hCommStack = hComm;
-    ppsCommLayers[cntLayerIndex]->m_psLowerLayer = psCurrentLayer;
-    ppsCommLayers[cntLayerIndex]->m_psUpperLayer = ppsCommLayers[cntLayerIndex + 1];
-    psCurrentLayer = ppsCommLayers[cntLayerIndex];
+    psCommLayers[cntLayerIndex].m_hCommStack = hComm;
+    psCommLayers[cntLayerIndex].m_psLowerLayer = psCurrentLayer;
+    psCommLayers[cntLayerIndex].m_psUpperLayer = &psCommLayers[cntLayerIndex + 1];
+    psCurrentLayer = &psCommLayers[cntLayerIndex];
   }
 
   psCurrentLayer->m_psUpperLayer = (SCommLayer *)NULL;
@@ -216,16 +219,16 @@ void CommStack_Disconnect(HCOMMSTACK hCommStack)
   Comm_Disconnect(hCommStack->m_psCommLayer);
 }
 
-ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes)
+ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack)
 {
-  unsigned char byStatus = Comm_TransmitProcess(hCommStack->m_psCommLayer, pcntNumBytes);
-  return byStatus;
+  unsigned char byStatus = Comm_TransmitProcess(hCommStack->m_psCommLayer);
+  return (ECommStatus)byStatus;
 }
 
-ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes)
+ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes, unsigned char **ppbyReceivedData)
 {
-  unsigned char byStatus = Comm_ReceiveProcess(hCommStack->m_psCommLayer, pcntNumBytes);
-  return byStatus;
+  unsigned char byStatus = Comm_ReceiveProcess(hCommStack->m_psCommLayer, pcntNumBytes, ppbyReceivedData);
+  return (ECommStatus)byStatus;
 }
 
 
