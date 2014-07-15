@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CommWinUSB">
+      <UniqueIdentifier>{266ef431-a1b0-454f-a5f2-3d58c2b89374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Comm">
+      <UniqueIdentifier>{669a8a72-f45a-4dfa-a19f-6a4b71ef633f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\CommTest.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CommTest.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\CommWinUSB.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\SetupAPIWrapper.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\usb.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\usb100.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\usb200.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\winusb.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\WinUSBComm2Shared.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\WinUSBCommDevice.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\WinUSBCommShared.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\winusbio.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WinUSB\WinUSBWrapper.h">
+      <Filter>CommWinUSB</Filter>
+    </ClInclude>
+    <ClInclude Include="CommTestDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommTestWinUSB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\CommCore.h">
+      <Filter>Comm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Core\CommBase.h">
+      <Filter>Comm</Filter>
+    </ClInclude>
+    <ClInclude Include="Defs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\WinUSB\CommWinUSB.cpp">
+      <Filter>CommWinUSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\WinUSB\SetupAPIWrapper.cpp">
+      <Filter>CommWinUSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\WinUSB\WinUSBCommDevice.cpp">
+      <Filter>CommWinUSB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\WinUSB\WinUSBWrapper.cpp">
+      <Filter>CommWinUSB</Filter>
+    </ClCompile>
+    <ClCompile Include="CommTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommTestDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommTestWinUSB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\CommCore.c">
+      <Filter>Comm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Core\CommBase.cpp">
+      <Filter>Comm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CommTest.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
