@@ -28,6 +28,8 @@
 #ifndef __COMM_CORE_H__
 #define __COMM_CORE_H__
 
+#include "Defs.h"
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -50,6 +52,7 @@ typedef enum _ECommStatus
   commstatusIdle,       ///< No communication
   commstatusActive,     ///< Communication is ongoing
   commstatusNewPacket,  ///< New packet received
+  commstatusErrorMask = 0x80,
   commstatusError,      ///< Internal error
   commstatusOverrun,    ///< Trying to send or receive too much data
   commstatusDisconnect, ///< Communication disconnected
