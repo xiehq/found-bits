@@ -25,36 +25,66 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __WINUSB_COMM_2_SHARED_H__
-#define __WINUSB_COMM_2_SHARED_H__
+#pragma once
 
-typedef enum _EWinUSBCommVersion
+#include <string>
+#include <vector>
+#include "WinUSBWrapper.h"
+
+class CWinUSBCommDevice
 {
-  winusbcommversion1a,  ///< Previous version (only one) don't have GetVersion command.
-  winusbcommversion1b,  ///< It has winusbctrlGETSTATUS command which might return 0, 1 or 2.
-  winusbcommversion1c,  ///< All these values are understood as v1.
-  winusbcommversion1,   ///< v1.
-  winusbcommversion2,   ///< v2.
-}EWinUSBCommVersion;
+public:
+  CWinUSBCommDevice(void);
+  ~CWinUSBCommDevice(void);
 
-typedef enum _EWinUSBComm2Command
-{
-  winusbcomm2commandNone,                ///< Device does nothing
-  winusbcomm2commandReset = 0x80,        ///< Device aborts all requests and commands and resets in state ready for new packet reception
-  winusbcomm2commandGetVersion,          ///< Device sends 1 byte with WinUSB Comm version
-  winusbcomm2commandGetState,            ///< Device sends 1 byte with value of current state (Of EWinUSBComm2State)
-  winusbcomm2commandGetBufferSize,       ///< Device sends 4 bytes with comm buffer size (little endian - LSByte first in buffer)
-  winusbcomm2commandGetReturnSize,       ///< Device sends 4 bytes with return packet size (little endian - LSByte first in buffer)
-  winusbcomm2commandFollowingPacketSize, ///< Device receives 4 bytes with following packet size (little endian - LSByte first in buffer)
-}EWinUSBComm2Command;
+// #ifdef UNICODE
+//   typedef std::wstring string;
+// #else
+  typedef std::string string;
+// #endif
 
-typedef enum _EWinUSBComm2State
-{
-  winusbcomm2stateIdle,         ///< Device will probably enter receiving state
-  winusbcomm2stateReceiving,    ///< Device is waiting for new packet
-  winusbcomm2stateSending,      ///< Device has finished processing and has response packet ready to send or is sending it
-  winusbcomm2stateError,        ///< Device in bad state
-}EWinUSBComm2State;
+  typedef std::vector<string> TStringList;
+  static BOOL ListDevices(TStringList &rNamesList, WORD wVID = 0, WORD wPID = 0);
+  BOOL IsConnected() const;
+  BOOL Connect(LPCSTR pcszDevice);  ///< Device name from ListDevices
+  void Disconnect();
 
+  BOOL SendData(BYTE *pbyBuffer, DWORD dwBufferSizeInBytes);
+  BOOL CanReceive(DWORD &rdwNumBytes);
+  BOOL DoReceive(unsigned char *pbyData, DWORD dwNumBytes);
 
-#endif // __WINUSB_COMM_2_SHARED_H__
+  DWORD GetMaxBuffer() const { return m_dwCommBufferSizeInBytes; }
+private:
+  static BOOL listDevices(TStringList &rNamesList, TStringList &rPathsList, WORD wVID = 0, WORD wPID = 0);
+  static BOOL getPath(LPCSTR pcszDevice, string &rstrPath);
+
+  BOOL queryDeviceEndpoints();
+  BOOL controlWrite(BYTE byWinUSBCommControl, BYTE *pbyData = NULL, WORD wNumBytesCount = 0);
+  BOOL controlRead(BYTE byWinUSBCommControl, BYTE *pbyData, WORD wNumBytesCount);
+
+  BOOL bulkWrite(BYTE *pbyData, DWORD dwNumBytesCount);
+  BOOL bulkRead(BYTE *pbyData, DWORD dwNumBytesCount);
+
+  BOOL reset();
+  BYTE readStatus();
+  BOOL getResponseLength(DWORD &rdwNumBytes);
+
+  BOOL doSend(BYTE *pbyData, DWORD dwNumBytesCount);
+
+private:
+  static GUID sm_WinUSBCommInterfaceGUID;
+
+  HANDLE m_hDeviceHandle;
+  WINUSB_INTERFACE_HANDLE m_hWinUSBHandle;
+  UCHAR  m_byPipeInId;
+  UCHAR  m_byPipeOutId;
+  DWORD m_dwCommBufferSizeInBytes;
+
+  BYTE m_byDeviceVersion;
+
+  BYTE m_bycommandReset;
+  BYTE m_bycommandGetState;
+  BYTE m_bycommandGetBufferSize;
+  BYTE m_bycommandGetReturnSize;
+};
+

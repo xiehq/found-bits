@@ -92,15 +92,16 @@ static ECommStatus winusbcommstm32f4_TransmitProcess(SCommLayer *psCommLayer, CO
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
   EWinUSBComm2State eWinUSBComm2State = psThis->m_byStateUSB;
-  if ( pcntByteCount )
-  {
-    *pcntByteCount = (COMMCOUNT)(psThis->m_pbyWritePtr - psThis->m_pbyBuffer - psThis->m_dwSendByteCountUSB);
-  }
   switch ( eWinUSBComm2State )
   {
+  case winusbcomm2stateIdle:
+    if ( psThis->m_dwSendByteCountUSB )
+    {
+      return commstatusActive;
+    }
+    return commstatusIdle;
+  case winusbcomm2stateReceiving: return commstatusIdle;
   case winusbcomm2stateSending: return commstatusActive;
-  case winusbcomm2stateProcessing: return commstatusActive;
-  case winusbcomm2stateIdle: return commstatusIdle;
   default: break;
   }
   return commstatusError;
@@ -116,13 +117,18 @@ static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COM
   }
   switch ( eWinUSBComm2State )
   {
+  case winusbcomm2stateIdle:
+    if ( psThis->m_dwExpectedByteCountUSB && ( psThis->m_dwExpectedByteCountUSB == dwReceivedByteCountUSB ) )
+    {
+      psThis->m_dwExpectedByteCountUSB = 0;
+      Comm_OnNewPacket(psCommLayer);
+      COMM_ONDATA(psThis->m_pbyBuffer, (COMMCOUNT)dwReceivedByteCountUSB);
+      Comm_OnPacketEnd(psCommLayer);
+      *ppData = psThis->m_pbyBuffer;
+      return commstatusNewPacket;
+    }
+    return commstatusIdle;
   case winusbcomm2stateReceiving: return commstatusActive;
-  case winusbcomm2stateIdle: return commstatusIdle;
-  case winusbcomm2stateProcessing:
-    Comm_OnNewPacket(psCommLayer);
-    COMM_ONDATA(psThis->m_pbyBuffer, (COMMCOUNT)dwReceivedByteCountUSB);
-    *ppData = psThis->m_pbyBuffer;
-    return commstatusNewPacket;
   default: break;
   }
   return commstatusError;
