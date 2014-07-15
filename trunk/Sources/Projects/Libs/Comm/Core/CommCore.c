@@ -25,6 +25,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                    //
 /////////////////////////////////////////////////////////////////////////////////////
 
+#include "Defs.h"
 #include "CommCore.h"
 
 #ifndef NULL
@@ -193,8 +194,19 @@ HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SComm
     {
       pfnInit(psCurrentLayer);
     }
+
+    if ( hComm->m_byLastError & commstatusErrorMask )
+    {
+      break;
+    }
   }
 
+  if ( hComm->m_byLastError & commstatusErrorMask )
+  {
+    CommStack_Disconnect(hComm);
+    return (HCOMMSTACK)0;
+  }
+    
   return hComm;
 }
 
@@ -202,6 +214,7 @@ HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SComm
 
 void CommStack_PacketStart(HCOMMSTACK hCommStack)
 {
+  hCommStack->m_byLastError = 0;
   Comm_PacketStart(hCommStack->m_psCommLayer);
 }
 
