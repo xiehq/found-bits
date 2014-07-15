@@ -433,43 +433,52 @@ static uint8_t  USBD_WinUSBComm_DeInit (USBD_HandleTypeDef *pdev,
 static void USBD_WinUSBComm_UpdateState(SWinUSBCommSTM32F4 *psWinUSBCommSTM32F4)
 {
   unsigned long dwReceivedByteCountUSB = psWinUSBCommSTM32F4->m_pbyReceivePtrUSB - psWinUSBCommSTM32F4->m_pbyBuffer;
+
+  // If expecting new data
   if ( psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB )
   {
+    // It's probably receiving state
     if ( psWinUSBCommSTM32F4->m_dwSendByteCountUSB )
     {
+      // But not if data also scheduled to send - error
       psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateError;
       return;
     }
     if ( dwReceivedByteCountUSB < psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB )
     {
+      // Still not everything received - receiving
       psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateReceiving;
       return;
     }
-    psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateProcessing;
+    // Everything received - idle
+    psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateIdle;
     return;
   }
 
+  // Not expecting any more data
   if ( dwReceivedByteCountUSB )
   {
+    // Data remains received
     if ( psWinUSBCommSTM32F4->m_dwSendByteCountUSB )
     {
+      // If data scheduled to send - error
       psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateError;
       return;
     }
-    psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateProcessing;
+    // idle
+    psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateIdle;
     return;
   }
 
+  // Nothing to receive and nothing received
   if ( psWinUSBCommSTM32F4->m_dwSendByteCountUSB )
   {
-    if ( psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB || dwReceivedByteCountUSB )
-    {
-      psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateError;
-      return;
-    }
+    // Data scheduled to send - sending
     psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateSending;
     return;
   }
+
+  // Nothing to receive, nothing received, and nothing to send - idle
   psWinUSBCommSTM32F4->m_byStateUSB = winusbcomm2stateIdle;
 }
 
@@ -548,36 +557,29 @@ static uint8_t  USBD_WinUSBComm_SetupVendorInterface(USBD_HandleTypeDef *pdev, U
       psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB = 0;
       psWinUSBCommSTM32F4->m_pbyReceivePtrUSB = psWinUSBCommSTM32F4->m_pbyBuffer;
       psWinUSBCommSTM32F4->m_dwSendByteCountUSB = 0;
-      return USBD_OK;
-    case winusbcomm2commandGetVersion:
-      USBD_CtlSendData(pdev, &s_byWinUSBCommVersion, 1);
-      return USBD_OK;
-    case winusbcomm2commandGetState:
-      USBD_CtlSendData(pdev, &psWinUSBCommSTM32F4->m_byStateUSB, 1);
-      return USBD_OK;
-    case winusbcomm2commandGetBufferSize:
-      USBD_CtlSendData(pdev, (uint8_t*)(&psWinUSBCommSTM32F4->m_dwBufferSizeInBytes), 4);
-      return USBD_OK;
+      break;
+    case winusbcomm2commandGetVersion: USBD_CtlSendData(pdev, &s_byWinUSBCommVersion, 1); break;
+    case winusbcomm2commandGetState: USBD_CtlSendData(pdev, &psWinUSBCommSTM32F4->m_byStateUSB, 1); break;
+    case winusbcomm2commandGetBufferSize: USBD_CtlSendData(pdev, (uint8_t*)(&psWinUSBCommSTM32F4->m_dwBufferSizeInBytes), 4); break;
     case winusbcomm2commandGetReturnSize:
       if ( psWinUSBCommSTM32F4->m_dwSendByteCountUSB )
       {
-        if ( psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB )
+        if ( psWinUSBCommSTM32F4->m_pbyWritePtr > psWinUSBCommSTM32F4->m_pbyBuffer )
         {
           USBD_LL_Transmit(pdev, WINUSBCOMM_EPIN_ADDR, psWinUSBCommSTM32F4->m_pbySendPtrUSB, psWinUSBCommSTM32F4->m_dwSendByteCountUSB);
         }
         psWinUSBCommSTM32F4->m_pbyReceivePtrUSB = psWinUSBCommSTM32F4->m_pbyBuffer;
-        psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB = 0;
+        psWinUSBCommSTM32F4->m_pbyWritePtr = psWinUSBCommSTM32F4->m_pbyBuffer;
       }
       USBD_CtlSendData(pdev, (uint8_t*)(&psWinUSBCommSTM32F4->m_dwSendByteCountUSB), 4);
-      return USBD_OK;
+      break;
     case winusbcomm2commandFollowingPacketSize:
       psWinUSBCommSTM32F4->m_pbyReceivePtrUSB = psWinUSBCommSTM32F4->m_pbyBuffer;
       USBD_CtlPrepareRx(pdev, (uint8_t*)(&psWinUSBCommSTM32F4->m_dwExpectedByteCountUSB), 4);
-      return USBD_OK;
-    default:
-      USBD_CtlError(pdev , req);
-      return USBD_FAIL;
+      break;
+    default: USBD_CtlError(pdev , req); return USBD_FAIL;
     }
+    //USBD_WinUSBComm_UpdateState(psWinUSBCommSTM32F4);
     break;
   default:
     USBD_CtlError(pdev , req);
