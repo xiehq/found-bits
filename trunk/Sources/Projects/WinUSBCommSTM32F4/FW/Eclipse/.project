@@ -180,6 +180,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_ioreq.h</locationURI>
 		</link>
 		<link>
+			<name>Sources/Defs.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Defs.h</locationURI>
+		</link>
+		<link>
 			<name>Sources/EclipseSWorkarund.asm</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/EclipseSWorkarund.asm</locationURI>
