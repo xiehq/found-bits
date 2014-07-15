@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\Core\;$(ProjectDir)..\WinUSB\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Core\;$(ProjectDir)..\..\WinUSB\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessToFile>false</PreprocessToFile>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
@@ -79,7 +79,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\Core\;$(ProjectDir)..\WinUSB\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Core\;$(ProjectDir)..\..\WinUSB\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -105,19 +105,19 @@
     <None Include="res\CommTest.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Core\CommBase.h" />
-    <ClInclude Include="..\Core\CommCore.h" />
-    <ClInclude Include="..\WinUSB\CommWinUSB.h" />
-    <ClInclude Include="..\WinUSB\SetupAPIWrapper.h" />
-    <ClInclude Include="..\WinUSB\usb.h" />
-    <ClInclude Include="..\WinUSB\usb100.h" />
-    <ClInclude Include="..\WinUSB\usb200.h" />
-    <ClInclude Include="..\WinUSB\winusb.h" />
-    <ClInclude Include="..\WinUSB\WinUSBComm2Shared.h" />
-    <ClInclude Include="..\WinUSB\WinUSBCommDevice.h" />
-    <ClInclude Include="..\WinUSB\WinUSBCommShared.h" />
-    <ClInclude Include="..\WinUSB\winusbio.h" />
-    <ClInclude Include="..\WinUSB\WinUSBWrapper.h" />
+    <ClInclude Include="..\..\Core\CommBase.h" />
+    <ClInclude Include="..\..\Core\CommCore.h" />
+    <ClInclude Include="..\..\WinUSB\CommWinUSB.h" />
+    <ClInclude Include="..\..\WinUSB\SetupAPIWrapper.h" />
+    <ClInclude Include="..\..\WinUSB\usb.h" />
+    <ClInclude Include="..\..\WinUSB\usb100.h" />
+    <ClInclude Include="..\..\WinUSB\usb200.h" />
+    <ClInclude Include="..\..\WinUSB\winusb.h" />
+    <ClInclude Include="..\..\WinUSB\WinUSBComm2Shared.h" />
+    <ClInclude Include="..\..\WinUSB\WinUSBCommDevice.h" />
+    <ClInclude Include="..\..\WinUSB\WinUSBCommShared.h" />
+    <ClInclude Include="..\..\WinUSB\winusbio.h" />
+    <ClInclude Include="..\..\WinUSB\WinUSBWrapper.h" />
     <ClInclude Include="CommManager.h" />
     <ClInclude Include="CommTestWinUSB.h" />
     <ClInclude Include="Defs.h" />
@@ -128,15 +128,15 @@
     <ClInclude Include="CommTestDlg.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Core\CommBase.cpp" />
-    <ClCompile Include="..\Core\CommCore.c">
+    <ClCompile Include="..\..\Core\CommBase.cpp" />
+    <ClCompile Include="..\..\Core\CommCore.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\WinUSB\CommWinUSB.cpp" />
-    <ClCompile Include="..\WinUSB\SetupAPIWrapper.cpp" />
-    <ClCompile Include="..\WinUSB\WinUSBCommDevice.cpp" />
-    <ClCompile Include="..\WinUSB\WinUSBWrapper.cpp" />
+    <ClCompile Include="..\..\WinUSB\CommWinUSB.cpp" />
+    <ClCompile Include="..\..\WinUSB\SetupAPIWrapper.cpp" />
+    <ClCompile Include="..\..\WinUSB\WinUSBCommDevice.cpp" />
+    <ClCompile Include="..\..\WinUSB\WinUSBWrapper.cpp" />
     <ClCompile Include="CommManager.cpp" />
     <ClCompile Include="CommTestWinUSB.cpp" />
     <ClCompile Include="stdafx.cpp">
