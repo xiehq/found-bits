@@ -175,7 +175,14 @@ void CCommLayerBase::OnNewPacket()
 }
 void CCommLayerBase::OnData(const unsigned char *pbyData, COMMCOUNT cntByteCount)
 {
-  Store(pbyData, cntByteCount);
+  if ( m_psCommLayer->m_psUpperLayer ) 
+  {
+    Comm_OnData(m_psCommLayer->m_psUpperLayer, pbyData, cntByteCount);
+  }
+  else
+  {
+    Store(pbyData, cntByteCount);
+  }
 }
 void CCommLayerBase::Store(const unsigned char *pbyData, COMMCOUNT cntByteCount)
 {
