@@ -49,6 +49,8 @@ void Comm_Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT 
   { psCommLayer->m_piCommLayer->m_pfnSend(psCommLayer, pbyData, cntByteCount); }
   else if ( COMM_LOWER() )
   { Comm_Send(COMM_LOWER(), pbyData, cntByteCount); }
+  else
+  { psCommLayer->m_hCommStack->m_byLastError = commstatusError; }
 }
 
 void Comm_PacketEnd(SCommLayer *psCommLayer)
@@ -79,7 +81,9 @@ void Comm_OnData(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUN
   else if ( COMM_UPPER() )
   { Comm_OnData(COMM_UPPER(), pbyData, cntByteCount); }
   else if ( psCommLayer->m_piCommLayer->m_pfnStore )
-  { psCommLayer->m_piCommLayer->m_pfnStore(psCommLayer, pbyData, cntByteCount); }
+  { Comm_Store(psCommLayer, pbyData, cntByteCount); }
+  else
+  { psCommLayer->m_hCommStack->m_byLastError = commstatusError; }
 }
 
 void Comm_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)
@@ -90,6 +94,8 @@ void Comm_Store(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT
   { psCommLayer->m_piCommLayer->m_pfnStore(psCommLayer, pbyData, cntByteCount); }
   else if ( COMM_LOWER() )
   { Comm_Store(COMM_LOWER(), pbyData, cntByteCount); }
+  else
+  { psCommLayer->m_hCommStack->m_byLastError = commstatusError; }
 }
 
 void Comm_OnPacketEnd(SCommLayer *psCommLayer)
