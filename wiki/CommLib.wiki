@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Comm library is meant for structured communication implementation on host and client sides. It doesn't provide any specific communication interface implementation. It is a way to design it. Read about the background on accompanying post (it has pretty pictures).
+Comm library is meant for structured communication implementation on host and client sides. It doesn't provide any specific communication interface implementation. It is a way to design it. Read about the background on [http://searchingforbit.blogspot.com/2014/07/communication-with-embedded-devices.html accompanying post (it has pretty pictures)].
 
 = Details =
 
