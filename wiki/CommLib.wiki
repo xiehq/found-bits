@@ -75,34 +75,37 @@ static void myCommLayer_Init(SCommLayer *psCommLayer)
   psThis->m_dwSendByteCount = 0;
 }
 
-static COMMCOUNT winusbcommstm32f4_CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize)
+static COMMCOUNT myCommLayer_CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize)
 {
   SMyCommLayerType *psThis = (SMyCommLayerType *)psCommLayer->m_pLayerInstance;
   return psThis->m_dwBufferSizeInBytes;
 }
 
-static void winusbcommstm32f4_PacketStart(SCommLayer *psCommLayer)
+static void myCommLayer_PacketStart(SCommLayer *psCommLayer)
 {
   SMyCommLayerType *psThis = (SMyCommLayerType *)psCommLayer->m_pLayerInstance;
-  .
-  .
-  .
+// impl
+//   .
+//   .
+//   .
 }
 
-  .
-  .
-  .
+// other impl functions
+//   .
+//   .
+//   .
 
-static const ICommLayer sc_iMyCommLayerImpl=
+static const ICommLayer sc_iMyCommLayerImpl =
 {
   COMM_EVENT_NULL,                   // ClientInit
   myCommLayer_HostInit,              // HostInit
   myCommLayer_CommGetBufferSize,     // CommGetBufferSize
   myCommLayer_PacketStart,           // PacketStart
   myCommLayer_Send,                  // Send
-  .
-  .
-  .
+// pointers to other impl functions
+//   .
+//   .
+//   .
 };
 
 void MyCommLayer_Init(SCommLayer *psCommLayer, SMyCommLayerType *psMyCommLayerInstance, void * pBuffer, unsigned long dwBufferSizeInBytes)
@@ -112,5 +115,4 @@ void MyCommLayer_Init(SCommLayer *psCommLayer, SMyCommLayerType *psMyCommLayerIn
   psMyCommLayerInstance->m_pbyBuffer = pBuffer;
   psMyCommLayerInstance->m_dwBufferSizeInBytes = dwBufferSizeInBytes;
 }
-
 }}}
