@@ -8,7 +8,7 @@ Comm library is meant for structured communication implementation on host and cl
 
 Library assumes query - response master - slave communication.
 
-[https://picasaweb.google.com/lh/photo/IQiGteUqq8C9qf_DDnbGe-4G50FozGUzQ4vn5eQLhHU?feat=directlink&nonsense=something_that_ends_with.jpg]
+[https://lh4.googleusercontent.com/-pW4F5J5UAcc/U8p7coWD9YI/AAAAAAAAAMo/HzCQqIQ89bA/s746/CommFlow.jpg]
 
 First implementation is made in C due to targeting embedded devices. Two major sets of functions are important:
   * `CommStack_X` functions
