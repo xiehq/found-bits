@@ -18,7 +18,7 @@ echo Working in %CD%
   :: exit
 
 set SCRIPT_DIR=%~dp0
-set CMP_DIR=T:\Tools\Compilers\arm-4_8-2014-q1\bin\
+set CMP_DIR=\Tools\Compilers\arm-4_8-2014-q1\bin\
 set OUT_DIR=%SCRIPT_DIR%eclipse\Debug\
 set OUT_NAME=CC3200Burn
 set OUT_EXT=out

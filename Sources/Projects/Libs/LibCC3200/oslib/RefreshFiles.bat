@@ -9,20 +9,15 @@ goto :done
 )
 
   :: Specify source folders
-set SRC_SLSOURCE=%1\simplelink\source\
-set SRC_SLINCLUDE=%1\simplelink\include\
+set SRC_OSLIB=%1\oslib\
 
   :: Specify libs destination folder
-set DEST_SLSOURCE=%~dp0source\
-set DEST_SLINLUDE=%~dp0include\
+set DEST_OSLIB=%~dp0
 
   :: Remove all files
-call :DELALL %DEST_SLSOURCE%
-call :DELALL %DEST_SLINLUDE%
-call :DELALL %~dp0
+call :DELALL %DEST_OSLIB%
 
-xcopy %SRC_SLSOURCE%*.* %DEST_SLSOURCE% /q /y /k /r
-xcopy %SRC_SLINCLUDE%*.* %DEST_SLINLUDE% /q /y /k /r
+xcopy %SRC_OSLIB%*.* %DEST_OSLIB% /q /y /k /r
 
 goto :done
 
