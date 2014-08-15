@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1848666689">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1848666689" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<macros>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}/../../../../../../Tools/Compilers/arm-4_8-2014-q1"/>
+					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}/bin"/>
+					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
+				</macros>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/LibCC3200SimpleLink"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/simplelink"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/CC3200_middleware"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/LibCC3200SimpleLink/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/simplelink/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/simplelink/DebugNonOS"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/CC3200_middleware/DebugNonOS"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="simplelink_nonos" srcPrefixMapping="" srcRootPath=""/>
+						<entry flags="RESOLVED" kind="libraryFile" name="middleware" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="a" artifactName="middleware" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1848666689" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1848666689." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.137403219" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.1106813424" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${CompilerToolsPath}/${CompilerToolsPrefix}" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.1230957690" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/LibCC3200SimpleLink}/Debug" id="cdt.managedbuild.builder.gnu.cross.1357176708" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.1643965132" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.271408926" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1738895931" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.178664020" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-pipe -x c -march=armv7-m -mthumb -mfpu=vfp -gdwarf-2 -c -Wimplicit" valueType="string"/>
+								<option id="gnu.c.compiler.option.include.paths.98119290" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../driver/hal/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../framework/pm/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../framework/timer/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../soc/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../driverlib/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../oslib/&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../../inc/&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.2046396813" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.625568601" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="SL_FULL"/>
+									<listOptionValue builtIn="false" value="gcc"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1680105353" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.976576595" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1358088309" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1428791712" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.799406613" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1184391363" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.471313502" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.541786818" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver">
+								<option id="gnu.both.lib.option.flags.1025646967" name="Archiver flags" superClass="gnu.both.lib.option.flags" value="-r -c -s" valueType="string"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.165548334" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1940555809" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="LibCC3200SimpleLink.cdt.managedbuild.target.gnu.cross.exe.353027217" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1848666689;cdt.managedbuild.config.gnu.cross.exe.debug.1848666689.;cdt.managedbuild.tool.gnu.cross.c.compiler.1643965132;cdt.managedbuild.tool.gnu.c.compiler.input.1680105353">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="DebugNonOS"/>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/LibCC3200SimpleLink"/>
+		</configuration>
+	</storageModule>
+</cproject>

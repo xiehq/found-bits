@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1726490722/PATH/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1726490722/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1726490722/PATH/value=\\Tools\\Compilers\\MinGW\\msys\\1.0\\bin;D\:\\Program Files\\eclipseKeplerCDTSubclipse;C\:\\Program Files\\CollabNet\\Subversion Client;D\:\\Program Files\\FFMPEG\\bin;D\:\\Program Files\\Gource;C\:\\Windows\\system32;C\:\\Windows;C\:\\Windows\\System32\\Wbem;C\:\\Program Files (x86)\\Pinnacle\\Shared Files\\;C\:\\Program Files (x86)\\Pinnacle\\Shared Files\\Filter\\;D\:\\Sourze\\Sources\\Libs\\android-sdk-windows\\tools;C\:\\OpenSSL-Win64\\bin;D\:\\QtSDK\\Symbian\\tools\\perl\\bin\\;C\:\\Program Files (x86)\\Subversion\\bin;C\:\\OpenSSL-Win64\\bin;C\:\\Python27;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C\:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit\\;C\:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C\:\\Program Files\\TortoiseSVN\\bin;C\:\\Program Files (x86)\\VisualSVN\\bin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1726490722/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1726490722/appendContributed=true
