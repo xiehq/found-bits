@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 echo Working in %CD%
 set ERR=0
 
