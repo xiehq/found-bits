@@ -10,6 +10,12 @@
 
 extern unsigned char _sram;
 
+// startup file is calling constructors - might not be needed; can be removed if collides with proper impl
+void __libc_init_array()
+{
+
+}
+
 uint32_t LibSTM32F4xx_GetHSEValue() { return HSE_VALUE; }
 uint32_t LibSTM32F4xx_GetExternalClockValue() { return EXTERNAL_CLOCK_VALUE; }
 
