@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_hal.h"
 #include "usbd_core.h"
@@ -7,6 +6,9 @@
 
 #include "CommCore.h"
 
+#ifndef _countof
+#define _countof(a) (sizeof(a)/sizeof(a[0]))
+#endif
 
 extern unsigned char _sram;
 

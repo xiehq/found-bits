@@ -60,11 +60,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/GCCRAM_CCM.ind</locationURI>
 		</link>
 		<link>
-			<name>BuildFiles/RefreshFiles.bat</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/RefreshFiles.bat</locationURI>
-		</link>
-		<link>
 			<name>BuildFiles/STM32F407xG.ind</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/STM32F407xG.ind</locationURI>
@@ -105,11 +100,6 @@
 			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommShared.h</locationURI>
 		</link>
 		<link>
-			<name>Headers/Conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Conf.h</locationURI>
-		</link>
-		<link>
 			<name>Headers/stdafx.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stdafx.h</locationURI>
@@ -118,46 +108,6 @@
 			<name>Headers/stm32f4xx_hal_conf.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_conf.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_WinUSBComm.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_WinUSBComm.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_conf.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_core.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_core.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_ctlreq.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_ctlreq.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_def.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_def.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_desc.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_desc.h</locationURI>
-		</link>
-		<link>
-			<name>Headers/usbd_ioreq.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_ioreq.h</locationURI>
-		</link>
-		<link>
-			<name>Sources/Defs.h</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Defs.h</locationURI>
 		</link>
 		<link>
 			<name>Sources/main.c</name>
