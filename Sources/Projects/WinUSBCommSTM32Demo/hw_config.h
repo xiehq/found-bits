@@ -34,8 +34,6 @@
  #include "stm32f10x.h"
 #endif /* STM32L1XX_MD */
 
-#include "STM32FxxxHelpers.h"
-
 #define USB_DISCONNECT                    GPIOD
 #define USB_DISCONNECT_PIN                GPIO_Pin_2
 #define RCC_APB2Periph_GPIO_DISCONNECT    RCC_APB2Periph_GPIOD
