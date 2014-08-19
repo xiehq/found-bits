@@ -35,6 +35,19 @@
 static uint8_t * s_pbyControlRequestData = NULL;
 static uint16_t s_wControlRequestDataSize = 0;
 
+void STM32_GetSerial(uint32_t *pdwDevice_Serial2, uint32_t *pdwDevice_Serial1, uint32_t *pdwDevice_Serial0)
+{
+#ifdef STM32L1XX_MD
+  *pdwDevice_Serial0 = *(uint32_t*)(0x1FF80050);
+  *pdwDevice_Serial1 = *(uint32_t*)(0x1FF80054);
+  *pdwDevice_Serial2 = *(uint32_t*)(0x1FF80064);
+#else
+  *pdwDevice_Serial0 = *(__IO uint32_t*)(0x1FFFF7E8);
+  *pdwDevice_Serial1 = *(__IO uint32_t*)(0x1FFFF7EC);
+  *pdwDevice_Serial2 = *(__IO uint32_t*)(0x1FFFF7F0);
+#endif /* STM32L1XX_MD */
+}
+
 
 DEVICE Device_Table =
   {

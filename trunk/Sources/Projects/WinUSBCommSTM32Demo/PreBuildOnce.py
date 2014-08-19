@@ -30,7 +30,7 @@ import os
 import shutil
 
 PROJECTPATH = sys.argv[1]
-print PROJECTPATH
+print(PROJECTPATH)
 
 shutil.copyfile(os.path.join(PROJECTPATH + "\\..\\..\\Libs\\STM32\\ST\\Project\\Mass_Storage\\src\\usb_istr.c"), os.path.join(PROJECTPATH + "\\usb_istr.c"))
 shutil.copyfile(os.path.join(PROJECTPATH + "\\..\\..\\Libs\\STM32\\ST\\Project\\Mass_Storage\\inc\\usb_istr.h"), os.path.join(PROJECTPATH + "\\usb_istr.h"))
