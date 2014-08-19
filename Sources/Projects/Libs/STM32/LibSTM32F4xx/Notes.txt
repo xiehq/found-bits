@@ -9,7 +9,7 @@ RefreshFiles.bat to get source files from ST download package
 stm32f4xx_hal_conf.h modified
   In Includes subfolder and doesn't get refreshed with RefreshFiles.bat
 
-Build without ETH module
+Build without ETH module - not anymore
   stm32f4xx_hal_conf.h defines macros for ETH which user might want to change.
   
 User needs to provide few functions
@@ -19,4 +19,9 @@ User needs to provide few functions
   uint32_t LibSTM32F4xx_GetHSEValue() { return HSE_VALUE; }
   uint32_t LibSTM32F4xx_GetExternalClockValue() { return EXTERNAL_CLOCK_VALUE; }
   
-  
+system_stm32f4xx.c included
+
+Startup assembler code
+  Pre build step must be configured for each configuration to generate startup.asm
+  with proper startup_stm32f4xxxx.s .include statment. MakeStartupFile.bat is
+  provided to echo argument line derivate specific file in it.  

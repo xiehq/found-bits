@@ -40,6 +40,16 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>startup.asm</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/startup.asm</locationURI>
+		</link>
+		<link>
+			<name>BuildFiles/MakeStartupFile.bat</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/MakeStartupFile.bat</locationURI>
+		</link>
+		<link>
 			<name>BuildFiles/Notes.txt</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Notes.txt</locationURI>
@@ -140,6 +150,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_flash_ex.c</locationURI>
 		</link>
 		<link>
+			<name>LibFiles/stm32f4xx_hal_flash_ramfunc.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_flash_ramfunc.c</locationURI>
+		</link>
+		<link>
 			<name>LibFiles/stm32f4xx_hal_gpio.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_gpio.c</locationURI>
@@ -213,6 +228,11 @@
 			<name>LibFiles/stm32f4xx_hal_pcd.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_pcd.c</locationURI>
+		</link>
+		<link>
+			<name>LibFiles/stm32f4xx_hal_pcd_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_hal_pcd_ex.c</locationURI>
 		</link>
 		<link>
 			<name>LibFiles/stm32f4xx_hal_pwr.c</name>
@@ -323,6 +343,11 @@
 			<name>LibFiles/stm32f4xx_ll_usb.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_ll_usb.c</locationURI>
+		</link>
+		<link>
+			<name>LibFiles/system_stm32f4xx.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/system_stm32f4xx.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
