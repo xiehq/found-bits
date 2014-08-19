@@ -35,14 +35,14 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>ExtLib</name>
+			<name>Headers</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>Headers</name>
+			<name>STM32F4xxCommWinUSB</name>
 			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/Libs/STM32/STM32F4xxCommWinUSB</locationURI>
 		</link>
 		<link>
 			<name>Sources</name>
@@ -105,31 +105,6 @@
 			<locationURI>PARENT-3-PROJECT_LOC/Libs/Comm/WinUSB/WinUSBCommShared.h</locationURI>
 		</link>
 		<link>
-			<name>ExtLib/startup_stm32f407xx.s</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/startup_stm32f407xx.s</locationURI>
-		</link>
-		<link>
-			<name>ExtLib/system_stm32f4xx.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/system_stm32f4xx.c</locationURI>
-		</link>
-		<link>
-			<name>ExtLib/usbd_core.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_core.c</locationURI>
-		</link>
-		<link>
-			<name>ExtLib/usbd_ctlreq.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_ctlreq.c</locationURI>
-		</link>
-		<link>
-			<name>ExtLib/usbd_ioreq.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ExtLib/usbd_ioreq.c</locationURI>
-		</link>
-		<link>
 			<name>Headers/Conf.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Conf.h</locationURI>
@@ -185,16 +160,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Defs.h</locationURI>
 		</link>
 		<link>
-			<name>Sources/EclipseSWorkarund.asm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/EclipseSWorkarund.asm</locationURI>
-		</link>
-		<link>
-			<name>Sources/buildWorkarunds.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/buildWorkarunds.c</locationURI>
-		</link>
-		<link>
 			<name>Sources/main.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/main.c</locationURI>
@@ -203,21 +168,6 @@
 			<name>Sources/stm32f4xx_it.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/stm32f4xx_it.c</locationURI>
-		</link>
-		<link>
-			<name>Sources/usbd_WinUSBComm.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_WinUSBComm.c</locationURI>
-		</link>
-		<link>
-			<name>Sources/usbd_conf.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_conf.c</locationURI>
-		</link>
-		<link>
-			<name>Sources/usbd_desc.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/usbd_desc.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
