@@ -18,7 +18,7 @@ set DEST_EXTLIB=%~dp0
 del %DEST_EXTLIB%*.c
 del %DEST_EXTLIB%*.h
 del %DEST_EXTLIB%*.s
-
+ :: don't delete asm
  :: pause
 
 set SRC_CMSIS=%SRC_STLIB%Drivers\CMSIS\
@@ -36,6 +36,9 @@ call :REFRESH %SRC_DEVICE_INC%stm32f4xx.h
 call :REFRESH %SRC_DEVICE_INC%stm32f405xx.h
 call :REFRESH %SRC_DEVICE_INC%stm32f407xx.h
 call :REFRESH %SRC_DEVICE_INC%system_stm32f4xx.h
+call :REFRESH %SRC_DEVICE_SRC%gcc\*.s
+call :REFRESH %SRC_DEVICE_SRC%system_stm32f4xx.c
+
 
 echo - Refreshing peripheral library files:
 

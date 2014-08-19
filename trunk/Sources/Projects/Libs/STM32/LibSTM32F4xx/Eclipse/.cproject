@@ -4,7 +4,7 @@
 		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" moduleId="org.eclipse.cdt.core.settings" name="Debug407">
 				<macros>
-					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\Tools\Compilers\arm-4_8-2014-q1"/>
+					<stringMacro name="CompilerRootPath" type="VALUE_PATH_ANY" value="${ProjDirPath}\..\..\..\..\..\..\Tools\Compilers\arm-4_8-2014-q1"/>
 					<stringMacro name="CompilerToolsPath" type="VALUE_PATH_ANY" value="${CompilerRootPath}\bin"/>
 					<stringMacro name="CompilerToolsPrefix" type="VALUE_TEXT" value="arm-none-eabi-"/>
 				</macros>
@@ -23,7 +23,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="a" artifactName="STM32F407xx" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="Debug lib for STM32F407xx devices" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" name="Debug407" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+				<configuration artifactExtension="a" artifactName="STM32F407xx" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib" cleanCommand="rm -rf" description="Debug lib for STM32F407xx devices" id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369" name="Debug407" parent="cdt.managedbuild.config.gnu.cross.exe.debug" preannouncebuildStep="Writes .include statement to startup.asm." prebuildStep="${ProjDirPath}/../MakeStartupFile.bat startup_stm32f407xx.s">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1116461369." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1308258430" name="Cross GCC" nonInternalBuilderId="cdt.managedbuild.builder.gnu.cross" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.1456608611" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${CompilerToolsPath}\\${CompilerToolsPrefix}" valueType="string"/>
@@ -59,7 +59,11 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1302138200" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver">
 								<option id="gnu.both.lib.option.flags.1339041371" name="Archiver flags" superClass="gnu.both.lib.option.flags" value="-r -c -s" valueType="string"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.679917736" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+							<tool command="as" id="cdt.managedbuild.tool.gnu.cross.assembler.679917736" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<option id="gnu.both.asm.option.flags.871298349" name="Assembler flags" superClass="gnu.both.asm.option.flags" value="-march=armv7-m -mthumb -mfpu=vfp -gdwarf-2" valueType="string"/>
+								<option id="gnu.both.asm.option.include.paths.1657268111" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1039180435" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
