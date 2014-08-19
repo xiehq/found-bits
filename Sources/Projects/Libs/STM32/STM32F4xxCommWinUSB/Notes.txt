@@ -1,0 +1,8 @@
+HAL Lib from STM32Cube_FW_F4_V1.1.0
+  Download and install seperatly to update sources.
+  Needed sources to build are in repositiory.
+
+RefreshFiles.bat to get source files from ST download package
+  Needs path to top folder of downloaded package.
+  E.g. C:\STM32Cube_FW_F4_V1.1.0.
+
