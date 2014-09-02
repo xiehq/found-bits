@@ -120,6 +120,7 @@ static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COM
   case winusbcomm2stateIdle:
     if ( psThis->m_dwExpectedByteCountUSB && ( psThis->m_dwExpectedByteCountUSB == dwReceivedByteCountUSB ) )
     {
+      psThis->m_pbyReceivePtrUSB = psThis->m_pbyBuffer;
       psThis->m_dwExpectedByteCountUSB = 0;
       Comm_OnNewPacket(psCommLayer);
       COMM_ONDATA(psThis->m_pbyBuffer, (COMMCOUNT)dwReceivedByteCountUSB);
