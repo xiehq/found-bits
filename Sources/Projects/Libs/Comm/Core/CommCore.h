@@ -158,7 +158,6 @@ struct _SCommStack
 
 void Comm_PacketStart(SCommLayer *psCommLayer);
 void Comm_Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount);
-void Comm_SendBYTE(SCommLayer *psCommLayer, unsigned char byData);
 void Comm_PacketEnd(SCommLayer *psCommLayer);
 
 void Comm_OnNewPacket(SCommLayer *psCommLayer);
