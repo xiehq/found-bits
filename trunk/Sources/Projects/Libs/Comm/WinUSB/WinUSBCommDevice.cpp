@@ -275,7 +275,7 @@ static BOOL getDeviceInfo(HDEVINFO hDeviceInfo,
   if ( bResult )
   {
       hDeviceHandle = CreateFileW (
-      A2CSTRW(rstrPath),
+      A2CSTRW(rstrPath.c_str()),
       GENERIC_READ | GENERIC_WRITE,
       FILE_SHARE_READ | FILE_SHARE_WRITE,
       NULL,
@@ -534,7 +534,7 @@ BOOL CWinUSBCommDevice::Connect(LPCSTR pcszDevice)
   if ( bResult )
   {
     m_hDeviceHandle = CreateFileW (
-      A2CSTRW(strPath),
+      A2CSTRW(strPath.c_str()),
       GENERIC_READ | GENERIC_WRITE,
       FILE_SHARE_READ | FILE_SHARE_WRITE,
       NULL,
