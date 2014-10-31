@@ -64,12 +64,13 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef *hpcd)
     GPIO_InitStruct.Alternate = GPIO_AF10_OTG_FS;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct); 
     
-	/* Configure VBUS Pin */
+#ifndef NO_USB_FS_SENSE
+    /* Configure VBUS Pin */
     GPIO_InitStruct.Pin = GPIO_PIN_9;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    
+#endif
     /* Configure ID pin */
     GPIO_InitStruct.Pin = GPIO_PIN_10;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
@@ -352,7 +353,11 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
   hpcd.Init.phy_itface = PCD_PHY_EMBEDDED;
   hpcd.Init.Sof_enable = 0;
   hpcd.Init.speed = PCD_SPEED_FULL;
+#ifndef NO_USB_FS_SENSE
   hpcd.Init.vbus_sensing_enable = 1;
+#else
+  hpcd.Init.vbus_sensing_enable = 0;
+#endif
   /* Link The driver to the stack */
   hpcd.pData = pdev;
   pdev->pData = &hpcd;
