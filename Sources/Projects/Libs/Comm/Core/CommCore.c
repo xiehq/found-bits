@@ -228,6 +228,12 @@ void CommStack_Send(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOU
 {
   Comm_Send(hCommStack->m_psCommLayer, pbyData, cntByteCount);
 }
+
+void CommStack_SendCallback(void *pCallbackObject, const unsigned char *pbyData, COMMCOUNT cntByteCount)
+{
+  CommStack_Send((HCOMMSTACK)pCallbackObject, pbyData, cntByteCount);
+}
+
 void CommStack_PacketEnd(HCOMMSTACK hCommStack)
 {
   Comm_PacketEnd(hCommStack->m_psCommLayer);

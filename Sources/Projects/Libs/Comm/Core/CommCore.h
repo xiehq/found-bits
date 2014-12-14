@@ -169,6 +169,7 @@ COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer);
 HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer *psCommLayers, COMMCOUNT cntLayerCount);
 void CommStack_PacketStart(HCOMMSTACK hCommStack);
 void CommStack_Send(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOUNT cntByteCount);
+void CommStack_SendCallback(void *pCallbackObject, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 void CommStack_PacketEnd(HCOMMSTACK hCommStack);
 ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack);
 ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes, unsigned char **ppbyReceivedData);
