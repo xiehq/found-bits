@@ -287,7 +287,12 @@ static BOOL getDeviceInfo(HDEVINFO hDeviceInfo,
     {
       //Error.
       PTRACE("Error %d.", GetLastError());
-      bResult = FALSE;
+      if ( pInterfaceDetailData )
+      {
+        LocalFree(pInterfaceDetailData);
+        pInterfaceDetailData = NULL;
+      }
+      return TRUE;
     }
   }
 
