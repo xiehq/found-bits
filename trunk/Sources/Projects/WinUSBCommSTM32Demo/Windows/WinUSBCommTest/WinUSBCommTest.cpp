@@ -178,7 +178,7 @@ BOOL GetDeviceHandle (GUID guidDeviceInterface, PHANDLE hDeviceHandle)
 
     //copy device path
 
-    size_t nLength = strlen(pInterfaceDetailData->DevicePath) + 1;  
+    size_t nLength = _tcslen(pInterfaceDetailData->DevicePath) + 1;  
     lpDevicePath = (TCHAR *) LocalAlloc (LPTR, nLength * sizeof(TCHAR));
     StringCchCopy(lpDevicePath, nLength, pInterfaceDetailData->DevicePath);
     lpDevicePath[nLength-1] = 0;
@@ -509,7 +509,7 @@ int _tmain(int argc, _TCHAR* argv[])
   BYTE * pbyDataToDevice = NULL;
   BYTE * pbyDataFromDevice = NULL;
 
-  SetConsoleTitle("WinUSBComm Test");
+  SetConsoleTitle(_T("WinUSBComm Test"));
 
   bResult = GetDeviceHandle(guidDeviceInterface, &hDeviceHandle);
   if(!bResult)
