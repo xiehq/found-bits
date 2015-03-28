@@ -246,6 +246,11 @@ void CCommTestDlg::doOneCommTest()
   DWORD dwTestSize = calculateTestSize(m_sTestResult.m_dwPacketSize);
   m_sTestResult.m_dwPacketSize = dwTestSize;
 
+  if ( !dwTestSize )
+  {
+    return;
+  }
+
   BYTE bySeed = (BYTE)rand();
 
   for ( DWORD I = 0; I < dwTestSize; I++ )
@@ -404,13 +409,6 @@ void CCommTestDlg::OnBnClickedDoTest()
     bResult = NULL != m_hComm;
   }
   
-  DWORD dwAvailablePacketSize = 0;
-  if ( bResult )
-  {
-    dwAvailablePacketSize = CommStack_GetBufferSize(m_hComm);
-    bResult = 0 != dwAvailablePacketSize;
-  }
-  
   if ( bResult )
   {
     if ( packetSizeDynamic == m_sTestConfiguration.m_ePacketSize )
@@ -423,23 +421,12 @@ void CCommTestDlg::OnBnClickedDoTest()
       {
         bResult = FALSE;
       }
-      if ( dwAvailablePacketSize < m_sTestConfiguration.m_dwMaxPacketSize )
-      {
-        bResult = FALSE;
-      }
-    }
-    else
-    {
-      if ( dwAvailablePacketSize < m_sTestConfiguration.m_dwConstatPacketSize )
-      {
-        m_sTestConfiguration.m_dwConstatPacketSize = dwAvailablePacketSize;
-      }
     }
   }   
 
   if ( bResult )
   {
-    if ( dwAvailablePacketSize > m_dwAvailablePacketSize )
+    if ( m_sTestConfiguration.m_dwMaxPacketSize != m_dwAvailablePacketSize )
     {
       if ( m_pbyTestBuffer )
       {
@@ -447,9 +434,9 @@ void CCommTestDlg::OnBnClickedDoTest()
         m_pbyTestBuffer = NULL;
         m_dwAvailablePacketSize = 0;
       }
-      m_pbyTestBuffer = new BYTE[dwAvailablePacketSize];
+      m_pbyTestBuffer = new BYTE[m_sTestConfiguration.m_dwMaxPacketSize];
       bResult = NULL != m_pbyTestBuffer;
-      m_dwAvailablePacketSize = dwAvailablePacketSize;
+      m_dwAvailablePacketSize = m_sTestConfiguration.m_dwMaxPacketSize;
     }
   }
 
