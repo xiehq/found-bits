@@ -59,12 +59,21 @@ void CCommWinUSB::ClientInit()
     m_psCommLayer->m_hCommStack->m_byLastError = commstatusError;
   }
 }
-COMMCOUNT CCommWinUSB::CommGetBufferSize(COMMCOUNT cntLowerLayerBufferSize)
-{
-  COMMCOUNT cntBaseBufferSize = base_class::CommGetBufferSize(cntLowerLayerBufferSize);
-  COMMCOUNT cntDeviceBufferSize = m_USBDev.GetMaxBuffer();
 
-  return min(cntBaseBufferSize, cntDeviceBufferSize);
+void CCommWinUSB::PacketStart()
+{
+  base_class::PacketStart();
+  HCOMMSTACK hComm = m_psCommLayer->m_hCommStack;
+  const char *pcszDest = hComm->m_pcszDestination;
+  if ( !pcszDest )
+  {
+    pcszDest = "";
+  }
+  CommStack_Send(hComm, (BYTE *)pcszDest, strlen(pcszDest) + 1);
+  CommStack_Send(hComm, &hComm->m_byOP, sizeof(hComm->m_byOP));
+  CommStack_Send(hComm, &hComm->m_byI, sizeof(hComm->m_byI));
+  CommStack_Send(hComm, &hComm->m_byMoP, sizeof(hComm->m_byMoP));
+  CommStack_Send(hComm, &hComm->m_byIPI, sizeof(hComm->m_byIPI));
 }
 
 void CCommWinUSB::PacketEnd()
@@ -120,10 +129,26 @@ ECommStatus CCommWinUSB::ReceiveProcess(COMMCOUNT *pcntByteCount, unsigned char 
       return commstatusError;
     }
     OnNewPacketNotify();
-    OnDataNotify(GetBuffer(), dwResponseSize);
+    BYTE *pbyData = GetBuffer();
+    OnDataNotify(pbyData, dwResponseSize);
     OnPacketEndNotify();
-    *pcntByteCount = (COMMCOUNT)GetReceivedSize();
-    *ppbyReceivedData = GetBuffer();
+
+
+    DWORD dwHeaderLength = 0;
+//     HCOMMSTACK hComm = GetStack();
+//     hComm->m_pcszDestination = (char *)pbyData;
+//     dwHeaderLength += strlen(hComm->m_pcszDestination) + 1;
+//     hComm->m_byOP = pbyData[dwHeaderLength];
+//     dwHeaderLength += sizeof(hComm->m_byOP);
+//     hComm->m_byI = pbyData[dwHeaderLength];
+//     dwHeaderLength += sizeof(hComm->m_byI);
+//     hComm->m_byMoP = pbyData[dwHeaderLength];
+//     dwHeaderLength += sizeof(hComm->m_byMoP);
+//     hComm->m_byIPI = pbyData[dwHeaderLength];
+//     dwHeaderLength += sizeof(hComm->m_byIPI);
+
+    *ppbyReceivedData = GetBuffer() + dwHeaderLength;
+    *pcntByteCount = (COMMCOUNT)GetReceivedSize() - dwHeaderLength;
     return commstatusNewPacket;
   }
   return commstatusIdle;

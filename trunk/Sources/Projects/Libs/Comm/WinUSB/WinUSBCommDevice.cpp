@@ -817,6 +817,10 @@ BOOL CWinUSBCommDevice::SendData(BYTE *pbyBuffer, DWORD dwBufferSizeInBytes)
 
 BOOL CWinUSBCommDevice::doSend(BYTE *pbyData, DWORD dwNumBytesCount)
 {
+  if ( dwNumBytesCount > m_dwCommBufferSizeInBytes )
+  {
+    return FALSE;
+  }
   BOOL bResult = TRUE;
   switch ( m_byDeviceVersion )
   {
