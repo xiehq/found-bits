@@ -46,22 +46,24 @@ static void winusbcommstm32f4_HostInit(SCommLayer *psCommLayer)
   psThis->m_pbySendPtrUSB = psThis->m_pbyBuffer;
   psThis->m_byStateUSB = winusbcomm2stateIdle;
 }
-static COMMCOUNT winusbcommstm32f4_CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize)
-{
-  SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
-  return psThis->m_dwBufferSizeInBytes;
-}
 static void winusbcommstm32f4_PacketStart(SCommLayer *psCommLayer)
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
+  HCOMMSTACK hComm = psCommLayer->m_hCommStack;
   psThis->m_dwSendByteCountUSB = 0;
   psThis->m_pbySendPtrUSB = psThis->m_pbyBuffer;
   psThis->m_byFlags &= ~wucstmflTxOverflow;
+
+//  CommStack_Send(hComm, (unsigned char *)hComm->m_pcszDestination, strlen(hComm->m_pcszDestination) + 1);
+//  CommStack_Send(hComm, &hComm->m_byOP, sizeof(hComm->m_byOP));
+//  CommStack_Send(hComm, &hComm->m_byI, sizeof(hComm->m_byI));
+//  CommStack_Send(hComm, &hComm->m_byMoP, sizeof(hComm->m_byMoP));
+//  CommStack_Send(hComm, &hComm->m_byIPI, sizeof(hComm->m_byIPI));
 }
 static void winusbcommstm32f4_Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount)
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
-  COMMCOUNT cntBufferSize = winusbcommstm32f4_CommGetBufferSize(psCommLayer, 0);
+  COMMCOUNT cntBufferSize = psThis->m_dwBufferSizeInBytes;
 
   if ( psThis->m_byFlags & wucstmflTxOverflow )
   {
@@ -110,6 +112,8 @@ static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COM
 {
   SWinUSBCommSTM32F4 *psThis = (SWinUSBCommSTM32F4 *)psCommLayer->m_pLayerInstance;
   EWinUSBComm2State eWinUSBComm2State = psThis->m_byStateUSB;
+  HCOMMSTACK hComm = psCommLayer->m_hCommStack;
+  unsigned long dwHeaderLength = 0;
   unsigned long dwReceivedByteCountUSB = psThis->m_pbyReceivePtrUSB - psThis->m_pbyBuffer;
   if ( pcntByteCount )
   {
@@ -125,7 +129,20 @@ static ECommStatus winusbcommstm32f4_ReceiveProcess(SCommLayer *psCommLayer, COM
       Comm_OnNewPacket(psCommLayer);
       COMM_ONDATA(psThis->m_pbyBuffer, (COMMCOUNT)dwReceivedByteCountUSB);
       Comm_OnPacketEnd(psCommLayer);
-      *ppData = psThis->m_pbyBuffer;
+
+      hComm->m_pcszDestination = (char *)psThis->m_pbyBuffer;
+      dwHeaderLength = strlen(hComm->m_pcszDestination) + 1;
+      hComm->m_byOP = psThis->m_pbyBuffer[dwHeaderLength];
+      dwHeaderLength += sizeof(hComm->m_byOP);
+      hComm->m_byI = psThis->m_pbyBuffer[dwHeaderLength];
+      dwHeaderLength += sizeof(hComm->m_byI);
+      hComm->m_byMoP = psThis->m_pbyBuffer[dwHeaderLength];
+      dwHeaderLength += sizeof(hComm->m_byMoP);
+      hComm->m_byIPI = psThis->m_pbyBuffer[dwHeaderLength];
+      dwHeaderLength += sizeof(hComm->m_byIPI);
+
+      *ppData = psThis->m_pbyBuffer + dwHeaderLength;
+      *pcntByteCount = (COMMCOUNT)dwReceivedByteCountUSB - dwHeaderLength;
       return commstatusNewPacket;
     }
     return commstatusIdle;
@@ -163,7 +180,6 @@ static const ICommLayer sc_iCommLayerWinUSBCommSTM32F4 =
 {
   COMM_EVENT_NULL,                         // ClientInit
   winusbcommstm32f4_HostInit,              // HostInit
-  winusbcommstm32f4_CommGetBufferSize,     // CommGetBufferSize
   winusbcommstm32f4_PacketStart,           // PacketStart
   winusbcommstm32f4_Send,                  // Send
   winusbcommstm32f4_PacketEnd,             // PacketEnd

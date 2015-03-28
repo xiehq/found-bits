@@ -39,7 +39,7 @@ public:
 
 protected:
   virtual void ClientInit();
-  virtual COMMCOUNT CommGetBufferSize(COMMCOUNT cntLowerLayerBufferSize);
+  virtual void PacketStart();
   virtual void PacketEnd();
   virtual ECommStatus TransmitProcess();
   virtual ECommStatus ReceiveProcess(COMMCOUNT *pcntByteCount, unsigned char **ppbyReceivedData);
