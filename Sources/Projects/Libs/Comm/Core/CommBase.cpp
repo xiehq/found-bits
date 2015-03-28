@@ -32,7 +32,6 @@ ICommLayer CCommLayerBase::sm_iCommLayer =
 {
   CCommLayerBase::ClientInit,
   CCommLayerBase::HostInit,
-  CCommLayerBase::CommGetBufferSize,
   CCommLayerBase::PacketStart,
   CCommLayerBase::Send,
   CCommLayerBase::PacketEnd,
@@ -74,11 +73,6 @@ void CCommLayerBase::HostInit(SCommLayer *psCommLayer)
 {
   CCommLayerBase *pThis = (CCommLayerBase *)psCommLayer->m_pLayerInstance;
   pThis->HostInit();
-}
-COMMCOUNT CCommLayerBase::CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize)
-{
-  CCommLayerBase *pThis = (CCommLayerBase *)psCommLayer->m_pLayerInstance;
-  return pThis->CommGetBufferSize(cntLowerLayerBufferSize);
 }
 void CCommLayerBase::PacketStart(SCommLayer *psCommLayer)
 {
@@ -140,19 +134,20 @@ void CCommLayerBase::ClientInit()
 void CCommLayerBase::HostInit()
 {
 }
-COMMCOUNT CCommLayerBase::CommGetBufferSize(COMMCOUNT cntLowerLayerBufferSize)
-{
-  return m_cntBufferSize;
-}
 void CCommLayerBase::PacketStart()
 {
   m_cntToSend = 0;
 }
 void CCommLayerBase::Send(const unsigned char *pbyData, COMMCOUNT cntByteCount)
 {
+  if ( GetError() )
+  {
+    return;
+  }
   if ( (cntByteCount + m_cntToSend) > m_cntBufferSize )
   {
-    m_psCommLayer->m_hCommStack->m_byLastError = commstatusOverrun;
+    ASSERT(0);
+    SetError(commstatusOverrun);
     return;
   }
   memmove(&m_pbyBuff[m_cntToSend], pbyData, cntByteCount);

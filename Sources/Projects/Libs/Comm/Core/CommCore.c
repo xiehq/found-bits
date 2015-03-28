@@ -114,7 +114,7 @@ ECommStatus Comm_TransmitProcess(SCommLayer *psCommLayer)
   {
     byStatus = psCommLayer->m_piCommLayer->m_pfnTransmitProcess(psCommLayer, (COMMCOUNT *)NULL, (unsigned char **)NULL);
   }
-  if ( commstatusError == byStatus )
+  if ( commstatusErrorMask & byStatus )
   {
     return commstatusError;
   }
@@ -142,17 +142,6 @@ ECommStatus Comm_ReceiveProcess(SCommLayer *psCommLayer, COMMCOUNT *pcntNumBytes
     byStatus = psCommLayer->m_piCommLayer->m_pfnReceiveProcess(psCommLayer, pcntNumBytes, ppbyReceivedData);
   }
   return (ECommStatus)byStatus;
-}
-
-COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer)
-{
-  COMMCOUNT cntBufferSize = 0;
-  if ( COMM_LOWER() )
-  { cntBufferSize = Comm_GetBufferSize(COMM_LOWER()); }
-  
-  if ( psCommLayer->m_piCommLayer->m_pfnCommGetBufferSize )
-  { cntBufferSize = psCommLayer->m_piCommLayer->m_pfnCommGetBufferSize(psCommLayer, cntBufferSize); }
-  return cntBufferSize;
 }
 
 void Comm_Disconnect(SCommLayer *psCommLayer)
@@ -216,7 +205,14 @@ HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SComm
   return hComm;
 }
 
-
+void CommStack_SetDestination(HCOMMSTACK hCommStack, const char *pcszDest, unsigned char byOP, unsigned char byI, unsigned char byMoP, unsigned char byIPI)
+{
+  hCommStack->m_pcszDestination = pcszDest;
+  hCommStack->m_byOP = byOP;
+  hCommStack->m_byI = byI;
+  hCommStack->m_byMoP = byMoP;
+  hCommStack->m_byIPI = byIPI;
+}
 
 void CommStack_PacketStart(HCOMMSTACK hCommStack)
 {
@@ -255,10 +251,3 @@ ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBy
   unsigned char byStatus = Comm_ReceiveProcess(hCommStack->m_psCommLayer, pcntNumBytes, ppbyReceivedData);
   return (ECommStatus)byStatus;
 }
-
-
-COMMCOUNT CommStack_GetBufferSize(HCOMMSTACK hCommStack)
-{
-  return Comm_GetBufferSize(hCommStack->m_psCommLayer);
-}
-
