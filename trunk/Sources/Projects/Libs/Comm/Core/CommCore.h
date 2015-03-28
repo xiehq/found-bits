@@ -62,16 +62,10 @@ typedef void (*pfnCommEvent)(SCommLayer *psCommLayer);  ///< Layer event notific
 typedef void (*pfnCommTransfer)(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount); ///< Data transfer (data received, store, send)
 typedef ECommStatus (*pfnCommProcess)(SCommLayer *psCommLayer, COMMCOUNT *pcntByteCount, unsigned char **ppbyReceivedData); ///< Comm process (receive, transmit)
 
-typedef COMMCOUNT (*pfnCommGetBufferSize)(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize);
-
 typedef struct _ICommLayer
 {
   pfnCommEvent m_pfnClientInit;                 ///< Client mode layer initialization and connect. Communication allowed.
   pfnCommEvent m_pfnHostInit;                   ///< Host mode layer initialization and start listening.
-
-  pfnCommGetBufferSize m_pfnCommGetBufferSize;  ///< Called from application or upper layer to get max comm buffer length in bytes.
-                                                ///< First same call to lower layer is made.
-                                                ///< Then size from lower layers is available in this call where it can be adjusted and returned.
 
   pfnCommEvent m_pfnPacketStart;                ///< Called from application or upper layer on new packet transmission after same call to lower layer.
                                                 ///< Same call to lower layer is made by framework regardless if layer implements this call.
@@ -111,7 +105,6 @@ typedef struct _ICommLayer
 /*
 layerImpl_ClientInit,            // ClientInit
 layerImpl_HostInit,              // HostInit
-layerImpl_CommGetBufferSize,     // CommGetBufferSize
 layerImpl_PacketStart,           // PacketStart
 layerImpl_Send,                  // Send
 layerImpl_PacketEnd,             // PacketEnd
@@ -127,7 +120,6 @@ layerImpl_Disconnect             // Disconnect
 #define COMM_EVENT_NULL         (pfnCommEvent)NULL
 #define COMM_TRANSFER_NULL      (pfnCommTransfer)NULL
 #define COMM_PROCESS_NULL       (pfnCommProcess)NULL
-#define COMM_GETBUFFERSIZE_NULL (pfnCommGetBufferSize)NULL
 
 
 typedef SCommStack * HCOMMSTACK;
@@ -151,6 +143,11 @@ enum ECommStackFlags
 struct _SCommStack
 {
   SCommLayer *m_psCommLayer;      ///< Pointer to array of comm layers. Lowest layer (physical) at index 0.
+  const char *m_pcszDestination;
+  unsigned char m_byOP;
+  unsigned char m_byI;
+  unsigned char m_byMoP;
+  unsigned char m_byIPI;
   COMMCOUNT m_cntNumberOfLayers;  ///< Number of layers in array.
   unsigned char m_byFlags;        ///< Of ECommStackFlags.
   unsigned char m_byLastError;
@@ -167,13 +164,13 @@ void Comm_OnPacketEnd(SCommLayer *psCommLayer);
 COMMCOUNT Comm_GetBufferSize(SCommLayer *psCommLayer);
 
 HCOMMSTACK CommStack_Init(unsigned char byFlags, SCommStack * psCommStack, SCommLayer *psCommLayers, COMMCOUNT cntLayerCount);
+void CommStack_SetDestination(HCOMMSTACK hCommStack, const char *pcszDest, unsigned char byOP, unsigned char byI, unsigned char byMoP, unsigned char byIPI);
 void CommStack_PacketStart(HCOMMSTACK hCommStack);
 void CommStack_Send(HCOMMSTACK hCommStack, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 void CommStack_SendCallback(void *pCallbackObject, const unsigned char *pbyData, COMMCOUNT cntByteCount);
 void CommStack_PacketEnd(HCOMMSTACK hCommStack);
 ECommStatus CommStack_TransmitProcess(HCOMMSTACK hCommStack);
 ECommStatus CommStack_ReceiveProcess(HCOMMSTACK hCommStack, COMMCOUNT *pcntNumBytes, unsigned char **ppbyReceivedData);
-COMMCOUNT CommStack_GetBufferSize(HCOMMSTACK hCommStack);
 void CommStack_Disconnect(HCOMMSTACK hCommStack);
 
 #define COMM_THIS() psCommLayer->m_pLayerInstance

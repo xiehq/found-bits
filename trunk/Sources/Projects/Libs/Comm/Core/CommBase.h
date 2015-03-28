@@ -47,7 +47,6 @@ public:
   // Static functions - prototypes as defined in CommCore.h
   static void ClientInit(SCommLayer *psCommLayer);
   static void HostInit(SCommLayer *psCommLayer);
-  static COMMCOUNT CommGetBufferSize(SCommLayer *psCommLayer, COMMCOUNT cntLowerLayerBufferSize);
   static void PacketStart(SCommLayer *psCommLayer);
   static void Send(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount);
   static void PacketEnd(SCommLayer *psCommLayer);
@@ -70,11 +69,14 @@ protected:
   DWORD GetBufferSize() const { return m_cntBufferSize; }
   DWORD GetReceivedSize() const { return m_cntStored; }
   DWORD GetSendSize() const { return m_cntToSend; }
+  HCOMMSTACK GetStack() const { return m_psCommLayer->m_hCommStack; }
+  void ClearError() { m_psCommLayer->m_hCommStack->m_byLastError = 0; }
+  void SetError(ECommStatus eError) { m_psCommLayer->m_hCommStack->m_byLastError = eError; }
+  ECommStatus GetError() const { return (ECommStatus)m_psCommLayer->m_hCommStack->m_byLastError; }
 protected:
   // Overridable methods called from CommCore through static functions.
   virtual void ClientInit();
   virtual void HostInit();
-  virtual COMMCOUNT CommGetBufferSize(COMMCOUNT cntLowerLayerBufferSize);
   virtual void PacketStart();
   virtual void Send(const unsigned char *pbyData, COMMCOUNT cntByteCount);
   virtual void PacketEnd();
