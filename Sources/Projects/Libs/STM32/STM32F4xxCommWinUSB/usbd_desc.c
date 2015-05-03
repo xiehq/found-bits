@@ -37,9 +37,9 @@
 #define USBD_LANGID_STRING            0x0409
 #define USBD_MANUFACTURER_STRING      "Awesome Embedded Developer"
 #define USBD_PRODUCT_HS_STRING        "WinUSBComm Device in HS Mode"
-#define USBD_SERIALNUMBER_HS_STRING   "00000000001A"
+//#define USBD_SERIALNUMBER_HS_STRING   "00000000001A"
 #define USBD_PRODUCT_FS_STRING        "WinUSBComm Device in FS Mode"
-#define USBD_SERIALNUMBER_FS_STRING   "00000000001B"
+//#define USBD_SERIALNUMBER_FS_STRING   "00000000001B"
 #define USBD_CONFIGURATION_HS_STRING  "WinUSBComm Config"
 #define USBD_INTERFACE_HS_STRING      "WinUSBComm Interface"
 #define USBD_CONFIGURATION_FS_STRING  "WinUSBComm Config"
@@ -146,11 +146,11 @@ uint8_t *USBD_WinUSBComm_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t 
 {
   if(speed == 0)
   {   
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_PRODUCT_HS_STRING, USBD_StrDesc, length);
+    USBD_GetString((uint8_t *)USBD_PRODUCT_HS_STRING, USBD_StrDesc, length);
   }
   else
   {
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_PRODUCT_FS_STRING, USBD_StrDesc, length);    
+    USBD_GetString((uint8_t *)USBD_PRODUCT_FS_STRING, USBD_StrDesc, length);
   }
   return USBD_StrDesc;
 }
@@ -167,6 +167,42 @@ uint8_t *USBD_WinUSBComm_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint
   return USBD_StrDesc;
 }
 
+#define SERIAL_CHAR_WIDTH 5
+#define SERIAL_NUM_BITS 96
+static const char *sc_pchSerialRadix = "0123456789ABCDEFGHIJKLMNOPRSTQRSTUVWXYZ";
+void serialToString(char *pszDest)
+{
+  const unsigned char *pbySerial = (unsigned char *)0x1FFF7A10;
+  unsigned char byOffset = 0;
+  unsigned char byBit = 0;
+  unsigned char byCurrentByteBit = 0;
+  unsigned char byCurrentByteBits = 0;
+  unsigned char byPart = 0;
+
+
+  for ( byBit = 0; byBit < SERIAL_NUM_BITS; byBit += SERIAL_CHAR_WIDTH )
+  {
+    byOffset = byBit / 8;
+    byCurrentByteBit = byBit % 8;
+    byCurrentByteBits = 8 - byCurrentByteBit;
+    if ( byCurrentByteBits > SERIAL_CHAR_WIDTH )
+    {
+      byCurrentByteBits = SERIAL_CHAR_WIDTH;
+    }
+    byPart = (pbySerial[byOffset] >> byCurrentByteBit) & ((1 << byCurrentByteBits) - 1);
+    if ( (byBit + SERIAL_CHAR_WIDTH) < SERIAL_NUM_BITS )
+    {
+      if ( byCurrentByteBits < SERIAL_CHAR_WIDTH )
+      {
+        byPart |= pbySerial[byOffset + 1] << byCurrentByteBits;
+      }
+    }
+    byPart &= ((1 << SERIAL_CHAR_WIDTH) - 1);
+    *pszDest = sc_pchSerialRadix[byPart];
+    pszDest++;
+  }
+}
+
 /**
   * @brief  Returns the serial number string descriptor.        
   * @param  speed: Current device speed
@@ -175,13 +211,17 @@ uint8_t *USBD_WinUSBComm_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint
   */
 uint8_t *USBD_WinUSBComm_SerialStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
 {
+  char achSerial[32] = { 0 };
+
+  serialToString(achSerial);
+
   if(speed == USBD_SPEED_HIGH)
   {    
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_SERIALNUMBER_HS_STRING, USBD_StrDesc, length);
+    USBD_GetString((uint8_t *)achSerial, USBD_StrDesc, length);
   }
   else
   {
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_SERIALNUMBER_FS_STRING, USBD_StrDesc, length);    
+    USBD_GetString((uint8_t *)achSerial, USBD_StrDesc, length);
   }
   return USBD_StrDesc;
 }
@@ -196,11 +236,11 @@ uint8_t *USBD_WinUSBComm_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *
 {
   if(speed == USBD_SPEED_HIGH)
   {  
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_CONFIGURATION_HS_STRING, USBD_StrDesc, length);
+    USBD_GetString((uint8_t *)USBD_CONFIGURATION_HS_STRING, USBD_StrDesc, length);
   }
   else
   {
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_CONFIGURATION_FS_STRING, USBD_StrDesc, length); 
+    USBD_GetString((uint8_t *)USBD_CONFIGURATION_FS_STRING, USBD_StrDesc, length);
   }
   return USBD_StrDesc;  
 }
@@ -215,11 +255,11 @@ uint8_t *USBD_WinUSBComm_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_
 {
   if(speed == 0)
   {
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_INTERFACE_HS_STRING, USBD_StrDesc, length);
+    USBD_GetString((uint8_t *)USBD_INTERFACE_HS_STRING, USBD_StrDesc, length);
   }
   else
   {
-    USBD_GetString((uint8_t *)(uint8_t *)USBD_INTERFACE_FS_STRING, USBD_StrDesc, length);
+    USBD_GetString((uint8_t *)USBD_INTERFACE_FS_STRING, USBD_StrDesc, length);
   }
   return USBD_StrDesc;  
 }
