@@ -54,9 +54,20 @@ public:
   BOOL DoReceive(unsigned char *pbyData, DWORD dwNumBytes);
 
   DWORD GetMaxBuffer() const { return m_dwCommBufferSizeInBytes; }
+  struct SDeviceInfo
+  {
+    string m_strVendor;
+    string m_strProduct;
+    string m_strSerial;
+    WORD m_wVID;
+    WORD m_wPID;
+    string GetLongName();
+  };
+  static BOOL GetDeviceInfo(LPCSTR pcszDevice, SDeviceInfo &rsDeviceInfo);
 private:
-  static BOOL listDevices(TStringList &rNamesList, TStringList &rPathsList, WORD wVID = 0, WORD wPID = 0);
-  static BOOL getPath(LPCSTR pcszDevice, string &rstrPath);
+  typedef std::vector<SDeviceInfo> TDeviceList;
+  static BOOL listDevices(TDeviceList &rDeviceList, TStringList &rPathsList, WORD wVID = 0, WORD wPID = 0);
+  static BOOL getPath(LPCSTR pcszDevice, string &rstrPath, SDeviceInfo *psDeviceInfo = NULL);
 
   BOOL queryDeviceEndpoints();
   BOOL controlWrite(BYTE byWinUSBCommControl, BYTE *pbyData = NULL, WORD wNumBytesCount = 0);
