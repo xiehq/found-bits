@@ -145,6 +145,13 @@ void makeName(const CWinUSBCommDevice::string &rstrVendor,
   }
 }
 
+CWinUSBCommDevice::string CWinUSBCommDevice::SDeviceInfo::GetLongName()
+{
+  string strName;
+  makeName(m_strVendor, m_strProduct, m_strSerial, TRUE, strName);
+  return strName;
+}
+
 ///
 /// Gets device name and path.
 ///
@@ -155,11 +162,14 @@ static BOOL getDeviceInfo(HDEVINFO hDeviceInfo,
                           WORD &rwVID,
                           WORD &rwPID,
                           BOOL &rbListed,
-                          CWinUSBCommDevice::string &rstrName,
-                          CWinUSBCommDevice::string &rstrPath)
+                          CWinUSBCommDevice::SDeviceInfo &rsDeviceInfo,
+                          CWinUSBCommDevice::string &rstrPath
+                          )
 {
   BOOL bResult = TRUE;
-  rstrName.clear();
+  rsDeviceInfo.m_strVendor.clear();
+  rsDeviceInfo.m_strProduct.clear();
+  rsDeviceInfo.m_strSerial.clear();
   rstrPath.clear();
 
   if ( bResult )
@@ -323,27 +333,19 @@ static BOOL getDeviceInfo(HDEVINFO hDeviceInfo,
   BYTE bySerialStringIndex = pDD->iSerialNumber;
 
 
-  CWinUSBCommDevice::string strVendor;
   if ( bResult )
   {
-    bResult = getStringDescriptor(hWinUSBHandle, byVendorStringIndex, strVendor);
-  }
-
-  CWinUSBCommDevice::string strProduct;
-  if ( bResult )
-  {
-    bResult = getStringDescriptor(hWinUSBHandle, byProductStringIndex, strProduct);
-  }
-
-  CWinUSBCommDevice::string strSerial;
-  if ( bResult )
-  {
-    bResult = getStringDescriptor(hWinUSBHandle, bySerialStringIndex, strSerial);
+    bResult = getStringDescriptor(hWinUSBHandle, byVendorStringIndex, rsDeviceInfo.m_strVendor);
   }
 
   if ( bResult )
   {
-    makeName(strVendor, strProduct, strSerial, TRUE, rstrName);
+    bResult = getStringDescriptor(hWinUSBHandle, byProductStringIndex, rsDeviceInfo.m_strProduct);
+  }
+
+  if ( bResult )
+  {
+    bResult = getStringDescriptor(hWinUSBHandle, bySerialStringIndex, rsDeviceInfo.m_strSerial);
   }
 
   if ( INVALID_HANDLE_VALUE != hWinUSBHandle )
@@ -366,14 +368,30 @@ static BOOL getDeviceInfo(HDEVINFO hDeviceInfo,
 
 BOOL CWinUSBCommDevice::ListDevices(TStringList &rNamesList, WORD wVID /* = 0 */, WORD wPID /* = 0 */)
 {
+  rNamesList.clear();
   TStringList paths;
-  return listDevices(rNamesList, paths, wVID, wPID);
+  TDeviceList devs;
+  if ( !listDevices(devs, paths, wVID, wPID) )
+  {
+    return FALSE;
+  }
+  for ( DWORD D = 0; D < devs.size(); ++D )
+  {
+    rNamesList.push_back(devs[D].GetLongName());
+  }
+  return TRUE;
 }
 
-BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPathsList, WORD wVID /* = 0 */, WORD wPID /* = 0 */)
+BOOL CWinUSBCommDevice::GetDeviceInfo(LPCSTR pcszDevice, SDeviceInfo &rsDeviceInfo)
+{
+  string strPath;
+  return getPath(pcszDevice, strPath, &rsDeviceInfo);
+}
+
+BOOL CWinUSBCommDevice::listDevices(TDeviceList &rDeviceList, TStringList &rPathsList, WORD wVID /* = 0 */, WORD wPID /* = 0 */)
 {
   rPathsList.clear();
-  rNamesList.clear();
+  rDeviceList.clear();
   BOOL bResult = TRUE;
   HDEVINFO hDeviceInfo = INVALID_HANDLE_VALUE;
   if ( bResult )
@@ -394,7 +412,7 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
   //Enumerate all the device interfaces in the device information set.
   for ( DWORD I = 0; ; I++ )
   {
-    string strDevName;
+    SDeviceInfo sDeviceInfo;
     string strDevPath;
     BOOL bDeviceListed = FALSE;
     WORD wDetectedVID = 0;
@@ -402,7 +420,7 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
 
     if ( bResult )
     {
-      bResult = getDeviceInfo(hDeviceInfo, DeviceInfoData, sm_WinUSBCommInterfaceGUID, I, wDetectedVID, wDetectedPID, bDeviceListed, strDevName, strDevPath);
+      bResult = getDeviceInfo(hDeviceInfo, DeviceInfoData, sm_WinUSBCommInterfaceGUID, I, wDetectedVID, wDetectedPID, bDeviceListed, sDeviceInfo, strDevPath);
     }
 
     if ( !bResult )
@@ -425,8 +443,11 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
       continue; // skip if PID provided and doesn't match
     }
 
+    sDeviceInfo.m_wVID = wDetectedVID;
+    sDeviceInfo.m_wPID = wDetectedPID;
+
     BOOL bGotPath = !strDevPath.empty();
-    BOOL bGotName = !strDevName.empty();
+    BOOL bGotName = (!sDeviceInfo.m_strVendor.empty()) && (!sDeviceInfo.m_strProduct.empty());
     if ( !bGotPath )
     {
       bResult = FALSE;  // what?
@@ -436,9 +457,9 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
     if ( bGotName )
     {
       BOOL bIsDuplicate = FALSE;
-      for ( DWORD dwKnownDeviceIndex = 0; dwKnownDeviceIndex < rNamesList.size(); dwKnownDeviceIndex++ )
+      for ( DWORD dwKnownDeviceIndex = 0; dwKnownDeviceIndex < rDeviceList.size(); dwKnownDeviceIndex++ )
       {
-        if ( rNamesList[dwKnownDeviceIndex] == strDevName )
+        if ( rDeviceList[dwKnownDeviceIndex].GetLongName() == sDeviceInfo.GetLongName() )
         {
           bIsDuplicate = TRUE;
           break;
@@ -446,7 +467,7 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
       }
       if ( !bIsDuplicate )  // Skip duplicates. Only one interface is supported by this lib.
       {
-        rNamesList.push_back(strDevName);
+        rDeviceList.push_back(sDeviceInfo);
         rPathsList.push_back(strDevPath);
       }
     }
@@ -461,18 +482,18 @@ BOOL CWinUSBCommDevice::listDevices(TStringList &rNamesList, TStringList &rPaths
   return bResult;
 }
 
-BOOL CWinUSBCommDevice::getPath(LPCSTR pcszDevice, string &rstrPath)
+BOOL CWinUSBCommDevice::getPath(LPCSTR pcszDevice, string &rstrPath, SDeviceInfo *psDeviceInfo /*= NULL*/)
 {
   BOOL bResult = TRUE;
 
-  TStringList names;
+  TDeviceList devs;
   TStringList paths;
 
   rstrPath.clear();
 
   if ( bResult )
   {
-    bResult = listDevices(names, paths);
+    bResult = listDevices(devs, paths);
   }
 
   if ( !paths.size() )
@@ -487,6 +508,10 @@ BOOL CWinUSBCommDevice::getPath(LPCSTR pcszDevice, string &rstrPath)
       if ( ( 0 == strlen(pcszDevice) ) && ( 1 == paths.size() ) )
       {
         rstrPath = paths[0];
+        if ( psDeviceInfo )
+        {
+          *psDeviceInfo = devs[0];
+        }
         return TRUE;
       }
     }
@@ -495,6 +520,10 @@ BOOL CWinUSBCommDevice::getPath(LPCSTR pcszDevice, string &rstrPath)
       if ( 1 == paths.size() )
       {
         rstrPath = paths[0];
+        if ( psDeviceInfo )
+        {
+          *psDeviceInfo = devs[0];
+        }
         return TRUE;
       }
     }
@@ -503,11 +532,15 @@ BOOL CWinUSBCommDevice::getPath(LPCSTR pcszDevice, string &rstrPath)
   string strName = pcszDevice;
   if ( bResult )
   {
-    for ( DWORD I = 0; I < names.size(); I++ )
+    for ( DWORD I = 0; I < devs.size(); I++ )
     {
-      if ( strName == names[I] )
+      if ( strName == devs[I].GetLongName() )
       {
         rstrPath = paths[I];
+        if ( psDeviceInfo )
+        {
+          *psDeviceInfo = devs[I];
+        }
         return TRUE;
       }
     }
