@@ -32,14 +32,28 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#ifndef USBD_VID
 #define USBD_VID                      0x06F9
+#endif
+
+#ifndef USBD_PID
 #define USBD_PID                      0x5555
+#endif
+
 #define USBD_LANGID_STRING            0x0409
+
+#ifndef USBD_MANUFACTURER_STRING
 #define USBD_MANUFACTURER_STRING      "Awesome Embedded Developer"
+#endif
+
+#ifndef USBD_PRODUCT_HS_STRING
 #define USBD_PRODUCT_HS_STRING        "WinUSBComm Device in HS Mode"
-//#define USBD_SERIALNUMBER_HS_STRING   "00000000001A"
+#endif
+
+#ifndef USBD_PRODUCT_FS_STRING
 #define USBD_PRODUCT_FS_STRING        "WinUSBComm Device in FS Mode"
-//#define USBD_SERIALNUMBER_FS_STRING   "00000000001B"
+#endif
+
 #define USBD_CONFIGURATION_HS_STRING  "WinUSBComm Config"
 #define USBD_INTERFACE_HS_STRING      "WinUSBComm Interface"
 #define USBD_CONFIGURATION_FS_STRING  "WinUSBComm Config"
