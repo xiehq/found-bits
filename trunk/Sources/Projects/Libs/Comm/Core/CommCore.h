@@ -1,3 +1,4 @@
+/** @file */
 /////////////////////////////////////////////////////////////////////////////////////
 // Copyright (c) 2014, pa.eeapai@gmail.com                                         //
 // All rights reserved.                                                            //
@@ -47,6 +48,7 @@ typedef unsigned short COMMCOUNT;
 typedef unsigned short COMMINDEX;
 #endif
 
+/// Internal state of communication
 typedef enum _ECommStatus
 {
   commstatusIdle,       ///< No communication
@@ -57,6 +59,7 @@ typedef enum _ECommStatus
   commstatusOverrun,    ///< Trying to send or receive too much data
   commstatusDisconnect, ///< Communication disconnected
 }ECommStatus;
+
 
 typedef void (*pfnCommEvent)(SCommLayer *psCommLayer);  ///< Layer event notification (init, packet start/end, disconnect etc.)
 typedef void (*pfnCommTransfer)(SCommLayer *psCommLayer, const unsigned char *pbyData, COMMCOUNT cntByteCount); ///< Data transfer (data received, store, send)
